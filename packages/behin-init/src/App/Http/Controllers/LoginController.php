@@ -28,15 +28,15 @@ class LoginController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        $publishResponse = new PushNotificationController([
-            'instanceId' => env('PUSHER_INSTANCE_ID'),
-            'secretKey' => env('PUSHER_SECRET_KEY')
-        ]);
+        // $publishResponse = new PushNotificationController([
+        //     'instanceId' => env('PUSHER_INSTANCE_ID'),
+        //     'secretKey' => env('PUSHER_SECRET_KEY')
+        // ]);
         $userId = Auth::user()->id;
         $user = User::find($userId);
-        $beamsToken = $publishResponse->generateToken($userId);
-        $user->beams_token = $beamsToken['token'];
-        $user->save();
+        // $beamsToken = $publishResponse->generateToken($userId);
+        // $user->beams_token = $beamsToken['token'];
+        // $user->save();
         return redirect()->intended(route('admin.dashboard', absolute: false));
     }
 

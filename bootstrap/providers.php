@@ -42,7 +42,7 @@ return [
     ShortenerServiceProvider::class,
     BladeServiceProvider::class,
     InventoryServiceProvider::class,
-    ViewBuilderServiceProvider::class,
+    // ViewBuilderServiceProvider::class,
     InventoryInventoryServiceProvider::class,
     ArghavanFinReport::class,
 ];

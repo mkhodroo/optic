@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'e948edce67600c02fd358b26ca9289ac7c6bed15',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -25,6 +25,15 @@
             'reference' => 'b5fd8eacd8915a1b627b8bfc027803f1939734dd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../beberlei/assert',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'behin/simple-workflow' => array(
+            'pretty_version' => '1.0',
+            'version' => '1.0.0.0',
+            'reference' => '05c5138dbfcbcc22c11f33483a2f6b9acc91f2fd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../behin/simple-workflow',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -479,9 +488,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'e948edce67600c02fd358b26ca9289ac7c6bed15',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1000,8 +1009,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86330a646f906abeb64bb63e6904ff4a",
+    "content-hash": "78a7ef1319914b68197d11c304f15dad",
     "packages": [
         {
             "name": "barryvdh/laravel-translation-manager",
@@ -136,6 +136,41 @@
                 "source": "https://github.com/beberlei/assert/tree/v3.3.3"
             },
             "time": "2024-07-15T13:18:35+00:00"
+        },
+        {
+            "name": "behin/simple-workflow",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/behin-simple-workflow.git",
+                "reference": "05c5138dbfcbcc22c11f33483a2f6b9acc91f2fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/05c5138dbfcbcc22c11f33483a2f6b9acc91f2fd",
+                "reference": "05c5138dbfcbcc22c11f33483a2f6b9acc91f2fd",
+                "shasum": ""
+            },
+            "require": {
+                "morilog/jalali": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Behin\\SimpleWorkflow\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/behin-simple-workflow/tree/v1.0.0",
+                "issues": "https://github.com/mkhodroo/behin-simple-workflow/issues"
+            },
+            "time": "2026-08-20T08:52:22+00:00"
         },
         {
             "name": "brick/math",
@@ -10128,5 +10163,5 @@
         "php": "^8.2"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
