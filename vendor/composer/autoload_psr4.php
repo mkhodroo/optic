@@ -128,8 +128,6 @@ return array(
     'Behin\\SimpleWorkflowReport\\' => array($baseDir . '/packages/behin-simple-workflow-report/src'),
     'Behin\\PMCaseNumbering\\' => array($baseDir . '/packages/behin-pm-case-numbering/src'),
     'BehinUserRoles\\' => array($baseDir . '/packages/behin-user-roles/src', $vendorDir . '/arghavan/user-role/src'),
-    'BehinProcessMaker\\' => array($baseDir . '/packages/behin-process-maker/src'),
-    'BehinProcessMakerAdmin\\' => array($baseDir . '/packages/behin-process-maker-admin/src'),
     'BehinLogging\\' => array($baseDir . '/packages/behin-logging/src'),
     'BehinInit\\' => array($baseDir . '/packages/behin-init/src'),
     'BehinFileControl\\' => array($vendorDir . '/arghavan/file-control/src'),

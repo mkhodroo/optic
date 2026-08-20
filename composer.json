@@ -69,9 +69,7 @@
             "BehinInit\\": "packages/behin-init/src/",
             "BehinUserRoles\\": "packages/behin-user-roles/src/",
             "UserProfile\\": "packages/behin-user-profile/src/",
-            "BehinProcessMaker\\": "packages/behin-process-maker/src/",
             "BehinLogging\\": "packages/behin-logging/src/",
-            "BehinProcessMakerAdmin\\": "packages/behin-process-maker-admin/src/",
             "Behin\\Sms\\": "packages/behin-sms/src/",
             "Behin\\PMCaseNumbering\\": "packages/behin-pm-case-numbering/src/",
             "TodoList\\": "packages/behin-todo-list/src/",
@@ -81,10 +79,7 @@
             "NumberToWord\\": "packages/number-to-word/src/",
             "ShortenerUrl\\Shortener\\": "packages/shortener-url/Shortener/src/",
             "Inventory\\": "packages/behin-inventory/src/"
-        },
-        "files": [
-            "packages/behin-simple-workflow/src/Helper/behin-simple-workflow.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {

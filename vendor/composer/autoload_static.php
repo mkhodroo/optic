@@ -47,7 +47,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'd634523d799d97a8ab4807b650bf5cea' => __DIR__ . '/..' . '/pestphp/pest-plugin-laravel/src/Autoload.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
-        'ade6dd009455de1483bf74c79d14a58e' => __DIR__ . '/../..' . '/packages/behin-simple-workflow/src/Helper/behin-simple-workflow.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -232,8 +231,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
             'Behin\\SimpleWorkflowReport\\' => 27,
             'Behin\\PMCaseNumbering\\' => 22,
             'BehinUserRoles\\' => 15,
-            'BehinProcessMaker\\' => 18,
-            'BehinProcessMakerAdmin\\' => 23,
             'BehinLogging\\' => 13,
             'BehinInit\\' => 10,
             'BehinFileControl\\' => 17,
@@ -744,14 +741,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
             0 => __DIR__ . '/../..' . '/packages/behin-user-roles/src',
             1 => __DIR__ . '/..' . '/arghavan/user-role/src',
         ),
-        'BehinProcessMaker\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/packages/behin-process-maker/src',
-        ),
-        'BehinProcessMakerAdmin\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src',
-        ),
         'BehinLogging\\' =>
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-logging/src',
@@ -851,20 +840,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'BehinLogging\\Controllers\\LoggingController' => __DIR__ . '/../..' . '/packages/behin-logging/src/Controllers/LoggingController.php',
         'BehinLogging\\Middlewares\\Logging' => __DIR__ . '/../..' . '/packages/behin-logging/src/Middlewares/Logging.php',
         'BehinLogging\\ServiceProvider' => __DIR__ . '/../..' . '/packages/behin-logging/src/ServiceProvider.php',
-        'BehinProcessMakerAdmin\\BehinProcessMakerAdminProvider' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/BehinProcessMakerAdminProvider.php',
-        'BehinProcessMakerAdmin\\Controllers\\AllCasesController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/AllCasesController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseDetailsController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseDetailsController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseFinListController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseFinListController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseHistoryController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseHistoryController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseInfoController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseInfoController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseLastStatusController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseLastStatusController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseRepairmanController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseRepairmanController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CaseReportController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CaseReportController.php',
-        'BehinProcessMakerAdmin\\Controllers\\CasesByLastStatusController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/CasesByLastStatusController.php',
-        'BehinProcessMakerAdmin\\Controllers\\DeleteCaseController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/DeleteCaseController.php',
-        'BehinProcessMakerAdmin\\Controllers\\GetCaseController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/GetCaseController.php',
-        'BehinProcessMakerAdmin\\Controllers\\ReassignCaseController' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Controllers/ReassignCaseController.php',
-        'BehinProcessMakerAdmin\\Models\\PmVars' => __DIR__ . '/../..' . '/packages/behin-process-maker-admin/src/Models/PmVars.php',
         'BehinUserRoles\\Controllers\\DepartmentController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/DepartmentController.php',
         'BehinUserRoles\\Controllers\\GetMethodsController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/GetMethodsController.php',
         'BehinUserRoles\\Controllers\\GetRoleController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/GetRoleController.php',
