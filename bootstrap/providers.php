@@ -32,7 +32,6 @@ return [
     FileServiceProvider::class,
     Behin\SimpleWorkflow\SimpleWorkflowProvider::class,
     Behin\SimpleWorkflowReport\SimpleWorkflowReportProvider::class,
-    MyFormBuilder\FormBuilderServiceProvider::class,
     Barryvdh\TranslationManager\ManagerServiceProvider::class,
     TelegramBot\TelegramBotProvider::class,
     ExcelServiceProvider::class,

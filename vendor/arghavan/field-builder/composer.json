@@ -1,0 +1,21 @@
+{
+    "name": "arghavan/field-builder",
+    "description": "A simple and elegant form builder for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MyFormBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MyFormBuilder\\FormBuilderServiceProvider"
+            ],
+            "aliases": {
+                "Form": "MyFormBuilder\\Facades\\Form"
+            }
+        }
+    }
+}

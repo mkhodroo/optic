@@ -23,6 +23,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:mkhodroo/bale-bot.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:mkhodroo/field-builder.git"
         }
     ],
     "require": {
@@ -38,8 +42,8 @@
         "behin/simple-workflow": "1.0.0",
         "arghavan/inventory": "dev-main",
         "arghavan/user-role": "dev-main",
-        "arghavan/bale-bot": "dev-main"
-
+        "arghavan/bale-bot": "dev-main",
+        "arghavan/field-builder": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -69,7 +73,6 @@
             "TodoList\\": "packages/behin-todo-list/src/",
             "FileService\\": "packages/behin-file-service/src/",
             "Behin\\SimpleWorkflowReport\\": "packages/behin-simple-workflow-report/src/",
-            "MyFormBuilder\\": "packages/behin-form-builder/src/",
             "TelegramBot\\": "packages/behin-telegram-bot/src/",
             "NumberToWord\\": "packages/number-to-word/src/",
             "ShortenerUrl\\Shortener\\": "packages/shortener-url/Shortener/src/",

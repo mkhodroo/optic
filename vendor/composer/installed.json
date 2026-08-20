@@ -37,6 +37,50 @@
             "install-path": "../arghavan/bale-bot"
         },
         {
+            "name": "arghavan/field-builder",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/field-builder.git",
+                "reference": "bc4542e6ddafa367dfe08c9d90109b26511005ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/field-builder/zipball/bc4542e6ddafa367dfe08c9d90109b26511005ca",
+                "reference": "bc4542e6ddafa367dfe08c9d90109b26511005ca",
+                "shasum": ""
+            },
+            "time": "2026-08-20T13:55:33+00:00",
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MyFormBuilder\\FormBuilderServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "MyFormBuilder\\Facades\\Form"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "MyFormBuilder\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A simple and elegant form builder for Laravel",
+            "support": {
+                "source": "https://github.com/mkhodroo/field-builder/tree/main",
+                "issues": "https://github.com/mkhodroo/field-builder/issues"
+            },
+            "install-path": "../arghavan/field-builder"
+        },
+        {
             "name": "arghavan/inventory",
             "version": "dev-main",
             "version_normalized": "dev-main",

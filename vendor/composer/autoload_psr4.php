@@ -76,7 +76,7 @@ return array(
     'PHPStan\\PhpDocParser\\' => array($vendorDir . '/phpstan/phpdoc-parser/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
     'NumberToWord\\' => array($baseDir . '/packages/number-to-word/src'),
-    'MyFormBuilder\\' => array($baseDir . '/packages/behin-form-builder/src'),
+    'MyFormBuilder\\' => array($vendorDir . '/arghavan/field-builder/src'),
     'Morilog\\Jalali\\' => array($vendorDir . '/morilog/jalali/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Mockery\\' => array($vendorDir . '/mockery/mockery/library/Mockery'),

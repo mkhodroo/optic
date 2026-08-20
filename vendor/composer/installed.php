@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b61d359026fbeabd1c627ea39393d71493893356',
+        'reference' => '884030fa184a16b667d9e8b639a582bd23fa5b70',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -16,6 +16,17 @@
             'reference' => '45698f5bf0952232203cafb3fa402864303481cf',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/bale-bot',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'arghavan/field-builder' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'bc4542e6ddafa367dfe08c9d90109b26511005ca',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../arghavan/field-builder',
             'aliases' => array(
                 0 => '9999999-dev',
             ),
@@ -523,7 +534,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b61d359026fbeabd1c627ea39393d71493893356',
+            'reference' => '884030fa184a16b667d9e8b639a582bd23fa5b70',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

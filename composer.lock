@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a2adaa65673428bbbb81fecd735be16",
+    "content-hash": "27e47d54cd19fa979478a99b921095a4",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -38,6 +38,47 @@
                 "issues": "https://github.com/mkhodroo/bale-bot/issues"
             },
             "time": "2026-08-20T13:40:55+00:00"
+        },
+        {
+            "name": "arghavan/field-builder",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/field-builder.git",
+                "reference": "bc4542e6ddafa367dfe08c9d90109b26511005ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/field-builder/zipball/bc4542e6ddafa367dfe08c9d90109b26511005ca",
+                "reference": "bc4542e6ddafa367dfe08c9d90109b26511005ca",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MyFormBuilder\\FormBuilderServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "MyFormBuilder\\Facades\\Form"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MyFormBuilder\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A simple and elegant form builder for Laravel",
+            "support": {
+                "source": "https://github.com/mkhodroo/field-builder/tree/main",
+                "issues": "https://github.com/mkhodroo/field-builder/issues"
+            },
+            "time": "2026-08-20T13:55:33+00:00"
         },
         {
             "name": "arghavan/inventory",
@@ -10271,6 +10312,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "arghavan/bale-bot": 20,
+        "arghavan/field-builder": 20,
         "arghavan/inventory": 20,
         "arghavan/user-role": 20
     },
