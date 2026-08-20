@@ -46,7 +46,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'd634523d799d97a8ab4807b650bf5cea' => __DIR__ . '/..' . '/pestphp/pest-plugin-laravel/src/Autoload.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
-        '1dd62bb642d9cb89aae0bb1db4f26894' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Helpers/behin-helpers.php',
         'ade6dd009455de1483bf74c79d14a58e' => __DIR__ . '/../..' . '/packages/behin-simple-workflow/src/Helper/behin-simple-workflow.php',
     );
 

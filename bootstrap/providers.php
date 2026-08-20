@@ -41,8 +41,8 @@ return [
     ExcelServiceProvider::class,
     ShortenerServiceProvider::class,
     BladeServiceProvider::class,
-    InventoryServiceProvider::class,
+    // InventoryServiceProvider::class,
     // ViewBuilderServiceProvider::class,
-    InventoryInventoryServiceProvider::class,
+    // InventoryInventoryServiceProvider::class,
     ArghavanFinReport::class,
 ];
