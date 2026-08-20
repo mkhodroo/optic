@@ -23,7 +23,6 @@ return [
     App\Providers\AppServiceProvider::class,
     BehinInitProvider::class,
     UserProfileProvider::class,
-    BehinFileControlProvider::class,
     ServiceProvider::class,
     BehinProcessMakerAdminProvider::class,
     SmsProvider::class,

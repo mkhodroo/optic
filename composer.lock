@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27e47d54cd19fa979478a99b921095a4",
+    "content-hash": "abfd8563a3dc6e783a4826af798f8609",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -79,6 +79,39 @@
                 "issues": "https://github.com/mkhodroo/field-builder/issues"
             },
             "time": "2026-08-20T13:55:33+00:00"
+        },
+        {
+            "name": "arghavan/file-control",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/file-uploader.git",
+                "reference": "e36d4770dbe13056b82a9c0a53e4936251af36c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/file-uploader/zipball/e36d4770dbe13056b82a9c0a53e4936251af36c1",
+                "reference": "e36d4770dbe13056b82a9c0a53e4936251af36c1",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BehinFileControl\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/file-uploader/tree/main",
+                "issues": "https://github.com/mkhodroo/file-uploader/issues"
+            },
+            "time": "2026-08-20T14:55:44+00:00"
         },
         {
             "name": "arghavan/inventory",
@@ -10313,6 +10346,7 @@
     "stability-flags": {
         "arghavan/bale-bot": 20,
         "arghavan/field-builder": 20,
+        "arghavan/file-control": 20,
         "arghavan/inventory": 20,
         "arghavan/user-role": 20
     },

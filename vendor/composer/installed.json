@@ -81,6 +81,42 @@
             "install-path": "../arghavan/field-builder"
         },
         {
+            "name": "arghavan/file-control",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/file-uploader.git",
+                "reference": "e36d4770dbe13056b82a9c0a53e4936251af36c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/file-uploader/zipball/e36d4770dbe13056b82a9c0a53e4936251af36c1",
+                "reference": "e36d4770dbe13056b82a9c0a53e4936251af36c1",
+                "shasum": ""
+            },
+            "time": "2026-08-20T14:55:44+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BehinFileControl\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/file-uploader/tree/main",
+                "issues": "https://github.com/mkhodroo/file-uploader/issues"
+            },
+            "install-path": "../arghavan/file-control"
+        },
+        {
             "name": "arghavan/inventory",
             "version": "dev-main",
             "version_normalized": "dev-main",

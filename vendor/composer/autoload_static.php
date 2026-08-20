@@ -762,7 +762,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         ),
         'BehinFileControl\\' =>
         array (
-            0 => __DIR__ . '/../..' . '/packages/behin-file-control/src',
+            0 => __DIR__ . '/..' . '/arghavan/file-control/src',
         ),
         'Barryvdh\\TranslationManager\\' =>
         array (
@@ -838,8 +838,8 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Barryvdh\\TranslationManager\\Models\\Translation' => __DIR__ . '/..' . '/barryvdh/laravel-translation-manager/src/Models/Translation.php',
         'Barryvdh\\TranslationManager\\TranslationServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-translation-manager/src/TranslationServiceProvider.php',
         'Barryvdh\\TranslationManager\\Translator' => __DIR__ . '/..' . '/barryvdh/laravel-translation-manager/src/Translator.php',
-        'BehinFileControl\\BehinFileControlProvider' => __DIR__ . '/../..' . '/packages/behin-file-control/src/BehinFileControlProvider.php',
-        'BehinFileControl\\Controllers\\FileController' => __DIR__ . '/../..' . '/packages/behin-file-control/src/Controllers/FileController.php',
+        'BehinFileControl\\BehinFileControlProvider' => __DIR__ . '/..' . '/arghavan/file-control/src/BehinFileControlProvider.php',
+        'BehinFileControl\\Controllers\\FileController' => __DIR__ . '/..' . '/arghavan/file-control/src/Controllers/FileController.php',
         'BehinInit\\App\\Http\\Controllers\\AccessController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/AccessController.php',
         'BehinInit\\App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/LoginController.php',
         'BehinInit\\App\\Http\\Controllers\\RegisterUserController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/RegisterUserController.php',

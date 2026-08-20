@@ -132,7 +132,7 @@ return array(
     'BehinProcessMakerAdmin\\' => array($baseDir . '/packages/behin-process-maker-admin/src'),
     'BehinLogging\\' => array($baseDir . '/packages/behin-logging/src'),
     'BehinInit\\' => array($baseDir . '/packages/behin-init/src'),
-    'BehinFileControl\\' => array($baseDir . '/packages/behin-file-control/src'),
+    'BehinFileControl\\' => array($vendorDir . '/arghavan/file-control/src'),
     'Barryvdh\\TranslationManager\\' => array($vendorDir . '/barryvdh/laravel-translation-manager/src'),
     'BaleBot\\' => array($vendorDir . '/arghavan/bale-bot/src'),
     'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
