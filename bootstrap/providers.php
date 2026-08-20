@@ -37,6 +37,7 @@ return [
     ExcelServiceProvider::class,
     ShortenerServiceProvider::class,
     BladeServiceProvider::class,
+    MyFormBuilder\FormBuilderServiceProvider::class,
     // InventoryServiceProvider::class,
     // ViewBuilderServiceProvider::class,
     // InventoryInventoryServiceProvider::class,
