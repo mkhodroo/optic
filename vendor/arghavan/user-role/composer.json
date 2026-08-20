@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "BehinUserRoles\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helper/helper.php"
+        ]
     },
     "authors": [
         {
