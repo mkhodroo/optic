@@ -22,9 +22,7 @@ use ViewBuilder\ViewBuilderServiceProvider;
 return [
     App\Providers\AppServiceProvider::class,
     BehinInitProvider::class,
-    UserRolesServiceProvider::class,
     UserProfileProvider::class,
-    BehinProcessMakerProvider::class,
     BehinFileControlProvider::class,
     ServiceProvider::class,
     BehinProcessMakerAdminProvider::class,
