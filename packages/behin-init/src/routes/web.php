@@ -16,11 +16,11 @@ Route::get('', function(){
 
 require __DIR__.'/auth.php';
 
-// Route::prefix('admin')->name('admin.')->middleware(['web', 'auth', Access::class])->group(function(){
-//     Route::get('', function(){
-//         return view('admin.dashboard');
-//     })->name('dashboard');
-// });
+Route::prefix('admin')->name('admin.')->middleware(['web', 'auth', Access::class])->group(function(){
+    Route::get('', function(){
+        return view('admin.dashboard');
+    })->name('dashboard');
+});
 
 Route::get('build-app', function(){
     Artisan::call('migrate');

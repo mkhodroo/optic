@@ -36,23 +36,6 @@ spl_autoload_register(function ($class) {
 });
 
 spl_autoload_register(function ($class) {
-    $prefix = 'Inventory\\';   // namespace اصلی پکیج خودت
-    $baseDir = __DIR__ . '/../packages/behin-inventory/src/'; // مسیر فولدر src پکیج
-
-    $len = strlen($prefix);
-    if (strncmp($prefix, $class, $len) !== 0) {
-        return;
-    }
-
-    $relativeClass = substr($class, $len);
-    $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
-
-    if (file_exists($file)) {
-        require $file;
-    }
-});
-
-spl_autoload_register(function ($class) {
     $prefix = 'ViewBuilder\\';   // namespace اصلی پکیج خودت
     $baseDir = __DIR__ . '/../packages/behin-view-builder/src/'; // مسیر فولدر src پکیج
 
