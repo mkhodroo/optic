@@ -1,0 +1,93 @@
+<?php
+
+use Behin\SimpleWorkflowReport\Controllers\Scripts\OPPAReportController;
+use Behin\SimpleWorkflow\Models\Core\Cases;
+use Behin\SimpleWorkflow\Models\Core\Variable;
+use Behin\SimpleWorkflowReport\Controllers\Core\AllRequestsReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\CustomersReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\FinReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\InventoryController;
+use Behin\SimpleWorkflowReport\Controllers\Core\MonthlyRequestsReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\ProductController;
+use Behin\SimpleWorkflowReport\Controllers\Core\ReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\RoleReportFormController;
+use Behin\SimpleWorkflowReport\Controllers\Core\SummaryReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\TransActionController;
+use Behin\SimpleWorkflowReport\Controllers\Core\RepairIncomeReportController;
+use Behin\SimpleWorkflowReport\Controllers\Core\TimeoffController;
+use Behin\SimpleWorkflowReport\Controllers\Scripts\PersonelActivityController;
+use BehinInit\App\Http\Middleware\Access;
+use Illuminate\Support\Facades\Route;
+
+Route::name('simpleWorkflowReport.')->prefix('workflow-report')->middleware(['web', 'auth'])->group(function () {
+    Route::get('index', [ReportController::class, 'index'])->name('index');
+    Route::resource('report', ReportController::class);
+    Route::resource('summary-report', SummaryReportController::class);
+    Route::resource('role', RoleReportFormController::class);
+    Route::resource('fin-report', FinReportController::class);
+    Route::get('customers/export', [CustomersReportController::class, 'export'])->name('customers.export');
+    Route::resource('customers', CustomersReportController::class)->except(['create', 'show', 'edit']);
+    Route::get('timeoff-report', [TimeoffController::class, 'index'])->middleware(Access::class . ':گزارش مرخصی ها')->name('timeoff-report.index');
+    Route::get('total-payment', [FinReportController::class, 'totalPayment'])->name('totalPayment');
+    Route::get('test', function () {
+        $images = Variable::where('key', 'device_plaque_image')->whereNotNull('value')->get();
+        foreach($images as $image){
+            $case = Cases::find($image->case_id);
+            echo $case->getVariable('device_name') . " | " . $case->number . "<a href='". url("public/$image->value")."' download='". $case->number .".jpg'>Download</a><br>";
+        }
+    });
+
+    
+    Route::get('all-requests/export', [AllRequestsReportController::class, 'export'])->middleware(Access::class. ':گزارش کل درخواست ها')->name('all-requests.export');
+    Route::get('all-requests/{case_number}', [AllRequestsReportController::class, 'show'])->middleware(Access::class. ':گزارش کل درخواست ها')->name('all-requests.show');
+    Route::get('all-requests', [AllRequestsReportController::class, 'index'])->middleware(Access::class. ':گزارش کل درخواست ها')->name('all-requests.index');
+    Route::post('all-requests/update', [AllRequestsReportController::class, 'update'])->middleware(Access::class. ':گزارش کل درخواست ها')->name('all-requests.update');
+
+    Route::get('monthly-requests', [MonthlyRequestsReportController::class, 'report'])->middleware(Access::class. ':گزارش کل درخواست ها')->name('monthly-requests.index');
+    Route::get('monthly-requests/export', [MonthlyRequestsReportController::class, 'export'])->middleware(Access::class. ':گزارش کل درخواست ها')->name('monthly-requests.export');
+
+
+    Route::resource('oppa-report', OPPAReportController::class);
+    Route::resource('transaction-report', TransActionController::class);
+    Route::resource('repair-income-report', RepairIncomeReportController::class);
+
+    Route::prefix('management')->name('management.')->group(function () {
+        Route::view('processes', 'SimpleWorkflowReportView::Management.Processes.overview')->name('processes');
+        Route::view('customers', 'SimpleWorkflowReportView::Management.Customers.overview')->name('customers');
+        Route::view('financial', 'SimpleWorkflowReportView::Management.Financial.overview')->name('financial');
+        Route::view('inventory', 'SimpleWorkflowReportView::Management.Inventory.overview')->name('inventory');
+        Route::view('devices', 'SimpleWorkflowReportView::Management.Devices.overview')->name('devices');
+        Route::view('hr', 'SimpleWorkflowReportView::Management.HR.overview')->name('hr');
+        Route::view('workflow', 'SimpleWorkflowReportView::Management.Workflow.overview')->name('workflow');
+        Route::view('configuration', 'SimpleWorkflowReportView::Management.Configuration.overview')->name('configuration');
+        Route::view('managerial', 'SimpleWorkflowReportView::Management.Managerial.overview')->name('managerial');
+    });
+
+    Route::prefix('product')->name('product.')->middleware('access:محصولات')->group(function () {
+        Route::get('index', [ProductController::class, 'index'])->name('index');
+        Route::get('create', [ProductController::class, 'create'])->name('create');
+        Route::post('store', [ProductController::class, 'store'])->name('store');
+        Route::get('{product}/edit', [ProductController::class, 'edit'])->name('edit');
+        Route::put('{product}/update', [ProductController::class, 'update'])->name('update');
+    });
+
+    Route::prefix('inventory-transaction')->name('inventory-transaction.')->middleware('access:تراکنش های انبار')->group(function () {
+        Route::get('index', [InventoryController::class, 'index'])->name('index');
+        Route::get('{product}/create', [InventoryController::class, 'create'])->name('create');
+        Route::post('store', [InventoryController::class, 'store'])->name('store');
+        Route::delete('{inventory}/delete', [InventoryController::class, 'destroy'])->name('delete');
+
+        
+    });
+
+    Route::get('total-timeoff', function(){
+        return Excel::download(new TotalTimeoff, 'total_timeoff.xlsx');
+    })->name('totalTimeoff');
+
+    Route::get('user-timeoffs/{userId?}', function($userId = null){
+        return Excel::download(new UserTimeoffs($userId), 'timeoff_report.xlsx');
+    })->name('userTimeoffs');
+
+    Route::post('timeoff/update', [TimeoffController::class, 'update'])->name('timeoff.update');
+
+});

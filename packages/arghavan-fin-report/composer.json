@@ -1,0 +1,17 @@
+{
+    "name": "arghavan-fin-report",
+    "version": "1.0",
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Arghavan\\FinReport\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mkhodroo",
+            "email": "mkhodroo@yahoo.com"
+        }
+    ],
+    "require": {}
+}

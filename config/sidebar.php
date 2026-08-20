@@ -1,0 +1,112 @@
+<?php
+
+return [
+    'menu' =>[
+
+        'dashboard' => [
+            'icon' => 'dashboard',
+            'fa_name' => 'داشبرد',
+            'submenu' => [
+                'dashboard' => [ 'fa_name' => 'داشبرد من', 'route-name' => '', 'route-url' => 'admin' ],
+            ]
+        ],
+        'workflow-inbox' => [
+            'icon' => 'inbox',
+            'fa_name' => 'کارتابل',
+            'submenu' => [
+                'new-process' => [ 'fa_name' => 'فرایند جدید', 'route-name' => 'simpleWorkflow.process.startListView' ],
+                'inbox' => [ 'fa_name' => 'کارتابل من', 'route-name' => 'simpleWorkflow.inbox.index' ],
+                'categorized-inbox' => [ 'fa_name' => 'کارتابل دسته بندی شده', 'route-name' => 'simpleWorkflow.inbox.categorized' ],
+                'done-inbox' => [ 'fa_name' => 'انجام شده ها', 'route-name' => 'simpleWorkflow.inbox.done' ],
+            ]
+        ],
+        'workflow-report' => [
+            'icon' => 'report',
+            'fa_name' => 'گزارشات کارتابل',
+            'submenu' => [
+                'list' => [ 'fa_name' => 'لیست', 'route-name' => 'simpleWorkflowReport.index' ],
+                'fin-report' => [ 'fa_name' => 'مالی', 'route-name' => 'simpleWorkflowReport.fin-report.index' ],
+                'summary' => [ 'fa_name' => 'خلاصه', 'route-name' => 'simpleWorkflowReport.summary-report.index' ],
+                'role-form-control' => [ 'fa_name' => 'فرم گزارش نقش ها', 'route-name' => 'simpleWorkflowReport.role.index' ],
+
+            ]
+        ],
+        'workflow' => [
+            'icon' => 'account_tree',
+            'fa_name' => 'گردش کار',
+            'submenu' => [
+                'process' => [ 'fa_name' => 'فرایند', 'route-name' => 'simpleWorkflow.process.index' ],
+                'task-actors' => [ 'fa_name' => 'تسک ها', 'route-name' => 'simpleWorkflow.task-actors.index' ],
+                'forms' => [ 'fa_name' => 'فرم ها', 'route-name' => 'simpleWorkflow.form.index'  ],
+                'scripts' => [ 'fa_name' => 'اسکریپت ها', 'route-name' => 'simpleWorkflow.scripts.index' ],
+                'conditions' => [ 'fa_name' => 'شرط ها', 'route-name' => 'simpleWorkflow.conditions.index' ],
+                'fields' => [ 'fa_name' => 'فیلدها', 'route-name' => 'simpleWorkflow.fields.index' ],
+                'entities' => [ 'fa_name' => 'موجودیت ها', 'route-name' => 'simpleWorkflow.entities.index' ],
+                'view-models' => [ 'fa_name' => 'ویو مدل ها', 'route-name' => 'simpleWorkflow.view-model.index' ],
+                'all-inbox' => [ 'fa_name' => 'کارتابل همه', 'route-name' => 'simpleWorkflow.inbox.cases.list' ],
+            ]
+        ],
+        'inventory' => [
+            'icon' => 'account_tree',
+            'fa_name' => 'انبار',
+            'submenu' => [
+                'products' => [ 'fa_name' => 'مدیریت محصولات', 'route-name' => 'inventory.products.index' ],
+                'categories' => [ 'fa_name' => 'مدیریت دسته‌بندی‌ها', 'route-name' => 'inventory.categories.index' ],
+                'warehouses' => [ 'fa_name' => 'مدیریت انبارها', 'route-name' => 'inventory.warehouses.index' ],
+                'entry-reasons' => [ 'fa_name' => 'مدیریت دلایل ورود کالا', 'route-name' => 'inventory.entry-reasons.index' ],
+                'exit-reasons' => [ 'fa_name' => 'مدیریت دلایل خروج کالا', 'route-name' => 'inventory.exit-reasons.index' ],
+                'entries' => [ 'fa_name' => 'مدیریت ورود کالا', 'route-name' => 'inventory.entries.index' ],
+                'exits' => [ 'fa_name' => 'مدیریت خروج کالا', 'route-name' => 'inventory.exits.index' ],
+                'stock' => [ 'fa_name' => 'گزارش موجودی کل', 'route-name' => 'inventory.stock.index' ],
+                'movements' => [ 'fa_name' => 'لیست ورود و خروج کالا', 'route-name' => 'inventory.movements.index' ],
+                'settlements' => [ 'fa_name' => 'مدیریت تسویه کالا', 'route-name' => 'inventory.settlements.index' ],
+                'settlement-reasons' => [ 'fa_name' => 'مدیریت دلایل تسویه', 'route-name' => 'inventory.settlement-reasons.index' ],
+                'receivers' => [ 'fa_name' => 'مدیریت تحویل گیرندگان', 'route-name' => 'inventory.receivers.index' ],
+            ]
+        ],
+        'translations' => [
+            'icon' => 'language',
+            'fa_name' => 'ترجمه',
+            'submenu' => [
+                'index' => [ 'fa_name' => 'ترجمه', 'route-name' => '', 'route-url' => '/translations' ],
+            ]
+        ],
+        'cases' => [
+            'icon' => 'list',
+            'fa_name' => 'کارپوشه',
+            'submenu' => [
+                'new-case' => [ 'fa_name' => 'فرایند جدید', 'route-name' => 'MkhodrooProcessMaker.forms.start', 'route-url' => '' ],
+                'inbox' => [ 'fa_name' => 'انجام نشده ها', 'route-name' => 'MkhodrooProcessMaker.forms.todo', 'route-url' => '' ],
+                'done' => [ 'fa_name' => 'انجام شده ها', 'route-name' => 'MkhodrooProcessMaker.forms.done', 'route-url' => '' ],
+                'draft' => [ 'fa_name' => 'پیش نویس', 'route-name' => 'MkhodrooProcessMaker.forms.draft', 'route-url' => '' ]
+            ]
+        ],
+        'cases-report' => [
+            'icon' => 'list',
+            'fa_name' => 'گزارشات کارپوشه',
+            'submenu' => [
+                'all' => [ 'fa_name' => 'همه', 'route-name' => 'pmAdmin.form.allCasesForm', 'route-url' => '' ],
+                'filter-by-last-status' => [ 'fa_name' => 'دسته بندی', 'route-name' => 'pmAdmin.form.casesByLastStatusView', 'route-url' => '' ],
+                'fin-report' => [ 'fa_name' => 'مالی', 'route-name' => 'pmAdmin.form.finListView', 'route-url' => '' ],
+            ]
+        ],
+        'users' => [
+            'icon' => 'person',
+            'fa_name' => 'کاربران',
+            'submenu' => [
+                'dashboard' => [ 'fa_name' => 'همه', 'route-name' => '', 'route-url' => 'user/all' ],
+                'role' => [ 'fa_name' => 'نقش ها', 'route-name' => 'role.listForm', 'route-url' => '' ],
+                'method' => [ 'fa_name' => 'متد ها', 'route-name' => 'method.list', 'route-url' => '' ],
+            ]
+        ],
+        'tickets' => [
+            'icon' => 'support_agent',
+            'fa_name' => 'تیکت پشتیبانی',
+            'submenu' => [
+                'create' => [ 'fa_name' => 'ایجاد', 'route-name' => 'ATRoutes.index', 'route-url' => '' ],
+                'show' => [ 'fa_name' => 'مشاهده', 'route-name' => 'ATRoutes.show.listForm', 'route-url' => '' ],
+            ]
+        ],
+
+    ]
+];
