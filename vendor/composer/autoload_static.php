@@ -741,6 +741,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'BehinUserRoles\\' =>
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-user-roles/src',
+            1 => __DIR__ . '/..' . '/arghavan/user-role/src',
         ),
         'BehinProcessMaker\\' =>
         array (

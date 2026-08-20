@@ -15,6 +15,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:mkhodroo/inventory.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/mkhodroo/user-role.git"
         }
     ],
     "require": {
@@ -28,7 +32,8 @@
         "morilog/jalali": "3.*",
         "phpoffice/phpword": "^1.4",
         "behin/simple-workflow": "1.0.0",
-        "arghavan/inventory": "dev-main"
+        "arghavan/inventory": "dev-main",
+        "arghavan/user-role": "dev-main"
 
     },
     "require-dev": {

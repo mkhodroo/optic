@@ -47,6 +47,43 @@
             "install-path": "../arghavan/inventory"
         },
         {
+            "name": "arghavan/user-role",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/user-role.git",
+                "reference": "2f168bb4f643e04289f7a18e899f4da13db1acb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/user-role/zipball/2f168bb4f643e04289f7a18e899f4da13db1acb2",
+                "reference": "2f168bb4f643e04289f7a18e899f4da13db1acb2",
+                "shasum": ""
+            },
+            "time": "2026-08-20T12:46:23+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BehinUserRoles\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "description": "defining roles of users and accessibility of each role. it can use codes in views and controllers.",
+            "support": {
+                "source": "https://github.com/mkhodroo/user-role/tree/main",
+                "issues": "https://github.com/mkhodroo/user-role/issues"
+            },
+            "install-path": "../arghavan/user-role"
+        },
+        {
             "name": "barryvdh/laravel-translation-manager",
             "version": "v0.6.6",
             "version_normalized": "0.6.6.0",

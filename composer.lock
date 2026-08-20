@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "725ccf05d0c953b3af677486ee5645f4",
+    "content-hash": "ce21da9c2018721534db3a815266234b",
     "packages": [
         {
             "name": "arghavan/inventory",
@@ -48,6 +48,40 @@
                 "issues": "https://github.com/mkhodroo/inventory/issues"
             },
             "time": "2026-08-20T12:16:48+00:00"
+        },
+        {
+            "name": "arghavan/user-role",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/user-role.git",
+                "reference": "2f168bb4f643e04289f7a18e899f4da13db1acb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/user-role/zipball/2f168bb4f643e04289f7a18e899f4da13db1acb2",
+                "reference": "2f168bb4f643e04289f7a18e899f4da13db1acb2",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BehinUserRoles\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "description": "defining roles of users and accessibility of each role. it can use codes in views and controllers.",
+            "support": {
+                "source": "https://github.com/mkhodroo/user-role/tree/main",
+                "issues": "https://github.com/mkhodroo/user-role/issues"
+            },
+            "time": "2026-08-20T12:46:23+00:00"
         },
         {
             "name": "barryvdh/laravel-translation-manager",
@@ -10200,7 +10234,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "arghavan/inventory": 20
+        "arghavan/inventory": 20,
+        "arghavan/user-role": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
