@@ -1,5 +1,5 @@
 {
-    "name": "stock-flow/inventory",
+    "name": "arghavan/inventory",
     "description": "Inventory management package for Laravel",
     "type": "library",
     "license": "MIT",
@@ -19,13 +19,5 @@
                 "StockFlow\\Inventory\\InventoryServiceProvider"
             ]
         }
-    },
-    "require": {
-        "php": "^8.2",
-        "illuminate/support": "^13.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "^10.0",
-        "phpunit/phpunit": "^12.0"
     }
 }

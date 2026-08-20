@@ -11,6 +11,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:mkhodroo/behin-simple-workflow.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:mkhodroo/inventory.git"
         }
     ],
     "require": {
@@ -23,7 +27,9 @@
         "melipayamak/php": "1.0.0",
         "morilog/jalali": "3.*",
         "phpoffice/phpword": "^1.4",
-        "behin/simple-workflow": "1.0.0"
+        "behin/simple-workflow": "1.0.0",
+        "arghavan/inventory": "dev-main"
+
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

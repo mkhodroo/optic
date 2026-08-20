@@ -1,6 +1,52 @@
 {
     "packages": [
         {
+            "name": "arghavan/inventory",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/inventory.git",
+                "reference": "064450f0495fd4b22becb4f1aa260fd851167b56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/inventory/zipball/064450f0495fd4b22becb4f1aa260fd851167b56",
+                "reference": "064450f0495fd4b22becb4f1aa260fd851167b56",
+                "shasum": ""
+            },
+            "time": "2026-08-20T12:16:48+00:00",
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "StockFlow\\Inventory\\InventoryServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "StockFlow\\Inventory\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "StockFlow\\Inventory\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Inventory management package for Laravel",
+            "support": {
+                "source": "https://github.com/mkhodroo/inventory/tree/main",
+                "issues": "https://github.com/mkhodroo/inventory/issues"
+            },
+            "install-path": "../arghavan/inventory"
+        },
+        {
             "name": "barryvdh/laravel-translation-manager",
             "version": "v0.6.6",
             "version_normalized": "0.6.6.0",

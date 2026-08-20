@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0f957f57f3e9e8cf641c1f3fbe5daf0",
+    "content-hash": "725ccf05d0c953b3af677486ee5645f4",
     "packages": [
+        {
+            "name": "arghavan/inventory",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/inventory.git",
+                "reference": "064450f0495fd4b22becb4f1aa260fd851167b56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/inventory/zipball/064450f0495fd4b22becb4f1aa260fd851167b56",
+                "reference": "064450f0495fd4b22becb4f1aa260fd851167b56",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "StockFlow\\Inventory\\InventoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StockFlow\\Inventory\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "StockFlow\\Inventory\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Inventory management package for Laravel",
+            "support": {
+                "source": "https://github.com/mkhodroo/inventory/tree/main",
+                "issues": "https://github.com/mkhodroo/inventory/issues"
+            },
+            "time": "2026-08-20T12:16:48+00:00"
+        },
         {
             "name": "barryvdh/laravel-translation-manager",
             "version": "v0.6.6",
@@ -10156,7 +10199,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "arghavan/inventory": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
