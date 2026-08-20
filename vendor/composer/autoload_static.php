@@ -770,7 +770,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         ),
         'BaleBot\\' =>
         array (
-            0 => __DIR__ . '/../..' . '/packages/behin-bale-bot/src',
+            0 => __DIR__ . '/..' . '/arghavan/bale-bot/src',
         ),
         'Assert\\' =>
         array (
@@ -820,12 +820,12 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Assert\\LazyAssertion' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/LazyAssertion.php',
         'Assert\\LazyAssertionException' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/LazyAssertionException.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-        'BaleBot\\BaleBotProvider' => __DIR__ . '/../..' . '/packages/behin-bale-bot/src/BaleBotProvider.php',
-        'BaleBot\\Controllers\\BotController' => __DIR__ . '/../..' . '/packages/behin-bale-bot/src/Controllers/BotController.php',
-        'BaleBot\\Controllers\\TelegramController' => __DIR__ . '/../..' . '/packages/behin-bale-bot/src/Controllers/TelegramController.php',
-        'BaleBot\\Jobs\\SendBaleBotMessageJob' => __DIR__ . '/../..' . '/packages/behin-bale-bot/src/Jobs/SendBaleBotMessageJob.php',
-        'BaleBot\\Models\\BaleMessage' => __DIR__ . '/../..' . '/packages/behin-bale-bot/src/Models/BaleMessage.php',
-        'BaleBot\\Models\\BaleUser' => __DIR__ . '/../..' . '/packages/behin-bale-bot/src/Models/BaleUser.php',
+        'BaleBot\\BaleBotProvider' => __DIR__ . '/..' . '/arghavan/bale-bot/src/BaleBotProvider.php',
+        'BaleBot\\Controllers\\BotController' => __DIR__ . '/..' . '/arghavan/bale-bot/src/Controllers/BotController.php',
+        'BaleBot\\Controllers\\TelegramController' => __DIR__ . '/..' . '/arghavan/bale-bot/src/Controllers/TelegramController.php',
+        'BaleBot\\Jobs\\SendBaleBotMessageJob' => __DIR__ . '/..' . '/arghavan/bale-bot/src/Jobs/SendBaleBotMessageJob.php',
+        'BaleBot\\Models\\BaleMessage' => __DIR__ . '/..' . '/arghavan/bale-bot/src/Models/BaleMessage.php',
+        'BaleBot\\Models\\BaleUser' => __DIR__ . '/..' . '/arghavan/bale-bot/src/Models/BaleUser.php',
         'Barryvdh\\TranslationManager\\Console\\CleanCommand' => __DIR__ . '/..' . '/barryvdh/laravel-translation-manager/src/Console/CleanCommand.php',
         'Barryvdh\\TranslationManager\\Console\\ExportCommand' => __DIR__ . '/..' . '/barryvdh/laravel-translation-manager/src/Console/ExportCommand.php',
         'Barryvdh\\TranslationManager\\Console\\FindCommand' => __DIR__ . '/..' . '/barryvdh/laravel-translation-manager/src/Console/FindCommand.php',

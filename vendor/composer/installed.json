@@ -1,6 +1,42 @@
 {
     "packages": [
         {
+            "name": "arghavan/bale-bot",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/bale-bot.git",
+                "reference": "45698f5bf0952232203cafb3fa402864303481cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/bale-bot/zipball/45698f5bf0952232203cafb3fa402864303481cf",
+                "reference": "45698f5bf0952232203cafb3fa402864303481cf",
+                "shasum": ""
+            },
+            "time": "2026-08-20T13:40:55+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BaleBot\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Amirali-Hosseini",
+                    "email": "amiralihosseini216@yahoo.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/bale-bot/tree/main",
+                "issues": "https://github.com/mkhodroo/bale-bot/issues"
+            },
+            "install-path": "../arghavan/bale-bot"
+        },
+        {
             "name": "arghavan/inventory",
             "version": "dev-main",
             "version_normalized": "dev-main",

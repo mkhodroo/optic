@@ -35,7 +35,6 @@ return [
     MyFormBuilder\FormBuilderServiceProvider::class,
     Barryvdh\TranslationManager\ManagerServiceProvider::class,
     TelegramBot\TelegramBotProvider::class,
-    BaleBot\BaleBotProvider::class,
     ExcelServiceProvider::class,
     ShortenerServiceProvider::class,
     BladeServiceProvider::class,
