@@ -252,12 +252,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/visual-script.git",
-                "reference": "1cb570c2f144d24c32c0ab51782e970c9db6a8bd"
+                "reference": "e7562861301a3643975174697f23ebc16e0492e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/visual-script/zipball/1cb570c2f144d24c32c0ab51782e970c9db6a8bd",
-                "reference": "1cb570c2f144d24c32c0ab51782e970c9db6a8bd",
+                "url": "https://api.github.com/repos/mkhodroo/visual-script/zipball/e7562861301a3643975174697f23ebc16e0492e6",
+                "reference": "e7562861301a3643975174697f23ebc16e0492e6",
                 "shasum": ""
             },
             "require": {
@@ -265,7 +265,7 @@
                 "php": "^8.1",
                 "symfony/expression-language": "^6.0|^7.0"
             },
-            "time": "2026-08-21T10:35:37+00:00",
+            "time": "2026-08-21T10:49:38+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
