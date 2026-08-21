@@ -9,6 +9,7 @@ use TodoList\TodoListProvider;
 use UserProfile\UserProfileProvider;
 use Maatwebsite\Excel\ExcelServiceProvider;
 use ShortenerUrl\Shortener\ShortenerServiceProvider;
+use VisualScript\VisualScriptServiceProvider;
 
 return [
     App\Providers\AppServiceProvider::class,
@@ -27,4 +28,5 @@ return [
     // ViewBuilderServiceProvider::class,
     // InventoryInventoryServiceProvider::class,
     ArghavanFinReport::class,
+    VisualScriptServiceProvider::class,
 ];
