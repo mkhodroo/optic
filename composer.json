@@ -35,6 +35,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:mkhodroo/logging.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:mkhodroo/visual-script.git"
         }
     ],
     "require": {
@@ -53,7 +57,8 @@
         "arghavan/bale-bot": "dev-main",
         "arghavan/field-builder": "dev-main",
         "arghavan/file-control": "dev-main",
-        "arghavan/logging": "dev-main"
+        "arghavan/logging": "dev-main",
+        "arghavan/visual-script": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

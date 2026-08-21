@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1e87b1cfe8834702f71c04638ac816a9a093cb4e',
+        'reference' => '5cd22dae56083d849dce9226cff56c9f0e241302',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -71,6 +71,17 @@
             'reference' => '9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/user-role',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'arghavan/visual-script' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'cc5469a0913c0f0e70a0a40b7c1e5d1216b3adef',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../arghavan/visual-script',
             'aliases' => array(
                 0 => '9999999-dev',
             ),
@@ -558,7 +569,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1e87b1cfe8834702f71c04638ac816a9a093cb4e',
+            'reference' => '5cd22dae56083d849dce9226cff56c9f0e241302',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -975,6 +986,21 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'psr/cache' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => 'aa5030cfa5405eccfdcb1083ce040c2cb8d253bf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.0|3.0',
+            ),
+        ),
         'psr/clock' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
@@ -1315,6 +1341,30 @@
                 0 => '*',
             ),
         ),
+        'symfony/cache' => array(
+            'pretty_version' => 'v7.4.16',
+            'version' => '7.4.16.0',
+            'reference' => '23a2c5298ca72c4d26b04611ed966c86762ffd49',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/cache-contracts' => array(
+            'pretty_version' => 'v3.7.1',
+            'version' => '3.7.1.0',
+            'reference' => '9789738bc19af1106dc54d6afba9a0b467516cf2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/cache-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/cache-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.1|2.0|3.0',
+            ),
+        ),
         'symfony/clock' => array(
             'pretty_version' => 'v7.0.7',
             'version' => '7.0.7.0',
@@ -1383,6 +1433,15 @@
             'provided' => array(
                 0 => '2.0|3.0',
             ),
+        ),
+        'symfony/expression-language' => array(
+            'pretty_version' => 'v7.4.14',
+            'version' => '7.4.14.0',
+            'reference' => 'bd5763f92959201816ecc31defdf352d2ea473be',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/expression-language',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/finder' => array(
             'pretty_version' => 'v7.0.7',
@@ -1585,6 +1644,15 @@
             'reference' => 'd1627b66fd87c8b4d90cabe5671c29d575690924',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/var-dumper',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/var-exporter' => array(
+            'pretty_version' => 'v7.4.16',
+            'version' => '7.4.16.0',
+            'reference' => 'ca31404415670aa3834809005b529df1b84f0790',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/var-exporter',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
