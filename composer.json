@@ -43,7 +43,7 @@
         "melipayamak/php": "1.0.0",
         "morilog/jalali": "3.*",
         "phpoffice/phpword": "^1.4",
-        "behin/simple-workflow": "1.0.0",
+        "behin/simple-workflow": "dev-main",
         "arghavan/inventory": "dev-main",
         "arghavan/user-role": "dev-main",
         "arghavan/bale-bot": "dev-main",
