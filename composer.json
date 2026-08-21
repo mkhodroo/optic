@@ -77,8 +77,7 @@
             "Behin\\SimpleWorkflowReport\\": "packages/behin-simple-workflow-report/src/",
             "TelegramBot\\": "packages/behin-telegram-bot/src/",
             "NumberToWord\\": "packages/number-to-word/src/",
-            "ShortenerUrl\\Shortener\\": "packages/shortener-url/Shortener/src/",
-            "Inventory\\": "packages/behin-inventory/src/"
+            "ShortenerUrl\\Shortener\\": "packages/shortener-url/Shortener/src/"
         }
     },
     "autoload-dev": {

@@ -2784,8 +2784,6 @@ return array(
     'Illuminate\\View\\ViewFinderInterface' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
     'Illuminate\\View\\ViewName' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewName.php',
     'Illuminate\\View\\ViewServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
-    'Inventory\\Controllers\\BotController' => $baseDir . '/packages/behin-inventory/src/Controllers/BotController.php',
-    'Inventory\\InventoryServiceProvider' => $baseDir . '/packages/behin-inventory/src/InventoryServiceProvider.php',
     'Jean85\\Exception\\ProvidedPackageException' => $vendorDir . '/jean85/pretty-package-versions/src/Exception/ProvidedPackageException.php',
     'Jean85\\Exception\\ReplacedPackageException' => $vendorDir . '/jean85/pretty-package-versions/src/Exception/ReplacedPackageException.php',
     'Jean85\\Exception\\VersionMissingExceptionInterface' => $vendorDir . '/jean85/pretty-package-versions/src/Exception/VersionMissingExceptionInterface.php',

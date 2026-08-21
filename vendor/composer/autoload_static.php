@@ -180,7 +180,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         ),
         'I' =>
         array (
-            'Inventory\\' => 10,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\' => 11,
         ),
@@ -600,10 +599,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Jean85\\' =>
         array (
             0 => __DIR__ . '/..' . '/jean85/pretty-package-versions/src',
-        ),
-        'Inventory\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/packages/behin-inventory/src',
         ),
         'Illuminate\\Support\\' =>
         array (
@@ -3562,8 +3557,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
-        'Inventory\\Controllers\\BotController' => __DIR__ . '/../..' . '/packages/behin-inventory/src/Controllers/BotController.php',
-        'Inventory\\InventoryServiceProvider' => __DIR__ . '/../..' . '/packages/behin-inventory/src/InventoryServiceProvider.php',
         'Jean85\\Exception\\ProvidedPackageException' => __DIR__ . '/..' . '/jean85/pretty-package-versions/src/Exception/ProvidedPackageException.php',
         'Jean85\\Exception\\ReplacedPackageException' => __DIR__ . '/..' . '/jean85/pretty-package-versions/src/Exception/ReplacedPackageException.php',
         'Jean85\\Exception\\VersionMissingExceptionInterface' => __DIR__ . '/..' . '/jean85/pretty-package-versions/src/Exception/VersionMissingExceptionInterface.php',
