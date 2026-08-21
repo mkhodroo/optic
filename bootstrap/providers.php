@@ -25,7 +25,6 @@ return [
     UserProfileProvider::class,
     ServiceProvider::class,
     SmsProvider::class,
-    PackageServiceProvider::class,
     TodoListProvider::class,
     Behin\SimpleWorkflowReport\SimpleWorkflowReportProvider::class,
     Barryvdh\TranslationManager\ManagerServiceProvider::class,
