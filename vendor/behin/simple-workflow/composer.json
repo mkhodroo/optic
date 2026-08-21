@@ -5,6 +5,16 @@
     "autoload": {
         "psr-4": {
             "Behin\\SimpleWorkflow\\": "src/"
+        },
+        "files": [
+            "src/Helper/behin-simple-workflow.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Behin\\SimpleWorkflow\\SimpleWorkflowProvider"
+            ]
         }
     },
     "authors": [
