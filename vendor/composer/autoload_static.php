@@ -43,6 +43,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         '7d2876738dc0328edeb8a103c76cd8e7' => __DIR__ . '/..' . '/pestphp/pest/src/Pest.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'a50a2d7cf3f9479ae7c99df78da7e152' => __DIR__ . '/..' . '/arghavan/user-role/src/Helper/helper.php',
+        'a2d75001256464662d14104e0bb52a66' => __DIR__ . '/..' . '/behin/simple-workflow/src/Helper/behin-simple-workflow.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'd634523d799d97a8ab4807b650bf5cea' => __DIR__ . '/..' . '/pestphp/pest-plugin-laravel/src/Autoload.php',
