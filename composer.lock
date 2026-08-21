@@ -239,12 +239,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/visual-script.git",
-                "reference": "cc5469a0913c0f0e70a0a40b7c1e5d1216b3adef"
+                "reference": "8a13fd2c4dbb098600facdc6d6a2a85704522c0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/visual-script/zipball/cc5469a0913c0f0e70a0a40b7c1e5d1216b3adef",
-                "reference": "cc5469a0913c0f0e70a0a40b7c1e5d1216b3adef",
+                "url": "https://api.github.com/repos/mkhodroo/visual-script/zipball/8a13fd2c4dbb098600facdc6d6a2a85704522c0f",
+                "reference": "8a13fd2c4dbb098600facdc6d6a2a85704522c0f",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +274,7 @@
                 "source": "https://github.com/mkhodroo/visual-script/tree/main",
                 "issues": "https://github.com/mkhodroo/visual-script/issues"
             },
-            "time": "2026-08-21T10:15:22+00:00"
+            "time": "2026-08-21T10:26:01+00:00"
         },
         {
             "name": "barryvdh/laravel-translation-manager",
