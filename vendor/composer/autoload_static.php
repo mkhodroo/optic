@@ -78,7 +78,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
             'Termwind\\' => 9,
-            'TelegramBot\\' => 12,
         ),
         'S' =>
         array (
@@ -195,7 +194,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         array (
             'Fruitcake\\Cors\\' => 15,
             'Firebase\\JWT\\' => 13,
-            'FileService\\' => 12,
             'Fidry\\CpuCoreCounter\\' => 21,
             'Faker\\' => 6,
         ),
@@ -286,10 +284,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Termwind\\' =>
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/termwind/src',
-        ),
-        'TelegramBot\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/packages/behin-telegram-bot/src',
         ),
         'Symfony\\Polyfill\\Uuid\\' =>
         array (
@@ -637,10 +631,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Firebase\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
-        ),
-        'FileService\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/packages/behin-file-service/src',
         ),
         'Fidry\\CpuCoreCounter\\' =>
         array (
@@ -1889,10 +1879,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Fidry\\CpuCoreCounter\\Finder\\WmicPhysicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/WmicPhysicalFinder.php',
         'Fidry\\CpuCoreCounter\\Finder\\_NProcessorFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/_NProcessorFinder.php',
         'Fidry\\CpuCoreCounter\\NumberOfCpuCoreNotFound' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/NumberOfCpuCoreNotFound.php',
-        'FileService\\Controllers\\FileServiceController' => __DIR__ . '/../..' . '/packages/behin-file-service/src/Controllers/FileServiceController.php',
-        'FileService\\FileServiceProvider' => __DIR__ . '/../..' . '/packages/behin-file-service/src/FileServiceProvider.php',
-        'FileService\\Services\\File\\FileService' => __DIR__ . '/../..' . '/packages/behin-file-service/src/Services/File/FileService.php',
-        'FileService\\Services\\File\\FileToolsService' => __DIR__ . '/../..' . '/packages/behin-file-service/src/Services/File/FileToolsService.php',
         'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
         'Firebase\\JWT\\CachedKeySet' => __DIR__ . '/..' . '/firebase/php-jwt/src/CachedKeySet.php',
         'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
@@ -8676,9 +8662,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'Symfony\\Polyfill\\Php83\\Php83' => __DIR__ . '/..' . '/symfony/polyfill-php83/Php83.php',
         'Symfony\\Polyfill\\Uuid\\Uuid' => __DIR__ . '/..' . '/symfony/polyfill-uuid/Uuid.php',
-        'TelegramBot\\Controllers\\BotController' => __DIR__ . '/../..' . '/packages/behin-telegram-bot/src/Controllers/BotController.php',
-        'TelegramBot\\Controllers\\TelegramController' => __DIR__ . '/../..' . '/packages/behin-telegram-bot/src/Controllers/TelegramController.php',
-        'TelegramBot\\TelegramBotProvider' => __DIR__ . '/../..' . '/packages/behin-telegram-bot/src/TelegramBotProvider.php',
         'Termwind\\Actions\\StyleToMethod' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Actions/StyleToMethod.php',
         'Termwind\\Components\\Anchor' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Components/Anchor.php',
         'Termwind\\Components\\BreakLine' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Components/BreakLine.php',

@@ -73,9 +73,7 @@
             "Behin\\Sms\\": "packages/behin-sms/src/",
             "Behin\\PMCaseNumbering\\": "packages/behin-pm-case-numbering/src/",
             "TodoList\\": "packages/behin-todo-list/src/",
-            "FileService\\": "packages/behin-file-service/src/",
             "Behin\\SimpleWorkflowReport\\": "packages/behin-simple-workflow-report/src/",
-            "TelegramBot\\": "packages/behin-telegram-bot/src/",
             "NumberToWord\\": "packages/number-to-word/src/",
             "ShortenerUrl\\Shortener\\": "packages/shortener-url/Shortener/src/"
         }
