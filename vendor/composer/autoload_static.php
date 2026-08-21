@@ -719,7 +719,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         ),
         'BehinLogging\\' =>
         array (
-            0 => __DIR__ . '/../..' . '/packages/behin-logging/src',
+            0 => __DIR__ . '/..' . '/arghavan/logging/src',
         ),
         'BehinInit\\' =>
         array (
@@ -813,9 +813,9 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'BehinInit\\App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Requests/Auth/LoginRequest.php',
         'BehinInit\\App\\Models\\Access' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Models/Access.php',
         'BehinInit\\BehinInitProvider' => __DIR__ . '/../..' . '/packages/behin-init/src/BehinInitProvider.php',
-        'BehinLogging\\Controllers\\LoggingController' => __DIR__ . '/../..' . '/packages/behin-logging/src/Controllers/LoggingController.php',
-        'BehinLogging\\Middlewares\\Logging' => __DIR__ . '/../..' . '/packages/behin-logging/src/Middlewares/Logging.php',
-        'BehinLogging\\ServiceProvider' => __DIR__ . '/../..' . '/packages/behin-logging/src/ServiceProvider.php',
+        'BehinLogging\\Controllers\\LoggingController' => __DIR__ . '/..' . '/arghavan/logging/src/Controllers/LoggingController.php',
+        'BehinLogging\\Middlewares\\Logging' => __DIR__ . '/..' . '/arghavan/logging/src/Middlewares/Logging.php',
+        'BehinLogging\\ServiceProvider' => __DIR__ . '/..' . '/arghavan/logging/src/ServiceProvider.php',
         'BehinUserRoles\\Controllers\\DepartmentController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/DepartmentController.php',
         'BehinUserRoles\\Controllers\\GetMethodsController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/GetMethodsController.php',
         'BehinUserRoles\\Controllers\\GetRoleController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/GetRoleController.php',

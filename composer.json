@@ -31,6 +31,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:mkhodroo/file-uploader.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:mkhodroo/logging.git"
         }
     ],
     "require": {
@@ -48,7 +52,8 @@
         "arghavan/user-role": "dev-main",
         "arghavan/bale-bot": "dev-main",
         "arghavan/field-builder": "dev-main",
-        "arghavan/file-control": "dev-main"
+        "arghavan/file-control": "dev-main",
+        "arghavan/logging": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -69,7 +74,6 @@
             "BehinInit\\": "packages/behin-init/src/",
             "BehinUserRoles\\": "packages/behin-user-roles/src/",
             "UserProfile\\": "packages/behin-user-profile/src/",
-            "BehinLogging\\": "packages/behin-logging/src/",
             "Behin\\Sms\\": "packages/behin-sms/src/",
             "TodoList\\": "packages/behin-todo-list/src/",
             "Behin\\SimpleWorkflowReport\\": "packages/behin-simple-workflow-report/src/",

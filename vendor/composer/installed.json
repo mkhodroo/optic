@@ -163,6 +163,49 @@
             "install-path": "../arghavan/inventory"
         },
         {
+            "name": "arghavan/logging",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/logging.git",
+                "reference": "6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/logging/zipball/6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f",
+                "reference": "6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f",
+                "shasum": ""
+            },
+            "time": "2026-08-21T08:03:29+00:00",
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BehinLogging\\ServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "BehinLogging\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/logging/tree/main",
+                "issues": "https://github.com/mkhodroo/logging/issues"
+            },
+            "install-path": "../arghavan/logging"
+        },
+        {
             "name": "arghavan/user-role",
             "version": "dev-main",
             "version_normalized": "dev-main",

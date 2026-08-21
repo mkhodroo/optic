@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f28ff21aba32d9209cb8579323a06fae",
+    "content-hash": "56dfb0af8df48e4acf0f66fc29dc5ce3",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -155,6 +155,46 @@
                 "issues": "https://github.com/mkhodroo/inventory/issues"
             },
             "time": "2026-08-20T12:16:48+00:00"
+        },
+        {
+            "name": "arghavan/logging",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/logging.git",
+                "reference": "6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/logging/zipball/6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f",
+                "reference": "6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BehinLogging\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BehinLogging\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Mkhodroo",
+                    "email": "mkhodroo@yahoo.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/logging/tree/main",
+                "issues": "https://github.com/mkhodroo/logging/issues"
+            },
+            "time": "2026-08-21T08:03:29+00:00"
         },
         {
             "name": "arghavan/user-role",
@@ -10359,6 +10399,7 @@
         "arghavan/field-builder": 20,
         "arghavan/file-control": 20,
         "arghavan/inventory": 20,
+        "arghavan/logging": 20,
         "arghavan/user-role": 20,
         "behin/simple-workflow": 20
     },

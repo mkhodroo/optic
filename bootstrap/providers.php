@@ -14,7 +14,6 @@ return [
     App\Providers\AppServiceProvider::class,
     BehinInitProvider::class,
     UserProfileProvider::class,
-    ServiceProvider::class,
     SmsProvider::class,
     TodoListProvider::class,
     Behin\SimpleWorkflowReport\SimpleWorkflowReportProvider::class,
