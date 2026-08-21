@@ -74,7 +74,6 @@
             "Behin\\PMCaseNumbering\\": "packages/behin-pm-case-numbering/src/",
             "TodoList\\": "packages/behin-todo-list/src/",
             "Behin\\SimpleWorkflowReport\\": "packages/behin-simple-workflow-report/src/",
-            "NumberToWord\\": "packages/number-to-word/src/",
             "ShortenerUrl\\Shortener\\": "packages/shortener-url/Shortener/src/"
         }
     },
