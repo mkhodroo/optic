@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1ddf1179a10e91e5baf7cc627cb878defe59735a',
+        'reference' => '20c0be5bf306c6f01f7a124ac6e397191c1d47df',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -79,7 +79,7 @@
         'arghavan/visual-script' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8a13fd2c4dbb098600facdc6d6a2a85704522c0f',
+            'reference' => '1cb570c2f144d24c32c0ab51782e970c9db6a8bd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/visual-script',
             'aliases' => array(
@@ -569,7 +569,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1ddf1179a10e91e5baf7cc627cb878defe59735a',
+            'reference' => '20c0be5bf306c6f01f7a124ac6e397191c1d47df',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
