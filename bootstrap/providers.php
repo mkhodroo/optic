@@ -35,6 +35,7 @@ return [
     ShortenerServiceProvider::class,
     BladeServiceProvider::class,
     MyFormBuilder\FormBuilderServiceProvider::class,
+    Behin\SimpleWorkflow\SimpleWorkflowProvider::class,
     // InventoryServiceProvider::class,
     // ViewBuilderServiceProvider::class,
     // InventoryInventoryServiceProvider::class,
