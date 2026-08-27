@@ -9,6 +9,15 @@
             اطلاعات مشتری با شماره پرونده: [[ $case->number ]]
         </div>
         <div class="card-body row">
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'نماینده یا نمایندگان مشتری',
+                'fieldId' => 'case_customers',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => false,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null ?? '',
+            ])
             <div class="col-sm-3">
                 <label for="">نام مشتری</label>
                 <p>[[ $case->customer?->fullname ]]</p>
@@ -123,8 +132,7 @@
                 <label for="">تصویر اولیه دستگاه</label>
                 <p>
                     @if ($case->device?->initial_pic)
-                        <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100"
-                            download>
+                        <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100" download>
                     @endif
                 </p>
             </div>
@@ -241,7 +249,7 @@
         'fieldValue' => null,
         'fieldValueAlt' => null ?? '',
     ])
-    
+
     @include('SimpleWorkflowView::Core.Form.field-generator', [
         'fieldName' => 'اطلاعات پیش فاکتور',
         'fieldId' => 'pre_invoice',
@@ -340,7 +348,8 @@
             fd.append('case_number', '[[ $case->number ]]');
             fd.append('repair_category', $(this).val());
             send_ajax_formdata_request(
-                '[[ route('simpleWorkflowReport.all-requests.update') ]]',
+                '[[ route('
+                simpleWorkflowReport.all - requests.update ') ]]',
                 fd,
                 function(response) {
                     show_message(response.message);
