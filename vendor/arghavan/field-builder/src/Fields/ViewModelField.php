@@ -22,12 +22,31 @@ class ViewModelField extends AbstractField
 
         $s .= "<div class='table-responsive card p-1' style='" . $style . "'>";
 
-        // ✅ اضافه کردن دکمه رفرش بالا
-        $s .= "<div class='card-header d-flex align-items-center mb-2'>";
-        $s .= "<div style='margin-left: 10px; cursor: pointer;' onclick='get_view_model_rows(\"$viewModel->id\", \"$viewModel->api_key\")'>";
-        $s .= "<i class='fa fa-refresh'></i> ";
-        $s .= "</div>";
+        $s .= "<div class='card-header d-flex align-items-center justify-content-between mb-2'>";
+
+        // عنوان
         $s .= "<h5 class='mb-0'>" . trans('fields.' . $viewModel->name) . "</h5>";
+
+        // دکمه‌ها
+        $s .= "<div class='d-flex align-items-center'>";
+
+        // دکمه ایجاد رکورد جدید
+        if ($viewModel->allow_create_row) {
+            $s .= "<div id='create-view-model-row-{$viewModel->id}'></div>";
+        }
+
+        // دکمه رفرش
+        $s .= "<div
+            class='ml-2'
+            style='cursor: pointer;'
+            onclick='get_view_model_rows(\"{$viewModel->id}\", \"{$viewModel->api_key}\")'
+        >";
+
+        $s .= "<i class='fa fa-refresh'></i>";
+
+        $s .= "</div>";
+
+        $s .= "</div>";
 
         $s .= "</div>";
 
@@ -43,9 +62,9 @@ class ViewModelField extends AbstractField
             $s .= "</tr></thead>";
             $s .= "<tbody></tbody>";
             $s .= "</table>";
-        }elseif($viewModel->show_as == 'box'){
+        } elseif ($viewModel->show_as == 'box') {
             $s .= "<div class='' id='{$viewModel->id}' style='width: 100%'>";
-            
+
             $s .= "</div>";
         }
 

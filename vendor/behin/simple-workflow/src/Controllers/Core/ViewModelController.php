@@ -190,6 +190,37 @@ class ViewModelController extends Controller
         return false;
     }
 
+    public function createNewBtnHtml(Request $request)
+    {
+        $case = CaseController::getById($request->case_id);
+        $viewModel = self::getById($request->viewModel_id);
+        if ($viewModel->api_key != $request->api_key) {
+            return response(trans("fields.Api key is not valid"), 403);
+        }
+        $max_number_of_rows = $viewModel->max_number_of_rows;
+        if ($viewModel->allow_read_row) {
+            if ($viewModel->show_rows_based_on == 'case_id') {
+                $rows = $model::where('case_id', $case->id)->whereNull('deleted_at');
+            } elseif ($viewModel->show_rows_based_on == 'case_number') {
+                $rows = $model::where('case_number', $case->number)->whereNull('deleted_at');
+            } else {
+                $rows = $model::query()->whereNull('deleted_at');
+            }
+        }
+
+        $s = '';
+        if ($viewModel->allow_create_row and count($rows) < $max_number_of_rows) {
+            $s .= "";
+            $colspan = count($columns) + 1;
+            $btnLabel = trans('fields.Create new');
+            $s .= "<div class='card-footer' colspan='{$colspan}'>";
+            $s .= "<button class='btn btn-sm btn-primary' onclick='open_view_model_create_new_form(`$viewModel->create_form`, `$viewModel->id`, `$viewModel->api_key`)'>";
+            $s .= "<i class='fa fa-plus' aria-hidden='true'></i>{$btnLabel}</button></div>";
+            $s .= "";
+        }
+        return $s;
+    }
+
 
     public function getRows(Request $request)
     {
@@ -330,10 +361,12 @@ class ViewModelController extends Controller
             }
             $footer = $s;
             $total = $body . $footer;
+
+
             return [
                 'body' => $body,
                 'footer' => $footer,
-                'total' => $total
+                'total' => $total,
             ];
         } catch (Exception $e) {
             return $e->getMessage();
@@ -369,7 +402,7 @@ class ViewModelController extends Controller
                 $path = FileController::store($file, 'simpleWorkflow', true);
                 if ($path['status'] == 200) {
                     $data[$fieldName] = $path['dir'];
-                }else{
+                } else {
                     return response($path['message'], $path['status']);
                 }
             }
@@ -442,7 +475,7 @@ class ViewModelController extends Controller
                 }
             }
         } catch (Exception $th) {
-            return response($th->getMessage() . $th->getLine() , 500);
+            return response($th->getMessage() . $th->getLine(), 500);
         }
 
 

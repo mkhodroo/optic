@@ -266,16 +266,30 @@ function get_view_model_rows(viewModel_id, api_key) {
     send_ajax_formdata_request(url, fd, function (response) {
         // console.log(response)
         var container = $(`#${viewModel_id}`);
+        get_view_model_create_new_btn(viewModel_id, api_key);
         if (container.hasClass('table')) {
             $(`#${viewModel_id} tbody`).html('');
             $(`#${viewModel_id} tbody`).html(response.body);
-            $(`#${viewModel_id}`).after(response.footer);
         } else {
             $(`#${viewModel_id} `).html('');
-            $(`#${viewModel_id} `).html(response.total);
+            $(`#${viewModel_id} `).html(response.body);
         }
+    })
+}
 
-
+function get_view_model_create_new_btn(viewModel_id, api_key) {
+    url = appUrl + 'workflow/get-view-model-create-new-btn';
+    var fd = new FormData();
+    fd.append('viewModel_id', viewModel_id);
+    fd.append('api_key', api_key);
+    fd.append('inbox_id', $('#inboxId').val() ?? '');
+    fd.append('case_id', $('#caseId').val() ?? '');
+    send_ajax_formdata_request(url, fd, function (response) {
+        // console.log(response)
+        var createButtonDiv = $(`#create-view-model-row-${viewModel_id}`);
+        $(`#${createButtonDiv}`).html('');
+        $(`#${createButtonDiv}`).html(response);
+            
     })
 }
 
