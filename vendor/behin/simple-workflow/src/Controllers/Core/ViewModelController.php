@@ -214,9 +214,9 @@ class ViewModelController extends Controller
         if ($viewModel->allow_create_row and count($rows) < $max_number_of_rows) {
             $s .= "";
             $btnLabel = trans('fields.Create new');
-            $s .= "<div class='card-footer'>";
+            $s .= "";
             $s .= "<button class='btn btn-sm btn-primary' onclick='open_view_model_create_new_form(`$viewModel->create_form`, `$viewModel->id`, `$viewModel->api_key`)'>";
-            $s .= "<i class='fa fa-plus' aria-hidden='true'></i>{$btnLabel}</button></div>";
+            $s .= "{$btnLabel}</button>";
             $s .= "";
         }
         return $s;
