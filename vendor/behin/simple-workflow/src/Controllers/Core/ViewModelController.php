@@ -321,9 +321,9 @@ class ViewModelController extends Controller
                 $s .= "<tr>";
                 $colspan = count($columns) + 1;
                 $btnLabel = trans('fields.Create new');
-                $s .= "<td colspan='{$colspan}'>";
+                $s .= "<div class='card-footer' colspan='{$colspan}'>";
                 $s .= "<button class='btn btn-sm btn-primary' onclick='open_view_model_create_new_form(`$viewModel->create_form`, `$viewModel->id`, `$viewModel->api_key`)'>";
-                $s .= "<i class='fa fa-plus' aria-hidden='true'></i>{$btnLabel}</button></td>";
+                $s .= "<i class='fa fa-plus' aria-hidden='true'></i>{$btnLabel}</button></div>";
                 $s .= "</tr>";
             }
             return $s;
