@@ -465,12 +465,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/behin-simple-workflow.git",
-                "reference": "e60ef7e508da0376ef5087243d40c80acb7858a5"
+                "reference": "862f5ca9a1db64c098294e14bc75ee8c90cd8689"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/e60ef7e508da0376ef5087243d40c80acb7858a5",
-                "reference": "e60ef7e508da0376ef5087243d40c80acb7858a5",
+                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/862f5ca9a1db64c098294e14bc75ee8c90cd8689",
+                "reference": "862f5ca9a1db64c098294e14bc75ee8c90cd8689",
                 "shasum": ""
             },
             "require": {
@@ -503,7 +503,7 @@
                 "source": "https://github.com/mkhodroo/behin-simple-workflow/tree/main",
                 "issues": "https://github.com/mkhodroo/behin-simple-workflow/issues"
             },
-            "time": "2026-08-27T15:52:48+00:00"
+            "time": "2026-08-27T16:12:37+00:00"
         },
         {
             "name": "brick/math",
