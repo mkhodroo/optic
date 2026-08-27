@@ -179,7 +179,7 @@
                 </div>
             </div>
         @endif
-        @if (auth()->user()->access('منو >>گزارشات کارتابل>>لیست'))
+        @if (auth()->user()->access('گزارش پرونده ها'))
             <div class="col-sm-3 ">
                 <!-- small box -->
                 <div class="small-box bg-warning">
