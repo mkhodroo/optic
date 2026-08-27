@@ -8097,6 +8097,7 @@ return array(
     'VisualScript\\Engine\\Nodes\\ForeachNode' => $vendorDir . '/arghavan/visual-script/src/Engine/Nodes/ForeachNode.php',
     'VisualScript\\Engine\\Nodes\\QueryNode' => $vendorDir . '/arghavan/visual-script/src/Engine/Nodes/QueryNode.php',
     'VisualScript\\Engine\\Nodes\\ReturnNode' => $vendorDir . '/arghavan/visual-script/src/Engine/Nodes/ReturnNode.php',
+    'VisualScript\\Engine\\Nodes\\SaveNode' => $vendorDir . '/arghavan/visual-script/src/Engine/Nodes/SaveNode.php',
     'VisualScript\\Engine\\Nodes\\SetVariableNode' => $vendorDir . '/arghavan/visual-script/src/Engine/Nodes/SetVariableNode.php',
     'VisualScript\\Engine\\ScriptEngine' => $vendorDir . '/arghavan/visual-script/src/Engine/ScriptEngine.php',
     'VisualScript\\Http\\Controllers\\ScriptController' => $vendorDir . '/arghavan/visual-script/src/Http/Controllers/ScriptController.php',

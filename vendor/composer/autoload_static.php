@@ -8883,6 +8883,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'VisualScript\\Engine\\Nodes\\ForeachNode' => __DIR__ . '/..' . '/arghavan/visual-script/src/Engine/Nodes/ForeachNode.php',
         'VisualScript\\Engine\\Nodes\\QueryNode' => __DIR__ . '/..' . '/arghavan/visual-script/src/Engine/Nodes/QueryNode.php',
         'VisualScript\\Engine\\Nodes\\ReturnNode' => __DIR__ . '/..' . '/arghavan/visual-script/src/Engine/Nodes/ReturnNode.php',
+        'VisualScript\\Engine\\Nodes\\SaveNode' => __DIR__ . '/..' . '/arghavan/visual-script/src/Engine/Nodes/SaveNode.php',
         'VisualScript\\Engine\\Nodes\\SetVariableNode' => __DIR__ . '/..' . '/arghavan/visual-script/src/Engine/Nodes/SetVariableNode.php',
         'VisualScript\\Engine\\ScriptEngine' => __DIR__ . '/..' . '/arghavan/visual-script/src/Engine/ScriptEngine.php',
         'VisualScript\\Http\\Controllers\\ScriptController' => __DIR__ . '/..' . '/arghavan/visual-script/src/Http/Controllers/ScriptController.php',

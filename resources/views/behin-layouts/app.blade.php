@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ url('public/behin/logo.ico') . '?' . config('app.version') }}">
+    <link rel="icon" href="{{ url('behin/logo.ico') . '?' . config('app.version') }}">
     <link rel="manifest" href="{{ url('manifest.json') . '?' . config('app.version') }}">
 
     <title>@yield('title')</title>
@@ -14,55 +14,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/font-awesome/css/font-awesome.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/font-awesome/css/font-awesome.min.css') . '?' . config('app.version') }}">
     
     <!-- Theme style -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/dist/css/adminlte.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/dist/css/adminlte.min.css') . '?' . config('app.version') }}">
     <!-- Date Picker -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/datepicker/datepicker3.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/datepicker/datepicker3.css') . '?' . config('app.version') }}">
     <!-- Daterange picker -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/daterangepicker/daterangepicker-bs3.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/daterangepicker/daterangepicker-bs3.css') . '?' . config('app.version') }}">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') . '?' . config('app.version') }}">
     
     <!-- bootstrap rtl -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/dist/css/bootstrap-rtl.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/dist/css/bootstrap-rtl.min.css') . '?' . config('app.version') }}">
     <!-- template rtl version -->
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/dist/css/custom-style.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/dist/css/custom-style.css') . '?' . config('app.version') }}">
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/dist/css/custom.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/dist/css/custom.css') . '?' . config('app.version') }}">
 
     <link rel="stylesheet" type="text/css"
-        href="{{ url('public/behin/behin-dist/plugins/datatables/dataTables.bootstrap4.css') . '?' . config('app.version') }}" />
+        href="{{ url('behin/behin-dist/plugins/datatables/dataTables.bootstrap4.css') . '?' . config('app.version') }}" />
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/dist/css/dropzone.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/dist/css/dropzone.min.css') . '?' . config('app.version') }}">
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/toastr/toastr.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/toastr/toastr.min.css') . '?' . config('app.version') }}">
     
     
-    <link rel="stylesheet" href="{{ url('public/behin/behin-dist/plugins/select2/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ url('behin/behin-dist/plugins/select2/select2.min.css') }}">
     
-    <link rel="stylesheet" href="{{ url('public/behin/behin-dist/persian-date-picker/persian-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ url('behin/behin-dist/persian-date-picker/persian-datepicker.css') }}">
     
     <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/mapp/css/mapp.min.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/mapp/css/mapp.min.css') . '?' . config('app.version') }}">
     
         <link rel="stylesheet"
-        href="{{ url('public/behin/behin-dist/plugins/mapp/css/fa/style.css') . '?' . config('app.version') }}">
+        href="{{ url('behin/behin-dist/plugins/mapp/css/fa/style.css') . '?' . config('app.version') }}">
     
     
         {{-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"> --}}
     
     
     <!-- Material Icons اضافه -->
-    <link href="{{ url('public/behin/behin-dist/dist/css/icon.css') . '?' . config('app.version') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('public/behin/behin-dist/plugins/sweetalert/sweetalert2.min.css') }}">
+    <link href="{{ url('behin/behin-dist/dist/css/icon.css') . '?' . config('app.version') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('behin/behin-dist/plugins/sweetalert/sweetalert2.min.css') }}">
 
 
     <!-- استایل سفارشی متریال -->
@@ -172,38 +172,38 @@
     </style>
     @yield('style')
 
-    <script src="{{ url('public/behin/behin-dist/plugins/jquery/jquery.min.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-dist/plugins/jquery/jquery.min.js') . '?' . config('app.version') }}"></script>
     <script
-        src="{{ url('public/behin/behin-dist/plugins/datatables/jquery.dataTables.js') . '?' . config('app.version') }}">
+        src="{{ url('behin/behin-dist/plugins/datatables/jquery.dataTables.js') . '?' . config('app.version') }}">
     </script>
     <script
-        src="{{ url('public/behin/behin-dist/plugins/datatables/dataTables.bootstrap4.js') . '?' . config('app.version') }}">
+        src="{{ url('behin/behin-dist/plugins/datatables/dataTables.bootstrap4.js') . '?' . config('app.version') }}">
     </script>
-    <script src="{{ url('public/behin/behin-dist/persian-date-picker/persian-date.js') . '?' . config('app.version') }}">
+    <script src="{{ url('behin/behin-dist/persian-date-picker/persian-date.js') . '?' . config('app.version') }}">
     </script>
     <script
-        src="{{ url('public/behin/behin-dist/persian-date-picker/persian-datepicker.js') . '?' . config('app.version') }}">
+        src="{{ url('behin/behin-dist/persian-date-picker/persian-datepicker.js') . '?' . config('app.version') }}">
     </script>
 
 
-    <script src="{{ url('public/behin/behin-dist/plugins/mapp/js/mapp.env.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-dist/plugins/mapp/js/mapp.env.js') . '?' . config('app.version') }}"></script>
 
     <script>
         window.appUrl = "{{ env('APP_URL') }}";
     </script>
-    <script src="{{ url('public/behin/behin-js/ajax.js') . '?' . config('app.version') }}"></script>
-    <script src="{{ url('public/behin/behin-js/dataTable.js') . '?' . config('app.version') }}"></script>
-    <script src="{{ url('public/behin/behin-js/dropzone.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-js/ajax.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-js/dataTable.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-js/dropzone.js') . '?' . config('app.version') }}"></script>
     {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script> --}}
     <script
-        src="{{ url('public/behin/behin-dist/plugins/autonumeric/autoNumeric.min.js') . '?' . config('app.version') }}">
+        src="{{ url('behin/behin-dist/plugins/autonumeric/autoNumeric.min.js') . '?' . config('app.version') }}">
     </script>
 
     {{-- ACE Editor --}}
-    <script src={{ url('public/behin/behin-dist/plugins/ace/1.13.1/ace.js') }}></script>
-    <script src={{ url('public/behin/behin-dist/plugins/ace/1.13.1/mode-php.js') }}></script>
-    <script src={{ url('public/behin/behin-dist/plugins/ace/1.13.1/theme-monokai.js') }}></script>
-    <script src={{ url('public/behin/behin-dist/plugins/ace/1.13.1/ext-language_tools.min.js') }}></script>
+    <script src={{ url('behin/behin-dist/plugins/ace/1.13.1/ace.js') }}></script>
+    <script src={{ url('behin/behin-dist/plugins/ace/1.13.1/mode-php.js') }}></script>
+    <script src={{ url('behin/behin-dist/plugins/ace/1.13.1/theme-monokai.js') }}></script>
+    <script src={{ url('behin/behin-dist/plugins/ace/1.13.1/ext-language_tools.min.js') }}></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 
@@ -269,23 +269,23 @@
 </div>
 
 <script
-    src="{{ url('public/behin/behin-dist/plugins/bootstrap/js/bootstrap.bundle.min.js') . '?' . config('app.version') }}">
+    src="{{ url('behin/behin-dist/plugins/bootstrap/js/bootstrap.bundle.min.js') . '?' . config('app.version') }}">
 </script>
-<script src="{{ url('public/behin/behin-dist/plugins/knob/jquery.knob.js') . '?' . config('app.version') }}"></script>
+<script src="{{ url('behin/behin-dist/plugins/knob/jquery.knob.js') . '?' . config('app.version') }}"></script>
 <script
-    src="{{ url('public/behin/behin-dist/plugins/daterangepicker/daterangepicker.js') . '?' . config('app.version') }}">
-</script>
-<script
-    src="{{ url('public/behin/behin-dist/plugins/datepicker/bootstrap-datepicker.js') . '?' . config('app.version') }}">
+    src="{{ url('behin/behin-dist/plugins/daterangepicker/daterangepicker.js') . '?' . config('app.version') }}">
 </script>
 <script
-    src="{{ url('public/behin/behin-dist/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') . '?' . config('app.version') }}">
+    src="{{ url('behin/behin-dist/plugins/datepicker/bootstrap-datepicker.js') . '?' . config('app.version') }}">
 </script>
-<script src="{{ url('public/behin/behin-dist/dist/js/adminlte.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('public/behin/behin-dist/plugins/select2/select2.full.min.js') }}"></script>
-<script src="{{ url('public/behin/behin-dist/plugins/mapp/js/mapp.min.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('public/behin/behin-dist/plugins/toastr/toastr.min.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('public/behin/behin-dist/plugins/sweetalert/sweetalert2.all.min.js') }}"></script>
+<script
+    src="{{ url('behin/behin-dist/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') . '?' . config('app.version') }}">
+</script>
+<script src="{{ url('behin/behin-dist/dist/js/adminlte.js') . '?' . config('app.version') }}"></script>
+<script src="{{ url('behin/behin-dist/plugins/select2/select2.full.min.js') }}"></script>
+<script src="{{ url('behin/behin-dist/plugins/mapp/js/mapp.min.js') . '?' . config('app.version') }}"></script>
+<script src="{{ url('behin/behin-dist/plugins/toastr/toastr.min.js') . '?' . config('app.version') }}"></script>
+<script src="{{ url('behin/behin-dist/plugins/sweetalert/sweetalert2.all.min.js') }}"></script>
 
 {{-- <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
@@ -324,7 +324,7 @@
             if (Notification.permission === 'granted') {
                 new Notification('نوتیفیکیشن فعال است', {
                     body: 'شما قبلاً مجوز داده‌اید!',
-                    icon: '{{ url('public/behin/logo.ico') }}'
+                    icon: '{{ url('behin/logo.ico') }}'
                 });
             } else if (Notification.permission === 'denied') {
                 alert('شما مجوز نوتیفیکیشن را رد کرده‌اید. لطفاً از تنظیمات مرورگر آن را فعال کنید.');
@@ -415,8 +415,8 @@
     }
 </script>
 
-<script src="{{ url('public/behin/behin-js/loader.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('public/behin/behin-js/scripts.js') . '?' . config('app.version') }}"></script>
+<script src="{{ url('behin/behin-js/loader.js') . '?' . config('app.version') }}"></script>
+<script src="{{ url('behin/behin-js/scripts.js') . '?' . config('app.version') }}"></script>
 @yield('script')
 </div>
 
