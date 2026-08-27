@@ -193,32 +193,79 @@ class ViewModelController extends Controller
     public function createNewBtnHtml(Request $request)
     {
         $case = CaseController::getById($request->case_id);
+
         $viewModel = self::getById($request->viewModel_id);
+
         $model = self::getModelById($viewModel->id);
+
         if ($viewModel->api_key != $request->api_key) {
-            return response(trans("fields.Api key is not valid"), 403);
+            return response(
+                trans("fields.Api key is not valid"),
+                403
+            );
         }
+
         $max_number_of_rows = $viewModel->max_number_of_rows;
+
+        /*
+     * دریافت رکوردها
+     */
         if ($viewModel->allow_read_row) {
+
             if ($viewModel->show_rows_based_on == 'case_id') {
-                $rows = $model::where('case_id', $case->id)->whereNull('deleted_at');
+
+                $rows = $model::where('case_id', $case->id)
+                    ->whereNull('deleted_at');
             } elseif ($viewModel->show_rows_based_on == 'case_number') {
-                $rows = $model::where('case_number', $case->number)->whereNull('deleted_at');
+
+                $rows = $model::where('case_number', $case->number)
+                    ->whereNull('deleted_at');
             } else {
-                $rows = $model::query()->whereNull('deleted_at');
+
+                $rows = $model::query()
+                    ->whereNull('deleted_at');
             }
         }
+
         $rows = $rows->get();
 
+
+        /*
+     * ایجاد HTML دکمه
+     */
         $s = '';
-        if ($viewModel->allow_create_row and count($rows) < $max_number_of_rows) {
-            $s .= "";
+
+        if (
+            $viewModel->allow_create_row &&
+            count($rows) < $max_number_of_rows
+        ) {
+
             $btnLabel = trans('fields.Create new');
-            $s .= "";
-            $s .= "<button class='btn btn-sm btn-primary' onclick='open_view_model_create_new_form(`$viewModel->create_form`, `$viewModel->id`, `$viewModel->api_key`)'>";
-            $s .= "{$btnLabel}</button>";
-            $s .= "";
+
+            $s .= "<button
+            type='button'
+            class='btn btn-success'
+            style='
+                height: 100%;
+                border-radius: 0;
+                white-space: nowrap;
+                border-top: 0;
+                border-bottom: 0;
+            '
+            onclick='open_view_model_create_new_form(
+                `{$viewModel->create_form}`,
+                `{$viewModel->id}`,
+                `{$viewModel->api_key}`
+            )'
+        >";
+
+            $s .= "<i class='fa fa-plus'></i> ";
+
+            $s .= $btnLabel;
+
+            $s .= "</button>";
         }
+
         return $s;
     }
 
