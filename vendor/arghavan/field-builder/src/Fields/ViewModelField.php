@@ -24,9 +24,9 @@ class ViewModelField extends AbstractField
 
         // ✅ اضافه کردن دکمه رفرش بالا
         $s .= "<div class='card-header d-flex align-items-center mb-2'>";
-        $s .= "<button type='button' class='btn btn-sm ' onclick='get_view_model_rows(\"$viewModel->id\", \"$viewModel->api_key\")'>";
+        $s .= "<div style='margin-left: 10px; cursor: pointer;' onclick='get_view_model_rows(\"$viewModel->id\", \"$viewModel->api_key\")'>";
         $s .= "<i class='fa fa-refresh'></i> ";
-        $s .= "</button>";
+        $s .= "</div>";
         $s .= "<h5 class='mb-0'>" . trans('fields.' . $viewModel->name) . "</h5>";
 
         $s .= "</div>";
