@@ -194,6 +194,7 @@ class ViewModelController extends Controller
     {
         $case = CaseController::getById($request->case_id);
         $viewModel = self::getById($request->viewModel_id);
+        $model = self::getModelById($viewModel->id);
         if ($viewModel->api_key != $request->api_key) {
             return response(trans("fields.Api key is not valid"), 403);
         }
