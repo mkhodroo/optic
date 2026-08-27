@@ -18,7 +18,8 @@ return [
         'draft' => ['label' => 'draft', 'color' => 'info', 'type' => 'open'],
         'canceled' => ['label' => 'canceled', 'color' => 'danger', 'type' => 'close'],
         'done' => ['label' => 'done', 'color' => 'success', 'type' => 'close'],
-        'doneByOther' => ['label' => 'doneByOther', 'color' => 'success', 'type' => 'close']
+        'doneByOther' => ['label' => 'doneByOther', 'color' => 'success', 'type' => 'close'],
+        'doneBySystem' => ['label' => 'doneBySystem', 'color' => 'success', 'type' => 'close'],
     ],
     'caseStatus' => [
         'inProgress' => ['label' => 'inProgress', 'color' => 'primary', 'key' => 'inProgress'],

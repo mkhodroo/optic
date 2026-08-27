@@ -490,18 +490,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/behin-simple-workflow.git",
-                "reference": "4e670c2032bae55a87109b5d91a131d0e91b015f"
+                "reference": "5897f1a38f4cda1a5c37b17b9396f4a7e269f3cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/4e670c2032bae55a87109b5d91a131d0e91b015f",
-                "reference": "4e670c2032bae55a87109b5d91a131d0e91b015f",
+                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/5897f1a38f4cda1a5c37b17b9396f4a7e269f3cb",
+                "reference": "5897f1a38f4cda1a5c37b17b9396f4a7e269f3cb",
                 "shasum": ""
             },
             "require": {
                 "morilog/jalali": "3.*"
             },
-            "time": "2026-08-27T10:31:41+00:00",
+            "time": "2026-08-27T11:09:43+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
