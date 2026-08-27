@@ -33,7 +33,7 @@ class ViewModelField extends AbstractField
 
 
         if ($viewModel->show_as == 'table') {
-            $s .= "<table class='table table-striped' id='{$viewModel->id}' style='width: 100%'>";
+            $s .= "<table class='table' id='{$viewModel->id}' style='width: 100%'>";
             $s .= "<thead><tr>";
             foreach ($columns as $column) {
                 $columnLabel = trans("fields." . $column);
