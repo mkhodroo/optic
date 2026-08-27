@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c53f9138c87e4f426812276ea1150dcd73106051',
+        'reference' => 'b3475dc2427fed89ae37a74b1cb28bdfe759e06b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -24,7 +24,7 @@
         'arghavan/field-builder' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'bc4542e6ddafa367dfe08c9d90109b26511005ca',
+            'reference' => '97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/field-builder',
             'aliases' => array(
@@ -119,7 +119,7 @@
         'behin/simple-workflow' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f60a63e448e273749872e6145da2933c58a6bd4c',
+            'reference' => 'a2577cc0f7410892bce3863ebed1ddf1d8e17611',
             'type' => 'library',
             'install_path' => __DIR__ . '/../behin/simple-workflow',
             'aliases' => array(
@@ -580,7 +580,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c53f9138c87e4f426812276ea1150dcd73106051',
+            'reference' => 'b3475dc2427fed89ae37a74b1cb28bdfe759e06b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

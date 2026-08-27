@@ -269,7 +269,11 @@ function get_view_model_rows(viewModel_id, api_key) {
         get_view_model_create_new_btn(viewModel_id, api_key);
         if (container.hasClass('table')) {
             $(`#${viewModel_id} tbody`).html('');
-            $(`#${viewModel_id} tbody`).html(response.body);
+            if (response.body == '') {
+                $(`#${viewModel_id} tbody`).html('داده ای وجود ندارد');
+            } else {
+                $(`#${viewModel_id} tbody`).html(response.body);
+            }
         } else {
             $(`#${viewModel_id} `).html('');
             $(`#${viewModel_id} `).html(response.body);

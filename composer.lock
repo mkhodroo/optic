@@ -45,12 +45,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/field-builder.git",
-                "reference": "bc4542e6ddafa367dfe08c9d90109b26511005ca"
+                "reference": "97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/field-builder/zipball/bc4542e6ddafa367dfe08c9d90109b26511005ca",
-                "reference": "bc4542e6ddafa367dfe08c9d90109b26511005ca",
+                "url": "https://api.github.com/repos/mkhodroo/field-builder/zipball/97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8",
+                "reference": "97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8",
                 "shasum": ""
             },
             "default-branch": true,
@@ -78,7 +78,7 @@
                 "source": "https://github.com/mkhodroo/field-builder/tree/main",
                 "issues": "https://github.com/mkhodroo/field-builder/issues"
             },
-            "time": "2026-08-20T13:55:33+00:00"
+            "time": "2026-08-27T15:06:52+00:00"
         },
         {
             "name": "arghavan/file-control",
@@ -465,12 +465,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/behin-simple-workflow.git",
-                "reference": "f60a63e448e273749872e6145da2933c58a6bd4c"
+                "reference": "a2577cc0f7410892bce3863ebed1ddf1d8e17611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/f60a63e448e273749872e6145da2933c58a6bd4c",
-                "reference": "f60a63e448e273749872e6145da2933c58a6bd4c",
+                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/a2577cc0f7410892bce3863ebed1ddf1d8e17611",
+                "reference": "a2577cc0f7410892bce3863ebed1ddf1d8e17611",
                 "shasum": ""
             },
             "require": {
@@ -503,7 +503,7 @@
                 "source": "https://github.com/mkhodroo/behin-simple-workflow/tree/main",
                 "issues": "https://github.com/mkhodroo/behin-simple-workflow/issues"
             },
-            "time": "2026-08-27T11:19:38+00:00"
+            "time": "2026-08-27T15:06:43+00:00"
         },
         {
             "name": "brick/math",
