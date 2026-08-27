@@ -287,7 +287,7 @@ class ViewModelController extends Controller
                                 $s .= "<td>" . $e->getMessage() . "</td>";
                             }
                         }
-                        $s .= "<td>";
+                        $s .= "<td style='border: 0px'>";
                         if ($row->allow_update) {
                             $s .= "<i class='fa fa-edit btn btn-sm btn-success ml-1' onclick='open_view_model_form(`$viewModel->update_form`, `$viewModel->id`,`$row->id`, `$viewModel->api_key`)'></i>";
                         }
