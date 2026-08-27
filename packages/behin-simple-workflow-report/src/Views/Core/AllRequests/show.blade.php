@@ -11,35 +11,120 @@
         'readOnly' => false,
         'required' => false,
         'fieldValue' => null,
-        'fieldValueAlt' => null ?? ''
+        'fieldValueAlt' => null ?? '',
     ])
-    <div class="card row">
-        <div class="card-header">
-            اطلاعات مشتری با شماره پرونده: [[ $case->number ]]
-        </div>
-        <div class="card-body row">
+    <div class="card p-0 mb-3">
 
-            <div class="col-sm-3">
-                <label for="">نام مشتری</label>
-                <p>[[ $case->customer?->fullname ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">موبایل مشتری</label>
-                <p>[[ $case->customer?->mobile ]]</p>
-            </div>
-            <div class="col-sm-12">
-                <label for="">آدرس مشتری</label>
-                <p>[[ $case->customer?->address ]]</p>
-            </div>
-            <div class="col-sm-12">
-                <label for="">لینک کوتاه مشاهده جزئیات پرونده توسط مشتری</label>
-                @if ($case->getVariable('tracking_url'))
-                    <a href="[[ $case->getVariable('tracking_url') ]]" target="_blank">
-                        [[ $case->getVariable('tracking_url') ]]
-                    </a>
-                @endif
-            </div>
+        <!-- Header -->
+        <div class="card-header d-flex align-items-center"
+            style="
+            background-color: #f5f5f5;
+            min-height: 50px;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            padding: 0 15px;
+        ">
+
+            <h5 class="mb-0 font-weight-bold" style="color: #333;">
+                اطلاعات مشتری
+            </h5>
+
+            <span class="badge badge-secondary mr-2"
+                style="
+                font-size: 12px;
+                padding: 6px 10px;
+            ">
+                شماره پرونده: [[ $case->number ]]
+            </span>
+
         </div>
+
+
+        <!-- Body -->
+        <div class="card-body">
+
+            <div class="row">
+
+                <!-- نام مشتری -->
+                <div class="col-sm-4 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        نام مشتری
+                    </label>
+
+                    <div class="font-weight-bold" style="color: #333;">
+                        [[ $case->customer?->fullname ?? '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- موبایل -->
+                <div class="col-sm-4 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        موبایل مشتری
+                    </label>
+
+                    <div class="font-weight-bold" style="direction: ltr; text-align: right; color: #333;">
+                        [[ $case->customer?->mobile ?? '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- آدرس -->
+                <div class="col-sm-12 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        آدرس مشتری
+                    </label>
+
+                    <div class="font-weight-bold" style="color: #333;">
+                        [[ $case->customer?->address ?? '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- لینک پیگیری -->
+                <div class="col-sm-12">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        لینک مشاهده جزئیات پرونده توسط مشتری
+                    </label>
+
+                    @if ($case->getVariable('tracking_url'))
+                        <div class="d-flex align-items-center"
+                            style="
+                            background-color: #f8f9fa;
+                            border: 1px solid #e9ecef;
+                            border-radius: 4px;
+                            min-height: 40px;
+                            padding: 5px 10px;
+                        ">
+
+                            <a href="[[ $case->getVariable('tracking_url') ]]" target="_blank" class="text-primary"
+                                style="
+                                direction: ltr;
+                                text-align: left;
+                                word-break: break-all;
+                            ">
+                                [[ $case->getVariable('tracking_url') ]]
+                            </a>
+
+                        </div>
+                    @else
+                        <div class="text-muted">
+                            لینکی برای این پرونده ایجاد نشده است.
+                        </div>
+                    @endif
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
     <div class="card">
         <div class="card-header">
