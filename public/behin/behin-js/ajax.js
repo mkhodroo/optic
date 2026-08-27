@@ -285,7 +285,7 @@ function get_view_model_rows(viewModel_id, api_key) {
 
             if (response.body == '') {
 
-                $(`#${viewModel_id} tbody`).html(`
+                $(`#${viewModel_id}`).html(`
                     <tr>
                         <td
                             colspan="${$(`#${viewModel_id} thead th`).length}"
