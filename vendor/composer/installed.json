@@ -206,6 +206,61 @@
             "install-path": "../arghavan/logging"
         },
         {
+            "name": "arghavan/php-persian-number-to-words",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/number-to-word.git",
+                "reference": "e3759316ea8450340f5f5b92c88a0865e3050401"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/number-to-word/zipball/e3759316ea8450340f5f5b92c88a0865e3050401",
+                "reference": "e3759316ea8450340f5f5b92c88a0865e3050401",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^0.2.3|^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2026-08-27T08:37:56+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Arghavan\\PersianNumberToWords\\": "./src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Arghavan\\PersianNumberToWords\\Tests\\": "./tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Converts number to words in persian",
+            "keywords": [
+                "numbers-to-words",
+                "persian"
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/number-to-word/tree/main",
+                "issues": "https://github.com/mkhodroo/number-to-word/issues"
+            },
+            "install-path": "../arghavan/php-persian-number-to-words"
+        },
+        {
             "name": "arghavan/user-role",
             "version": "dev-main",
             "version_normalized": "dev-main",

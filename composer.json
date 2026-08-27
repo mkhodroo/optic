@@ -39,6 +39,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:mkhodroo/visual-script.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:mkhodroo/number-to-word.git"
         }
     ],
     "require": {
@@ -58,7 +62,8 @@
         "arghavan/field-builder": "dev-main",
         "arghavan/file-control": "dev-main",
         "arghavan/logging": "dev-main",
-        "arghavan/visual-script": "dev-main"
+        "arghavan/visual-script": "dev-main",
+        "arghavan/php-persian-number-to-words": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

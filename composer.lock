@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d58b34a988772269c0af205dde19ad2",
+    "content-hash": "77ab68f8fe3a06617da1e8a4a9ecf671",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -195,6 +195,58 @@
                 "issues": "https://github.com/mkhodroo/logging/issues"
             },
             "time": "2026-08-21T08:03:29+00:00"
+        },
+        {
+            "name": "arghavan/php-persian-number-to-words",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkhodroo/number-to-word.git",
+                "reference": "e3759316ea8450340f5f5b92c88a0865e3050401"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkhodroo/number-to-word/zipball/e3759316ea8450340f5f5b92c88a0865e3050401",
+                "reference": "e3759316ea8450340f5f5b92c88a0865e3050401",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^0.2.3|^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Arghavan\\PersianNumberToWords\\": "./src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Arghavan\\PersianNumberToWords\\Tests\\": "./tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Converts number to words in persian",
+            "keywords": [
+                "numbers-to-words",
+                "persian"
+            ],
+            "support": {
+                "source": "https://github.com/mkhodroo/number-to-word/tree/main",
+                "issues": "https://github.com/mkhodroo/number-to-word/issues"
+            },
+            "time": "2026-08-27T08:37:56+00:00"
         },
         {
             "name": "arghavan/user-role",
@@ -10824,6 +10876,7 @@
         "arghavan/file-control": 20,
         "arghavan/inventory": 20,
         "arghavan/logging": 20,
+        "arghavan/php-persian-number-to-words": 20,
         "arghavan/user-role": 20,
         "arghavan/visual-script": 20,
         "behin/simple-workflow": 20

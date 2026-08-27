@@ -1,0 +1,31 @@
+{
+  "name": "arghavan/php-persian-number-to-words",
+  "description": "Converts number to words in persian",
+  "keywords": [
+    "numbers-to-words",
+    "persian"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.4|^8.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^0.2.3|^1.0",
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Arghavan\\PersianNumberToWords\\": "./src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Arghavan\\PersianNumberToWords\\Tests\\": "./tests"
+    }
+  },
+  "scripts": {
+    "test": "pest"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

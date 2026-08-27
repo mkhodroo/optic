@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '166a26eef41640ee24014a2c7a4af49f15444fed',
+        'reference' => 'eec84c5b5a6a8c87167accc9878a27c2816f7035',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -60,6 +60,17 @@
             'reference' => '6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/logging',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'arghavan/php-persian-number-to-words' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'e3759316ea8450340f5f5b92c88a0865e3050401',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../arghavan/php-persian-number-to-words',
             'aliases' => array(
                 0 => '9999999-dev',
             ),
@@ -569,7 +580,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '166a26eef41640ee24014a2c7a4af49f15444fed',
+            'reference' => 'eec84c5b5a6a8c87167accc9878a27c2816f7035',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

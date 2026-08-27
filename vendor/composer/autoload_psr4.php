@@ -135,5 +135,6 @@ return array(
     'Barryvdh\\TranslationManager\\' => array($vendorDir . '/barryvdh/laravel-translation-manager/src'),
     'BaleBot\\' => array($vendorDir . '/arghavan/bale-bot/src'),
     'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
+    'Arghavan\\PersianNumberToWords\\' => array($vendorDir . '/arghavan/php-persian-number-to-words/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );
