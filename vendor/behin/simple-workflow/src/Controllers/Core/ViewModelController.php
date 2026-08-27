@@ -240,7 +240,7 @@ class ViewModelController extends Controller
             count($rows) < $max_number_of_rows
         ) {
 
-            $btnLabel = trans('fields.Create new');
+            $btnLabel = '';//trans('fields.Create new');
 
             $s .= "<button
             type='button'
