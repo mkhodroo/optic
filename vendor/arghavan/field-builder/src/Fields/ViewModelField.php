@@ -2,7 +2,6 @@
 
 namespace MyFormBuilder\Fields;
 
-use Behin\SimpleWorkflow\Controllers\Core\ViewModelController;
 use Behin\SimpleWorkflow\Models\Core\ViewModel;
 
 class ViewModelField extends AbstractField
@@ -12,71 +11,107 @@ class ViewModelField extends AbstractField
         $id = $this->attributes['id'];
         $viewModelId = $this->attributes['view_model_id'];
         $style = $this->attributes['style'] ?? '';
+
         $s = "";
 
+        /*
+         * دریافت ViewModel
+         */
         $viewModel = ViewModel::find($viewModelId);
 
-        $columns = explode(',', $viewModel->default_fields);
+        if (!$viewModel) {
+            return '';
+        }
+
 
         /*
-         * -----------------------------------------
-         * Header settings
-         * -----------------------------------------
+         * ستون‌ها
+         */
+        $columns = explode(',', $viewModel->default_fields ?? '');
+
+
+        /*
+         * =========================================
+         * تنظیمات Header
+         * =========================================
          */
 
-        // رنگ هدر
-        // اگر ستون header_color وجود نداشته باشد یا خالی باشد
-        // رنگ پیش فرض استفاده می شود.
+
+        /*
+         * رنگ هدر
+         *
+         * اگر header_color وجود نداشته باشد
+         * یا مقدار آن خالی باشد، رنگ پیش‌فرض
+         * استفاده می‌شود.
+         */
         $headerColor = $viewModel->getAttribute('header_color');
 
         if (empty($headerColor)) {
             $headerColor = '#f5f5f5';
         }
 
-        // عنوان:
-        // اول label
-        // اگر label وجود نداشت -> name
+
+        /*
+         * عنوان ViewModel
+         *
+         * اولویت:
+         *
+         * label
+         * ↓
+         * name
+         */
         $title = $viewModel->getAttribute('label');
 
         if (empty($title)) {
-            $title = $viewModel->name;
+            $title = trans('fields.' . $viewModel->name);
         }
 
-        $title = trans('fields.' . $title);
-
 
         /*
-         * -----------------------------------------
-         * Main container
-         * -----------------------------------------
-         */
-
-        $s .= "<div class='table-responsive card p-0' style='" . $style . "'>";
-
-
-        /*
-         * -----------------------------------------
-         * Header
-         * -----------------------------------------
+         * =========================================
+         * شروع Card
+         * =========================================
          */
 
         $s .= "<div
-            class='card-header d-flex align-items-center justify-content-between'
+            class='table-responsive card p-0'
+            style='" . e($style) . "'
+        >";
+
+
+        /*
+         * =========================================
+         * Header
+         * =========================================
+         *
+         * padding:0 باعث می‌شود دکمه‌ها
+         * کاملاً به لبه چپ کارت بچسبند.
+         */
+
+        $s .= "<div
+            class='card-header d-flex align-items-center'
             style='
-                background-color: {$headerColor};
+                background-color: " . e($headerColor) . ";
                 min-height: 50px;
                 border-bottom: 1px solid rgba(0,0,0,.1);
+                padding: 0;
             '
         >";
 
 
         /*
-         * -----------------------------------------
-         * Title - Right
-         * -----------------------------------------
+         * =========================================
+         * عنوان - سمت راست
+         * =========================================
+         *
+         * flex-grow-1 باعث می‌شود فضای باقی‌مانده
+         * را بگیرد و دکمه‌ها به سمت چپ بروند.
          */
 
-        $s .= "<div class='d-flex align-items-center'>";
+        $s .= "<div
+            class='d-flex align-items-center flex-grow-1'
+            style='padding: 0 15px;'
+        >";
 
         $s .= "<h5
             class='mb-0 font-weight-bold'
@@ -91,38 +126,61 @@ class ViewModelField extends AbstractField
 
 
         /*
-         * -----------------------------------------
-         * Buttons - Left
-         * -----------------------------------------
+         * =========================================
+         * دکمه‌ها - سمت چپ
+         * =========================================
          */
 
-        $s .= "<div class='d-flex align-items-center'>";
+        $s .= "<div
+            class='d-flex align-items-stretch'
+            style='
+                align-self: stretch;
+                direction: ltr;
+            '
+        >";
 
 
         /*
-         * Create button
+         * -----------------------------------------
+         * دکمه ایجاد رکورد جدید
          *
-         * فعلاً یک container خالی است.
-         * getRows بر اساس can_create آن را پر می‌کند.
+         * محتوا توسط get_view_model_rows
+         * بر اساس can_create ساخته می‌شود.
+         * -----------------------------------------
          */
 
         if ($viewModel->allow_create_row) {
 
             $s .= "<div
                 id='create-view-model-row-{$viewModel->id}'
-                class='ml-2'
+                class='d-flex align-items-center'
             ></div>";
         }
 
 
         /*
-         * Refresh button
+         * -----------------------------------------
+         * دکمه Refresh
+         * -----------------------------------------
          */
+
+        $refreshTitle = trans('fields.Refresh');
+
+        if ($refreshTitle === 'fields.Refresh') {
+            $refreshTitle = 'بروزرسانی';
+        }
 
         $s .= "<button
             type='button'
-            class='btn btn-sm btn-secondary'
-            title='" . trans('fields.Refresh') . "'
+            class='btn btn-secondary'
+            title='" . e($refreshTitle) . "'
+            style='
+                border-radius: 0;
+                min-width: 50px;
+                border-top: 0;
+                border-bottom: 0;
+                border-left: 0;
+            '
             onclick='get_view_model_rows(
                 \"{$viewModel->id}\",
                 \"{$viewModel->api_key}\"
@@ -134,19 +192,24 @@ class ViewModelField extends AbstractField
         $s .= "</button>";
 
 
-        $s .= "</div>";
-
         /*
-         * End Header
+         * پایان بخش دکمه‌ها
          */
 
         $s .= "</div>";
 
 
         /*
-         * -----------------------------------------
+         * پایان Header
+         */
+
+        $s .= "</div>";
+
+
+        /*
+         * =========================================
          * Content
-         * -----------------------------------------
+         * =========================================
          */
 
         if ($viewModel->show_as == 'table') {
@@ -157,13 +220,23 @@ class ViewModelField extends AbstractField
                 style='width: 100%'
             >";
 
-            $s .= "<thead><tr>";
+            /*
+             * Table Header
+             */
+
+            $s .= "<thead>";
+
+            $s .= "<tr>";
 
             foreach ($columns as $column) {
 
                 $column = trim($column);
 
-                $columnLabel = trans("fields." . $column);
+                if (empty($column)) {
+                    continue;
+                }
+
+                $columnLabel = trans('fields.' . $column);
 
                 $s .= "<th
                     style='
@@ -177,15 +250,39 @@ class ViewModelField extends AbstractField
                 $s .= "</th>";
             }
 
-            $s .= "<th style='border-top: 0;'></th>";
 
-            $s .= "</tr></thead>";
+            /*
+             * ستون عملیات
+             */
+
+            $s .= "<th
+                style='border-top: 0;'
+            ></th>";
+
+
+            $s .= "</tr>";
+
+            $s .= "</thead>";
+
+
+            /*
+             * Table Body
+             */
 
             $s .= "<tbody></tbody>";
+
+
+            /*
+             * پایان Table
+             */
 
             $s .= "</table>";
 
         } elseif ($viewModel->show_as == 'box') {
+
+            /*
+             * حالت Box
+             */
 
             $s .= "<div
                 id='{$viewModel->id}'
@@ -195,23 +292,25 @@ class ViewModelField extends AbstractField
 
 
         /*
-         * -----------------------------------------
-         * End container
-         * -----------------------------------------
+         * =========================================
+         * پایان Card
+         * =========================================
          */
 
         $s .= "</div>";
 
 
         /*
-         * Load rows
+         * =========================================
+         * دریافت اولیه رکوردها
+         * =========================================
          */
 
         $s .= "<script>
             get_view_model_rows(
                 `{$viewModel->id}`,
                 `{$viewModel->api_key}`
-            )
+            );
         </script>";
 
 
