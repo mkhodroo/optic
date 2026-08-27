@@ -5,6 +5,7 @@ use Arghavan\FinReport\ArghavanFinReport;
 use Behin\Sms\SmsProvider;
 use BehinInit\BehinInitProvider;
 use BehinLogging\ServiceProvider;
+use BehinUserRoles\UserRolesServiceProvider;
 use TodoList\TodoListProvider;
 use UserProfile\UserProfileProvider;
 use Maatwebsite\Excel\ExcelServiceProvider;
@@ -29,4 +30,5 @@ return [
     // InventoryInventoryServiceProvider::class,
     ArghavanFinReport::class,
     VisualScriptServiceProvider::class,
+    UserRolesServiceProvider::class,
 ];
