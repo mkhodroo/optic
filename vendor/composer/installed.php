@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1b0869961f741d0845cace188605d5e6a4adea9c',
+        'reference' => '095d24a042633e7ed4f78235c7e7f12b8ed2485a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -119,7 +119,7 @@
         'behin/simple-workflow' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e9189ae9e27d2cc7c06c82aa56b3f247e1b4097d',
+            'reference' => 'abe40ec2e95b9a578d4020b11758ef9d76fa0a6e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../behin/simple-workflow',
             'aliases' => array(
@@ -580,7 +580,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1b0869961f741d0845cace188605d5e6a4adea9c',
+            'reference' => '095d24a042633e7ed4f78235c7e7f12b8ed2485a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
