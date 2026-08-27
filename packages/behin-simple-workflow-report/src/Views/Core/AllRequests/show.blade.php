@@ -4,20 +4,21 @@
 
 @section('content')
     <input type="hidden" id="caseId" value="[[ $case->id ]]">
+    @include('SimpleWorkflowView::Core.Form.field-generator', [
+        'fieldName' => 'نماینده یا نمایندگان مشتری',
+        'fieldId' => 'case_customers',
+        'fieldClass' => 'col-sm-12',
+        'readOnly' => false,
+        'required' => false,
+        'fieldValue' => null,
+        'fieldValueAlt' => null ?? '',
+    ])
     <div class="card row">
         <div class="card-header">
             اطلاعات مشتری با شماره پرونده: [[ $case->number ]]
         </div>
         <div class="card-body row">
-            @include('SimpleWorkflowView::Core.Form.field-generator', [
-                'fieldName' => 'نماینده یا نمایندگان مشتری',
-                'fieldId' => 'case_customers',
-                'fieldClass' => 'col-sm-12',
-                'readOnly' => false,
-                'required' => false,
-                'fieldValue' => null,
-                'fieldValueAlt' => null ?? '',
-            ])
+
             <div class="col-sm-3">
                 <label for="">نام مشتری</label>
                 <p>[[ $case->customer?->fullname ]]</p>
