@@ -266,9 +266,10 @@ function get_view_model_rows(viewModel_id, api_key){
     send_ajax_formdata_request(url, fd, function(response){
         // console.log(response)
         $(`#${viewModel_id} tbody`).html('');
-        $(`#${viewModel_id} tbody`).html(response);
+        $(`#${viewModel_id} tbody`).html(response.body);
+        $(`#${viewModel_id}`).after(response.footer);
         $(`#${viewModel_id} `).html('');
-        $(`#${viewModel_id} `).html(response);
+        $(`#${viewModel_id} `).html(response.total);
     })
 }
 

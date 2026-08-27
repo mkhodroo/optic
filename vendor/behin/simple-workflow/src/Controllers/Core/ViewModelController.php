@@ -315,8 +315,10 @@ class ViewModelController extends Controller
                     }
                 }
             }
+            $body = $s;
 
-            //
+            $footer = '';
+            $s = '';
             if ($viewModel->allow_create_row and count($rows) < $max_number_of_rows) {
                 $s .= "";
                 $colspan = count($columns) + 1;
@@ -326,7 +328,13 @@ class ViewModelController extends Controller
                 $s .= "<i class='fa fa-plus' aria-hidden='true'></i>{$btnLabel}</button></div>";
                 $s .= "";
             }
-            return $s;
+            $footer = $s;
+            $total = $body . $footer;
+            return [
+                'body' => $body,
+                'footer' => $footer,
+                'total' => $total
+            ];
         } catch (Exception $e) {
             return $e->getMessage();
         }
