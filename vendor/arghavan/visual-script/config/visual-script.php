@@ -1,5 +1,9 @@
 <?php
 
+use Behin\SimpleWorkflow\Models\Core\Inbox;
+use Behin\SimpleWorkflow\Models\Core\Process;
+use Behin\SimpleWorkflow\Models\Core\Task;
+
 return [
 
     // پیشوند مسیرهای پنل مدیریت اسکریپت‌ها
@@ -13,6 +17,9 @@ return [
     'models' => [
         // 'Post' => \App\Models\Post::class,
         'User' => \App\Models\User::class,
+        'Inbox' => Inbox::class,
+        'Task' => Task::class,
+        'Process' => Process::class
     ],
 
     // فیلدهای مجاز برای شرط‌گذاری روی هر مدل. اگر برای یک مدل خالی بماند،
