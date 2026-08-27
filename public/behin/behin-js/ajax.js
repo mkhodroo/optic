@@ -270,7 +270,7 @@ function get_view_model_rows(viewModel_id, api_key) {
         if (container.hasClass('table')) {
             $(`#${viewModel_id} tbody`).html('');
             if (response.body == '') {
-                $(`#${viewModel_id} tbody`).html('داده ای وجود ندارد');
+                $(`#${viewModel_id}`).html('داده ای وجود ندارد');
             } else {
                 $(`#${viewModel_id} tbody`).html(response.body);
             }
