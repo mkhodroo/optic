@@ -288,9 +288,8 @@ function get_view_model_create_new_btn(viewModel_id, api_key) {
         console.log('response of create btn')
         console.log(response)
         var createButtonDiv = $(`#create-view-model-row-${viewModel_id}`);
-        $(`#${createButtonDiv}`).html('');
-        $(`#${createButtonDiv}`).html(response);
-            
+        createButtonDiv.html('');
+        createButtonDiv.html(response);
     })
 }
 
