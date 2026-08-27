@@ -282,7 +282,7 @@ class ViewModelController extends Controller
                                     $value = $row->$column ?? null;
                                 }
 
-                                $s .= "<td>{$value}</td>";
+                                $s .= "<td style='border: 0px'>{$value}</td>";
                             } catch (\Throwable $e) {
                                 $s .= "<td>" . $e->getMessage() . "</td>";
                             }
