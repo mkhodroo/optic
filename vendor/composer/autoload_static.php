@@ -953,6 +953,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Behin\\SimpleWorkflow\\Jobs\\ExecuteNextTaskWithDelay' => __DIR__ . '/..' . '/behin/simple-workflow/src/Jobs/ExecuteNextTaskWithDelay.php',
         'Behin\\SimpleWorkflow\\Jobs\\SendPushNotification' => __DIR__ . '/..' . '/behin/simple-workflow/src/Jobs/SendPushNotification.php',
         'Behin\\SimpleWorkflow\\Jobs\\SendTaskReminderNotification' => __DIR__ . '/..' . '/behin/simple-workflow/src/Jobs/SendTaskReminderNotification.php',
+        'Behin\\SimpleWorkflow\\Middlewares\\RedirectOldRoutes' => __DIR__ . '/..' . '/behin/simple-workflow/src/Middlewares/RedirectOldRoutes.php',
         'Behin\\SimpleWorkflow\\Models\\Core\\CaseNumbering' => __DIR__ . '/..' . '/behin/simple-workflow/src/Models/Core/CaseNumbering.php',
         'Behin\\SimpleWorkflow\\Models\\Core\\Cases' => __DIR__ . '/..' . '/behin/simple-workflow/src/Models/Core/Cases.php',
         'Behin\\SimpleWorkflow\\Models\\Core\\Condition' => __DIR__ . '/..' . '/behin/simple-workflow/src/Models/Core/Condition.php',

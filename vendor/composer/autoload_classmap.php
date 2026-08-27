@@ -162,6 +162,7 @@ return array(
     'Behin\\SimpleWorkflow\\Jobs\\ExecuteNextTaskWithDelay' => $vendorDir . '/behin/simple-workflow/src/Jobs/ExecuteNextTaskWithDelay.php',
     'Behin\\SimpleWorkflow\\Jobs\\SendPushNotification' => $vendorDir . '/behin/simple-workflow/src/Jobs/SendPushNotification.php',
     'Behin\\SimpleWorkflow\\Jobs\\SendTaskReminderNotification' => $vendorDir . '/behin/simple-workflow/src/Jobs/SendTaskReminderNotification.php',
+    'Behin\\SimpleWorkflow\\Middlewares\\RedirectOldRoutes' => $vendorDir . '/behin/simple-workflow/src/Middlewares/RedirectOldRoutes.php',
     'Behin\\SimpleWorkflow\\Models\\Core\\CaseNumbering' => $vendorDir . '/behin/simple-workflow/src/Models/Core/CaseNumbering.php',
     'Behin\\SimpleWorkflow\\Models\\Core\\Cases' => $vendorDir . '/behin/simple-workflow/src/Models/Core/Cases.php',
     'Behin\\SimpleWorkflow\\Models\\Core\\Condition' => $vendorDir . '/behin/simple-workflow/src/Models/Core/Condition.php',
