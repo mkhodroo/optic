@@ -11,8 +11,7 @@
         'readOnly' => false,
         'required' => false,
         'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-        'header_color' => '#f5aa42'
+        'fieldValueAlt' => null ?? ''
     ])
     <div class="card row">
         <div class="card-header">
