@@ -208,6 +208,7 @@ class ViewModelController extends Controller
                 $rows = $model::query()->whereNull('deleted_at');
             }
         }
+        $rows->get();
 
         $s = '';
         if ($viewModel->allow_create_row and count($rows) < $max_number_of_rows) {
