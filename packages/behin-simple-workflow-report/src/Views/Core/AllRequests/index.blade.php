@@ -189,21 +189,16 @@
                                         <th>موبایل مشتری</th>
                                         <th>نام دستگاه</th>
                                         <th>سریال دستگاه</th>
-                                        <th>نوع تعمیر</th>
-                                        <th>جزئیات نوع تعمیر</th>
+                                        <th class="d-none">نوع تعمیر</th>
+                                        <th class="d-none">جزئیات نوع تعمیر</th>
                                         <th>تعمیرکار</th>
-                                        <th>تاریخ شروع تعمیر</th>
-                                        <th>تاریخ پایان تعمیر</th>
-                                        <th>مدت تعمیر</th>
-                                        <th>تایید اول تعمیرات</th>
-                                        <th>تایید دوم تعمیرات</th>
-                                        <th>تایید سوم تعمیرات</th>
-                                        <th>دستیاران تعمیر</th>
+                                        <th class="d-none">تاریخ شروع تعمیر</th>
+                                        <th class="d-none">تاریخ پایان تعمیر</th>
+                                        <th class="d-none">مدت تعمیر</th>
                                         <th>هزینه تعیین شده</th>
                                         <th>هزینه‌های دریافت شده</th>
                                         <th>آخرین وضعیت</th>
-                                        <th>گزارش تعمیرات</th>
-                                        <th class="text-center">جزئیات</th>
+                                        <th class="d-none">گزارش تعمیرات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -231,16 +226,12 @@
                                             <td dir="ltr">{{ $row->customer_mobile ?? '---' }}</td>
                                             <td>{{ $row->device_name ?? '---' }}</td>
                                             <td dir="ltr">{{ $row->device_serial ?? '---' }}</td>
-                                            <td>{{ $row->repair_type ?: '---' }}</td>
-                                            <td>{{ $row->repair_subtype ?: '---' }}</td>
+                                            <td class="d-none">{{ $row->repair_type ?: '---' }}</td>
+                                            <td class="d-none">{{ $row->repair_subtype ?: '---' }}</td>
                                             <td>{{ $row->repairman ?? '---' }}</td>
-                                            <td>{{ $row->repair_start_at ?? '---' }}</td>
-                                            <td>{{ $row->repair_end_at ?? '---' }}</td>
-                                            <td>{{ $row->repair_duration ?? '---' }}</td>
-                                            <td>{{ $row->approval_first ?? '---' }}</td>
-                                            <td>{{ $row->approval_second ?? '---' }}</td>
-                                            <td>{{ $row->approval_third ?? '---' }}</td>
-                                            <td>{{ $row->assistants ?: '---' }}</td>
+                                            <td class="d-none">{{ $row->repair_start_at ?? '---' }}</td>
+                                            <td class="d-none">{{ $row->repair_end_at ?? '---' }}</td>
+                                            <td class="d-none">{{ $row->repair_duration ?? '---' }}</td>
                                             <td>
                                                 @if ($row->repair_cost_formatted)
                                                     {{ $row->repair_cost_formatted }}
@@ -256,13 +247,6 @@
                                                 @endif
                                             </td>
                                             <td>{{ $row->last_status ?? '---' }}</td>
-                                            <td>{{ Str::limit($row->repair_report ?? '---', 100, '...') }}</td>
-                                            <td class="text-center">
-                                                <a href="{{ route('simpleWorkflowReport.all-requests.show', $row->case_number) }}"
-                                                    class="btn btn-sm btn-outline-primary px-3">
-                                                    مشاهده جزئیات
-                                                </a>
-                                            </td>
                                         </tr>
                                     @empty
                                         <tr>
