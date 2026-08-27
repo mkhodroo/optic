@@ -318,13 +318,13 @@ class ViewModelController extends Controller
 
             //
             if ($viewModel->allow_create_row and count($rows) < $max_number_of_rows) {
-                $s .= "<tr>";
+                $s .= "";
                 $colspan = count($columns) + 1;
                 $btnLabel = trans('fields.Create new');
                 $s .= "<div class='card-footer' colspan='{$colspan}'>";
                 $s .= "<button class='btn btn-sm btn-primary' onclick='open_view_model_create_new_form(`$viewModel->create_form`, `$viewModel->id`, `$viewModel->api_key`)'>";
                 $s .= "<i class='fa fa-plus' aria-hidden='true'></i>{$btnLabel}</button></div>";
-                $s .= "</tr>";
+                $s .= "";
             }
             return $s;
         } catch (Exception $e) {
