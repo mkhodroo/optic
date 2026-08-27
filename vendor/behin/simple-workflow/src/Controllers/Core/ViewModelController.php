@@ -305,13 +305,13 @@ class ViewModelController extends Controller
                             'case_id' => $request->case_id,
                             'viewModel_id' => $viewModel->id,
                         ]);
-                        $s .= "<div class='card'>";
+                        $s .= "<div class=''>";
                         if ($row->allow_update) {
                             $s .= FormController::open($request, $viewModel->update_form, false);
                         } else {
                             $s .= FormController::openReadForm($request, $viewModel->read_form, false);
                         }
-                        $s .= "<hr></div>";
+                        $s .= "</div>";
                     }
                 }
             }
