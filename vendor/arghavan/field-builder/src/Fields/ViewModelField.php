@@ -43,6 +43,10 @@ class ViewModelField extends AbstractField
             $s .= "</tr></thead>";
             $s .= "<tbody></tbody>";
             $s .= "</table>";
+        }elseif($viewModel->show_as == 'box'){
+            $s .= "<div class='' id='{$viewModel->id}' style='width: 100%'>";
+            
+            $s .= "</div>";
         }
 
 
