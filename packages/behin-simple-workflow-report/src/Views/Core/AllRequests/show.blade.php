@@ -12,7 +12,7 @@
         'required' => false,
         'fieldValue' => null,
         'fieldValueAlt' => null ?? '',
-        'header_color' => '#fff'
+        'header_color' => '#f5aa42'
     ])
     <div class="card row">
         <div class="card-header">
