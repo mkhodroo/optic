@@ -267,6 +267,8 @@ function get_view_model_rows(viewModel_id, api_key){
         // console.log(response)
         $(`#${viewModel_id} tbody`).html('');
         $(`#${viewModel_id} tbody`).html(response);
+        $(`#${viewModel_id} `).html('');
+        $(`#${viewModel_id} `).html(response);
     })
 }
 
