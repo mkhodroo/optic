@@ -4,15 +4,7 @@
 
 @section('content')
     <input type="hidden" id="caseId" value="[[ $case->id ]]">
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'نماینده یا نمایندگان مشتری',
-        'fieldId' => 'case_customers',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => false,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
+
     <div class="card p-0 mb-3">
 
         <!-- Header -->
@@ -126,40 +118,119 @@
         </div>
 
     </div>
-    <div class="card">
-        <div class="card-header">
-            اطلاعات پذیرش اولیه
+
+    <div class="card p-0 mb-3">
+
+        <!-- Header -->
+        <div class="card-header d-flex align-items-center"
+            style="
+            background-color: #f5f5f5;
+            min-height: 50px;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            padding: 0 15px;
+        ">
+
+            <h5 class="mb-0 font-weight-bold" style="color: #333;">
+                اطلاعات پذیرش اولیه
+            </h5>
+
         </div>
-        <div class="card-body row">
-            <div class="col-sm-3">
-                <label for="">تاریخ پذیرش</label>
-                <p>[[ $case->getVariable('receive_date') ]]</p>
+
+
+        <!-- Body -->
+        <div class="card-body">
+
+            <div class="row">
+
+
+                <!-- تاریخ پذیرش -->
+                <div class="col-sm-3 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        تاریخ پذیرش
+                    </label>
+
+                    <div class="font-weight-bold" style="color: #333;">
+                        [[ $case->getVariable('receive_date') ?: '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- نوع بسته بندی -->
+                <div class="col-sm-3 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        نوع بسته بندی
+                    </label>
+
+                    <div class="font-weight-bold" style="color: #333;">
+                        [[ $case->getVariable('device_packaging_type') ?: '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- لوازم همراه دستگاه -->
+                <div class="col-sm-3 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        لوازم همراه دستگاه
+                    </label>
+
+                    <div class="font-weight-bold" style="color: #333;">
+                        [[ $case->getVariable('device_accessories') ?: '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- توضیحات اولیه مشتری -->
+                <div class="col-sm-3 mb-3">
+
+                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                        توضیحات اولیه مشتری
+                    </label>
+
+                    <div class="font-weight-bold" style="color: #333;">
+                        [[ $case->getVariable('customer_description') ?: '-' ]]
+                    </div>
+
+                </div>
+
+
+                <!-- دسته بندی تعمیر -->
+                <div class="col-sm-3 mb-3">
+
+                    @include('SimpleWorkflowView::Core.Form.field-generator', [
+                        'fieldName' => 'repair_category',
+                        'fieldId' => 'repair_category',
+                        'fieldClass' => 'col-sm-12',
+                        'readOnly' => false,
+                        'required' => false,
+                        'fieldValue' => $case->getVariable('repair_category'),
+                        'fieldValueAlt' => null ?? '',
+                    ])
+
+                </div>
+
+
             </div>
-            <div class="col-sm-3">
-                <label for="">نوع بسته بندی</label>
-                <p>[[ $case->getVariable('device_packaging_type') ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">لوازم همراه دستگاه</label>
-                <p>[[ $case->getVariable('device_accessories') ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">توضیحات اولیه مشتری</label>
-                <p>[[ $case->getVariable('customer_description') ]]</p>
-            </div>
-            <div class="col-sm-3">
-                @include('SimpleWorkflowView::Core.Form.field-generator', [
-                    'fieldName' => 'repair_category',
-                    'fieldId' => 'repair_category',
-                    'fieldClass' => 'col-sm-12',
-                    'readOnly' => false,
-                    'required' => false,
-                    'fieldValue' => $case->getVariable('repair_category'),
-                    'fieldValueAlt' => null ?? '',
-                ])
-            </div>
+
         </div>
+
     </div>
+
+    @include('SimpleWorkflowView::Core.Form.field-generator', [
+        'fieldName' => 'نماینده یا نمایندگان مشتری',
+        'fieldId' => 'case_customers',
+        'fieldClass' => 'col-sm-12',
+        'readOnly' => false,
+        'required' => false,
+        'fieldValue' => null,
+        'fieldValueAlt' => null ?? '',
+    ])
+
     @include('SimpleWorkflowView::Core.Form.field-generator', [
         'fieldName' => 'توضیحات واحد فروش',
         'fieldId' => 'sale_unit_notes',
