@@ -44,7 +44,7 @@ class ViewModelField extends AbstractField
          * یا مقدار آن خالی باشد، رنگ پیش‌فرض
          * استفاده می‌شود.
          */
-        $headerColor = $viewModel->getAttribute('header_color');
+        $headerColor = $viewModel->attributes('header_color');
 
         if (empty($headerColor)) {
             $headerColor = '#f5f5f5';
