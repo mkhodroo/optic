@@ -37,7 +37,7 @@ class ViewModelField extends AbstractField
             $s .= "<thead><tr>";
             foreach ($columns as $column) {
                 $columnLabel = trans("fields." . $column);
-                $s .= "<th>$columnLabel</th>";
+                $s .= "<th style='border: 0px 0px 1px 0px'>$columnLabel</th>";
             }
             $s .= "<th></th>";
             $s .= "</tr></thead>";
