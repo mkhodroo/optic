@@ -311,7 +311,7 @@ class ViewModelController extends Controller
                         } else {
                             $s .= FormController::openReadForm($request, $viewModel->read_form, false);
                         }
-                        $s .= "</div>";
+                        $s .= "<hr></div>";
                     }
                 }
             }
