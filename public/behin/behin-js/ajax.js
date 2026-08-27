@@ -257,28 +257,153 @@ function close_admin_modal(id) {
 }
 
 function get_view_model_rows(viewModel_id, api_key) {
+
     url = appUrl + 'workflow/get-view-model-rows';
+
     var fd = new FormData();
+
     fd.append('viewModel_id', viewModel_id);
     fd.append('api_key', api_key);
     fd.append('inbox_id', $('#inboxId').val() ?? '');
     fd.append('case_id', $('#caseId').val() ?? '');
+
     send_ajax_formdata_request(url, fd, function (response) {
-        // console.log(response)
+
         var container = $(`#${viewModel_id}`);
+
+        // دریافت دکمه ایجاد رکورد جدید
         get_view_model_create_new_btn(viewModel_id, api_key);
+
+
+        /*
+         * =========================================
+         * حالت Table
+         * =========================================
+         */
+
         if (container.hasClass('table')) {
-            $(`#${viewModel_id} tbody`).html('');
+
             if (response.body == '') {
-                $(`#${viewModel_id}`).html('داده ای وجود ندارد');
+
+                $(`#${viewModel_id} tbody`).html(`
+                    <tr>
+                        <td
+                            colspan="${$(`#${viewModel_id} thead th`).length}"
+                            style="
+                                border: 0;
+                                padding: 40px 20px;
+                                text-align: center;
+                            "
+                        >
+
+                            <div
+                                style="
+                                    color: #adb5bd;
+                                    font-size: 14px;
+                                "
+                            >
+
+                                <div
+                                    style="
+                                        font-size: 32px;
+                                        margin-bottom: 10px;
+                                        opacity: .7;
+                                    "
+                                >
+                                    <i class="fa fa-folder-open-o"></i>
+                                </div>
+
+                                <div
+                                    style="
+                                        font-weight: 600;
+                                        color: #6c757d;
+                                        margin-bottom: 5px;
+                                    "
+                                >
+                                    داده‌ای وجود ندارد
+                                </div>
+
+                                <div
+                                    style="
+                                        font-size: 12px;
+                                        color: #adb5bd;
+                                    "
+                                >
+                                    هنوز رکوردی برای نمایش ثبت نشده است.
+                                </div>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                `);
+
             } else {
+
                 $(`#${viewModel_id} tbody`).html(response.body);
             }
+
+
+        /*
+         * =========================================
+         * حالت Box
+         * =========================================
+         */
+
         } else {
-            $(`#${viewModel_id} `).html('');
-            $(`#${viewModel_id} `).html(response.body);
+
+            $(`#${viewModel_id}`).html('');
+
+            if (response.body == '') {
+
+                $(`#${viewModel_id}`).html(`
+                    <div
+                        style="
+                            padding: 40px 20px;
+                            text-align: center;
+                            color: #adb5bd;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-size: 32px;
+                                margin-bottom: 10px;
+                                opacity: .7;
+                            "
+                        >
+                            <i class="fa fa-folder-open-o"></i>
+                        </div>
+
+                        <div
+                            style="
+                                font-weight: 600;
+                                color: #6c757d;
+                                margin-bottom: 5px;
+                            "
+                        >
+                            داده‌ای وجود ندارد
+                        </div>
+
+                        <div
+                            style="
+                                font-size: 12px;
+                                color: #adb5bd;
+                            "
+                        >
+                            هنوز رکوردی برای نمایش ثبت نشده است.
+                        </div>
+
+                    </div>
+                `);
+
+            } else {
+
+                $(`#${viewModel_id}`).html(response.body);
+            }
         }
-    })
+
+    });
 }
 
 function get_view_model_create_new_btn(viewModel_id, api_key) {
