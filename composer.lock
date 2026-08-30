@@ -119,7 +119,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/inventory",
-                "reference": "e1e26f775d03a05f7279e9ccd91a4687562a8920"
+                "reference": "fc1abb2fa9013914ee77e10d1ed2c645367d003f"
             },
             "type": "library",
             "extra": {
