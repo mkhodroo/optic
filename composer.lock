@@ -119,12 +119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/inventory.git",
-                "reference": "064450f0495fd4b22becb4f1aa260fd851167b56"
+                "reference": "b4f5c420fe237cfefcdf0062f805ec4eda112491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/inventory/zipball/064450f0495fd4b22becb4f1aa260fd851167b56",
-                "reference": "064450f0495fd4b22becb4f1aa260fd851167b56",
+                "url": "https://api.github.com/repos/mkhodroo/inventory/zipball/b4f5c420fe237cfefcdf0062f805ec4eda112491",
+                "reference": "b4f5c420fe237cfefcdf0062f805ec4eda112491",
                 "shasum": ""
             },
             "default-branch": true,
@@ -154,7 +154,7 @@
                 "source": "https://github.com/mkhodroo/inventory/tree/main",
                 "issues": "https://github.com/mkhodroo/inventory/issues"
             },
-            "time": "2026-08-20T12:16:48+00:00"
+            "time": "2026-08-30T08:37:49+00:00"
         },
         {
             "name": "arghavan/logging",
