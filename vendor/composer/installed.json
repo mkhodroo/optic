@@ -122,8 +122,8 @@
             "version_normalized": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "C:/wamp64/www/packages/inventory",
-                "reference": "b4f5c420fe237cfefcdf0062f805ec4eda112491"
+                "url": "../packages/inventory",
+                "reference": "e1e26f775d03a05f7279e9ccd91a4687562a8920"
             },
             "type": "library",
             "extra": {
@@ -150,7 +150,7 @@
             "description": "Inventory management package for Laravel",
             "transport-options": {
                 "symlink": true,
-                "relative": false
+                "relative": true
             },
             "install-path": "../arghavan/inventory"
         },
