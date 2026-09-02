@@ -136,5 +136,6 @@ return array(
     'BaleBot\\' => array($vendorDir . '/arghavan/bale-bot/src'),
     'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
     'Arghavan\\PersianNumberToWords\\' => array($vendorDir . '/arghavan/php-persian-number-to-words/src'),
+    'Arghavan\\Notification\\' => array($vendorDir . '/arghavan/notification/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );

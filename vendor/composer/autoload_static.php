@@ -246,6 +246,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         array (
             'Assert\\' => 7,
             'Arghavan\\PersianNumberToWords\\' => 30,
+            'Arghavan\\Notification\\' => 22,
             'App\\' => 4,
         ),
     );
@@ -778,6 +779,10 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'Arghavan\\PersianNumberToWords\\' =>
         array (
             0 => __DIR__ . '/..' . '/arghavan/php-persian-number-to-words/src',
+        ),
+        'Arghavan\\Notification\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/arghavan/notification/src',
         ),
         'App\\' =>
         array (

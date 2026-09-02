@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '569a2b7f93311954e771fa97671c1e4a55095030',
+        'reference' => '867a4771e15ec482f13542c609dab77115bfb875',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -61,6 +61,15 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
+            'dev_requirement' => false,
+        ),
+        'arghavan/notification' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '3bc501560e8345aa49ff9af61671df10503186e8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../arghavan/notification',
+            'aliases' => array(),
             'dev_requirement' => false,
         ),
         'arghavan/php-persian-number-to-words' => array(
@@ -578,7 +587,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '569a2b7f93311954e771fa97671c1e4a55095030',
+            'reference' => '867a4771e15ec482f13542c609dab77115bfb875',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

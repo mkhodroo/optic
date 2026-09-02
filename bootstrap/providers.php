@@ -31,5 +31,5 @@ return [
     ArghavanFinReport::class,
     VisualScriptServiceProvider::class,
     UserRolesServiceProvider::class,
-    UserNotification\UserNotificationProvider::class
+    // UserNotification\UserNotificationProvider::class
 ];
