@@ -198,44 +198,6 @@
             "install-path": "../arghavan/logging"
         },
         {
-            "name": "arghavan/notification",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../packages/notification",
-                "reference": "7c73f93cc97b20daf47a51b4e0fe119a0637b0e8"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "UserNotification\\UserNotificationProvider"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "UserNotification\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "UserNotification\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Notification package for Laravel",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            },
-            "install-path": "../arghavan/notification"
-        },
-        {
             "name": "arghavan/php-persian-number-to-words",
             "version": "dev-main",
             "version_normalized": "dev-main",

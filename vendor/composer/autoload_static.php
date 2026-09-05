@@ -75,7 +75,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'U' =>
         array (
             'UserProfile\\' => 12,
-            'UserNotification\\' => 17,
         ),
         'T' =>
         array (
@@ -281,10 +280,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'UserProfile\\' =>
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-user-profile/src',
-        ),
-        'UserNotification\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/arghavan/notification/src',
         ),
         'TodoList\\' =>
         array (
@@ -8877,10 +8872,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'TodoList\\Models\\TodoFile' => __DIR__ . '/../..' . '/packages/behin-todo-list/src/Models/TodoFile.php',
         'TodoList\\TodoListProvider' => __DIR__ . '/../..' . '/packages/behin-todo-list/src/TodoListProvider.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'UserNotification\\Controllers\\NotificationController' => __DIR__ . '/..' . '/arghavan/notification/src/Controllers/NotificationController.php',
-        'UserNotification\\Models\\UserNotification' => __DIR__ . '/..' . '/arghavan/notification/src/Models/UserNotification.php',
-        'UserNotification\\Services\\NotificationService' => __DIR__ . '/..' . '/arghavan/notification/src/Services/NotificationService.php',
-        'UserNotification\\UserNotificationProvider' => __DIR__ . '/..' . '/arghavan/notification/src/UserNotificationProvider.php',
         'UserProfile\\Controllers\\ChangePasswordController' => __DIR__ . '/../..' . '/packages/behin-user-profile/src/Controllers/ChangePasswordController.php',
         'UserProfile\\Controllers\\GetUserAgenciesController' => __DIR__ . '/../..' . '/packages/behin-user-profile/src/Controllers/GetUserAgenciesController.php',
         'UserProfile\\Controllers\\NationalIdController' => __DIR__ . '/../..' . '/packages/behin-user-profile/src/Controllers/NationalIdController.php',

@@ -65,7 +65,6 @@
         "arghavan/php-persian-number-to-words": "dev-main",
         "arghavan/user-role": "dev-main",
         "arghavan/visual-script": "dev-main",
-        "arghavan/notification": "dev-main",
         "barryvdh/laravel-translation-manager": "^0.6.6",
         "behin/simple-workflow": "dev-main",
         "firebase/php-jwt": "^6.11",
