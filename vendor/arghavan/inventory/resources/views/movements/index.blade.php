@@ -9,8 +9,8 @@
     <div class="card-body">
         <form method="GET" class="row g-3">
             <div class="col-md-3">
-                <label class="form-label">فیلتر بر اساس انبار</label>
-                <select name="warehouse_id" class="form-select select2">
+                <label class="form-label">فیلتر بر اساس انبار 123</label>
+                <select name="warehouse_id" class="form-select">
                     <option value="">همه انبارها</option>
                     @foreach($warehouses as $warehouse)
                         <option value="{{ $warehouse->id }}" {{ request('warehouse_id') == $warehouse->id ? 'selected' : '' }}>
