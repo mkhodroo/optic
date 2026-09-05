@@ -318,7 +318,7 @@
             'fieldValueAlt' => null,
         ])
     </div>
-    
+
     <div class="card">
         <div class="card-header">
             تصاویر تعمیرات
@@ -335,15 +335,27 @@
             @endforeach
         </div>
     </div>
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'جدول تعیین هزینه',
-        'fieldId' => 'repair_cost',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
+    @if (access('امکان ویرایش تعیین هزینه در جزئیات پرونده'))
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'جدول تعیین هزینه',
+            'fieldId' => 'repair_cost',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+    @else
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'مشاهده تعیین هزینه',
+            'fieldId' => 'repair_cost',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+    @endif
 
     @include('SimpleWorkflowView::Core.Form.field-generator', [
         'fieldName' => 'اطلاعات پیش فاکتور',
