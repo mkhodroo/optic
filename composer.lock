@@ -119,7 +119,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/inventory",
-                "reference": "fc1abb2fa9013914ee77e10d1ed2c645367d003f"
+                "reference": "a51040fd7a96bd8aa5ef338eb729362631029ae5"
             },
             "type": "library",
             "extra": {
@@ -194,24 +194,24 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/notification",
-                "reference": "3bc501560e8345aa49ff9af61671df10503186e8"
+                "reference": "7c73f93cc97b20daf47a51b4e0fe119a0637b0e8"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Arghavan\\Notification\\UserNotificationProvider"
+                        "UserNotification\\UserNotificationProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Arghavan\\Notification\\": "src/"
+                    "UserNotification\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Arghavan\\Notification\\\\Tests\\": "tests/"
+                    "UserNotification\\Tests\\": "tests/"
                 }
             },
             "license": [

@@ -13,6 +13,7 @@ return array(
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'VisualScript\\' => array($vendorDir . '/arghavan/visual-script/src'),
     'UserProfile\\' => array($baseDir . '/packages/behin-user-profile/src'),
+    'UserNotification\\' => array($vendorDir . '/arghavan/notification/src'),
     'TodoList\\' => array($baseDir . '/packages/behin-todo-list/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'Tests\\' => array($baseDir . '/tests'),
@@ -136,6 +137,5 @@ return array(
     'BaleBot\\' => array($vendorDir . '/arghavan/bale-bot/src'),
     'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
     'Arghavan\\PersianNumberToWords\\' => array($vendorDir . '/arghavan/php-persian-number-to-words/src'),
-    'Arghavan\\Notification\\' => array($vendorDir . '/arghavan/notification/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );

@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '867a4771e15ec482f13542c609dab77115bfb875',
+        'reference' => '0af5078db7d8fdf3dc0302d6d3dfd85d2ca1dcdb',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -46,7 +46,7 @@
         'arghavan/inventory' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fc1abb2fa9013914ee77e10d1ed2c645367d003f',
+            'reference' => 'a51040fd7a96bd8aa5ef338eb729362631029ae5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/inventory',
             'aliases' => array(),
@@ -66,7 +66,7 @@
         'arghavan/notification' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3bc501560e8345aa49ff9af61671df10503186e8',
+            'reference' => '7c73f93cc97b20daf47a51b4e0fe119a0637b0e8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/notification',
             'aliases' => array(),
@@ -587,7 +587,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '867a4771e15ec482f13542c609dab77115bfb875',
+            'reference' => '0af5078db7d8fdf3dc0302d6d3dfd85d2ca1dcdb',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
