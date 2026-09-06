@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35eda46072914b9c9c25a111d3e8e5fe",
+    "content-hash": "7c77f561a6cf981ade3c3841ab310dd5",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -119,7 +119,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/inventory",
-                "reference": "fc1abb2fa9013914ee77e10d1ed2c645367d003f"
+                "reference": "a3063b0f87e266e90ce49745ee675eb77070866e"
             },
             "type": "library",
             "extra": {
@@ -187,41 +187,6 @@
                 "issues": "https://github.com/mkhodroo/logging/issues"
             },
             "time": "2026-08-21T08:03:29+00:00"
-        },
-        {
-            "name": "arghavan/notification",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../packages/notification",
-                "reference": "3bc501560e8345aa49ff9af61671df10503186e8"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Arghavan\\Notification\\UserNotificationProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Arghavan\\Notification\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Arghavan\\Notification\\\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Notification package for Laravel",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "arghavan/php-persian-number-to-words",
@@ -10903,7 +10868,6 @@
         "arghavan/file-control": 20,
         "arghavan/inventory": 20,
         "arghavan/logging": 20,
-        "arghavan/notification": 20,
         "arghavan/php-persian-number-to-words": 20,
         "arghavan/user-role": 20,
         "arghavan/visual-script": 20,
@@ -10914,6 +10878,6 @@
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }

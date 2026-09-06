@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '867a4771e15ec482f13542c609dab77115bfb875',
+        'reference' => '0cc8f9cdbaf9e9e23bc0a0b9279f0cbf697f70d1',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -46,7 +46,7 @@
         'arghavan/inventory' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fc1abb2fa9013914ee77e10d1ed2c645367d003f',
+            'reference' => 'a3063b0f87e266e90ce49745ee675eb77070866e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/inventory',
             'aliases' => array(),
@@ -61,15 +61,6 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'dev_requirement' => false,
-        ),
-        'arghavan/notification' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '3bc501560e8345aa49ff9af61671df10503186e8',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../arghavan/notification',
-            'aliases' => array(),
             'dev_requirement' => false,
         ),
         'arghavan/php-persian-number-to-words' => array(
@@ -587,7 +578,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '867a4771e15ec482f13542c609dab77115bfb875',
+            'reference' => '0cc8f9cdbaf9e9e23bc0a0b9279f0cbf697f70d1',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1121,8 +1112,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(

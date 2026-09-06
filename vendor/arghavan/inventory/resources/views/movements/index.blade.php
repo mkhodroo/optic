@@ -9,8 +9,8 @@
     <div class="card-body">
         <form method="GET" class="row g-3">
             <div class="col-md-3">
-                <label class="form-label">فیلتر بر اساس انبار</label>
-                <select name="warehouse_id" class="form-select select2">
+                <label class="form-label">فیلتر بر اساس انبار </label>
+                <select name="warehouse_id" class="form-select">
                     <option value="">همه انبارها</option>
                     @foreach($warehouses as $warehouse)
                         <option value="{{ $warehouse->id }}" {{ request('warehouse_id') == $warehouse->id ? 'selected' : '' }}>
@@ -25,7 +25,7 @@
                     <option value="">همه محصولات</option>
                     @foreach($products as $product)
                         <option value="{{ $product->id }}" {{ request('product_id') == $product->id ? 'selected' : '' }}>
-                            {{ $product->name }} | {{ $product->main_code }}
+                            {{ $product->name }}
                         </option>
                     @endforeach
                 </select>
@@ -47,7 +47,7 @@
                     <i class="fa fa-funnel"></i> فیلتر
                 </button>
                 <a href="{{ route('inventory.movements.index') }}" class="btn btn-outline-secondary">
-                    <i class="fa fa-refresh"></i>
+                    <i class="fa fa-reload"></i>
                 </a>
             </div>
         </form>
