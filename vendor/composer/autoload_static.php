@@ -779,7 +779,11 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         array (
             0 => __DIR__ . '/..' . '/arghavan/php-persian-number-to-words/src',
         ),
-        'App\\' => 
+        'Arghavan\\Notification\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/arghavan/notification/src',
+        ),
+        'App\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
@@ -9064,7 +9068,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
         'phpDocumentor\\Reflection\\Utils' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/Utils.php',
         'voku\\helper\\ASCII' => __DIR__ . '/..' . '/voku/portable-ascii/src/voku/helper/ASCII.php',
-        '©' => __DIR__ . '/..' . '/symfony/cache/Traits/ValueWrapper.php',
+        'ï¿½' => __DIR__ . '/..' . '/symfony/cache/Traits/ValueWrapper.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

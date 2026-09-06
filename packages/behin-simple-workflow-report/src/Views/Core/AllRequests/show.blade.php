@@ -308,79 +308,17 @@
         </div>
     </div>
     <div class="card">
-        <div class="card-header">
-            اطلاعات تعمیرات
-        </div>
-        <div class="card-body row">
-            <div class="col-sm-3">
-                <label for="">نام تعمیرکار</label>
-                <p>[[ getUserInfo($case->deviceRepair?->repairman)?->name ?? $case->deviceRepair?->repairman ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">نوع تعمیر</label>
-                <p>
-                    @if ($case->deviceRepair?->repair_type)
-                        @php
-                            $repairType = normalizeList($case->deviceRepair?->repair_type);
-                        @endphp
-                        @foreach ($repairType as $type)
-                            <span class="badge bg-primary">[[ $type ]]</span>
-                        @endforeach
-                    @endif
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">جزئیات نوع تعمیر</label>
-                <p>
-                    @php
-                        $repairSubtype = normalizeList($case->deviceRepair?->repair_subtype);
-                    @endphp
-                    @foreach ($repairSubtype as $subtype)
-                        <span class="badge bg-primary">[[ $subtype ]]</span>
-                    @endforeach
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">تاریخ شروع تعمیر</label>
-                <p>[[ $case->deviceRepair?->repair_start_date ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">نام دستیار تعمیرکار</label>
-                <p>
-                    @if ($assistants)
-                        @foreach ($assistants as $assitant)
-                            [[ $assitant?->name ]]
-                            @if (!$loop->last)
-                                ,
-                            @endif
-                        @endforeach
-                        {{-- @if (gettype($case->deviceRepair?->repairman_assitant) == 'string')
-                            string
-                        @elseif(gettype($case->deviceRepair?->repairman_assitant) == 'array')
-                            @foreach ($case->deviceRepair?->repairman_assitant as $assitant)
-                                array
-                            @endforeach
-                        @else
-                            @foreach ($case->deviceRepair?->repairman_assitant as $assitant)
-                                [[ getUserInfo($assitant)?->name ]]
-                @if (!$loop->last)
-                ,
-                @endif
-                @endforeach
-                @endif --}}
-                    @endif
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">تاریخ پایان تعمیر</label>
-                <p>[[ $case->deviceRepair?->repair_end_date ]]</p>
-            </div>
-            <div class="col-sm-12">
-                <label for="">گزارش تعمیر</label>
-                <p>[[ $case->deviceRepair?->repair_report ]]</p>
-            </div>
-        </div>
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'اطلاعات تعمیرات',
+            'fieldId' => 'repair_info',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null,
+        ])
     </div>
+
     <div class="card">
         <div class="card-header">
             تصاویر تعمیرات
@@ -397,15 +335,27 @@
             @endforeach
         </div>
     </div>
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'جدول تعیین هزینه',
-        'fieldId' => 'repair_cost',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
+    @if (access('امکان ویرایش تعیین هزینه در جزئیات پرونده'))
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'جدول تعیین هزینه',
+            'fieldId' => 'repair_cost',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+    @else
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'مشاهده تعیین هزینه',
+            'fieldId' => 'repair_cost',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+    @endif
 
     @include('SimpleWorkflowView::Core.Form.field-generator', [
         'fieldName' => 'اطلاعات پیش فاکتور',
