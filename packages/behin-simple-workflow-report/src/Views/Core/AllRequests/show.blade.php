@@ -459,7 +459,8 @@
             fd.append('case_number', '[[ $case->number ]]');
             fd.append('repair_category', $(this).val());
             send_ajax_formdata_request(
-                '[[ route('simpleWorkflowReport.all-requests.update ') ]]',
+                '[[ route('
+                simpleWorkflowReport.all - requests.update ') ]]',
                 fd,
                 function(response) {
                     show_message(response.message);
@@ -467,16 +468,34 @@
             )
         })
 
-        function send_link_sms(id){
-            var fd = new FormData()
-            fd.append('caseId', $('#caseId').val())
+        function send_link_sms(id) {
+
+            var fd = new FormData();
+            fd.append('caseId', $('#caseId').val());
+
             runScript(
-                id, 
-                fd, 
-                function(response){
-                    console.log(response)
+                id,
+                fd,
+                function(response) {
+
+                    console.log(response);
+
+                    if (response.status === 1) {
+
+                        show_message(
+                            'پیامک با موفقیت به مشتری ارسال شد.'
+                        );
+
+                    } else {
+
+                        show_message(
+                            response.message || 'ارسال پیامک با خطا مواجه شد.'
+                        );
+
+                    }
+
                 }
-            )
+            );
         }
     </script>
 @endsection
