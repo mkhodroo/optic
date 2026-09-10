@@ -1,6 +1,10 @@
 <?php
 
 $packages = [
+    'Behin\\SimpleWorkflow\\' => [
+        'path' => dirname(__DIR__) . '/../packages/behin-simple-workflow/src/',
+        'provider' => 'Behin\\SimpleWorkflow\\SimpleWorkflowProvider',
+    ],
     'UserNotification\\' => [
         'path' => dirname(__DIR__) . '/../packages/notification/src/',
         'provider' => 'UserNotification\\UserNotificationProvider',

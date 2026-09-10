@@ -86,14 +86,14 @@ $app =  Application::configure(basePath: dirname(__DIR__))
         });
     })->create();
 
-foreach ($packages as $package) {
+// foreach ($packages as $package) {
 
-    if (
-        isset($package['provider']) &&
-        class_exists($package['provider'])
-    ) {
-        $app->register($package['provider']);
-    }
-}
+//     if (
+//         isset($package['provider']) &&
+//         class_exists($package['provider'])
+//     ) {
+//         $app->register($package['provider']);
+//     }
+// }
 
 return $app;

@@ -1,34 +1,34 @@
 <?php
 
-use App\Providers\BladeServiceProvider;
-use Arghavan\FinReport\ArghavanFinReport;
-use Behin\Sms\SmsProvider;
-use BehinInit\BehinInitProvider;
-use BehinLogging\ServiceProvider;
-use BehinUserRoles\UserRolesServiceProvider;
-use TodoList\TodoListProvider;
-use UserProfile\UserProfileProvider;
-use Maatwebsite\Excel\ExcelServiceProvider;
-use ShortenerUrl\Shortener\ShortenerServiceProvider;
-use VisualScript\VisualScriptServiceProvider;
-
-return [
+$providers = [
     App\Providers\AppServiceProvider::class,
-    BehinInitProvider::class,
-    UserProfileProvider::class,
-    SmsProvider::class,
-    TodoListProvider::class,
+    BehinInit\BehinInitProvider::class,
+    UserProfile\UserProfileProvider::class,
+    Behin\Sms\SmsProvider::class,
+    TodoList\TodoListProvider::class,
     Behin\SimpleWorkflowReport\SimpleWorkflowReportProvider::class,
     Barryvdh\TranslationManager\ManagerServiceProvider::class,
-    ExcelServiceProvider::class,
-    ShortenerServiceProvider::class,
-    BladeServiceProvider::class,
+    Maatwebsite\Excel\ExcelServiceProvider::class,
+    ShortenerUrl\Shortener\ShortenerServiceProvider::class,
+    App\Providers\BladeServiceProvider::class,
     MyFormBuilder\FormBuilderServiceProvider::class,
     Behin\SimpleWorkflow\SimpleWorkflowProvider::class,
-    // InventoryServiceProvider::class,
-    // ViewBuilderServiceProvider::class,
-    // InventoryInventoryServiceProvider::class,
-    ArghavanFinReport::class,
-    VisualScriptServiceProvider::class,
-    UserRolesServiceProvider::class,
+    Arghavan\FinReport\ArghavanFinReport::class,
+    VisualScript\VisualScriptServiceProvider::class,
+    UserRoles\UserRolesServiceProvider::class,
+    UserSalary\UserSalaryProvider::class,
+    UserNotification\UserNotificationProvider::class,
 ];
+
+return array_values(array_filter($providers, function ($provider) {
+
+    if (class_exists($provider)) {
+        return true;
+    }
+
+    error_log(
+        '[Laravel Provider] Provider not found: ' . $provider
+    );
+
+    return false;
+}));
