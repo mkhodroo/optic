@@ -468,7 +468,7 @@
             )
         })
 
-        send_link_sms(id){
+        function send_link_sms(id){
             url = '{{ route('simpleWorkflow.scripts.run', [ 'id', 'ID' ]) }}'
             url = url.replace('ID', id);
             var fd = new FormData()
