@@ -15,7 +15,7 @@ $providers = [
     Behin\SimpleWorkflow\SimpleWorkflowProvider::class,
     Arghavan\FinReport\ArghavanFinReport::class,
     VisualScript\VisualScriptServiceProvider::class,
-    UserRoles\UserRolesServiceProvider::class,
+    BehinUserRoles\UserRolesServiceProvider::class,
     UserSalary\UserSalaryProvider::class,
     UserNotification\UserNotificationProvider::class,
 ];
