@@ -111,7 +111,7 @@
                         </div>
                     @endif
 
-                    <button class="btn btn-sm btn-danger" onclick="send_link_sms()">
+                    <button class="btn btn-sm btn-danger" onclick="send_link_sms('2c1f485c-9311-4dd4-bac4-b6dd7a91aaaf')">
                         ارسال مجدد پیامک لینک به مشتری
                     </button>
 
@@ -471,8 +471,11 @@
         send_link_sms(id){
             url = '{{ route('simpleWorkflow.scripts.run', [ 'id', 'ID' ]) }}'
             url = url.replace('ID', id);
-            send_ajax_get_request(
+            var fd = new FormData()
+            fd.append('caseId', $('#caseId').val())
+            send_ajax_formdata_request(
                 url,
+                fd,
                 function(response){
                     console.log(response)
                 }
