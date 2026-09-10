@@ -459,8 +459,7 @@
             fd.append('case_number', '[[ $case->number ]]');
             fd.append('repair_category', $(this).val());
             send_ajax_formdata_request(
-                '[[ route('
-                simpleWorkflowReport.all - requests.update ') ]]',
+                '{{ route('simpleWorkflowReport.all - requests.update ') }}',
                 fd,
                 function(response) {
                     show_message(response.message);
