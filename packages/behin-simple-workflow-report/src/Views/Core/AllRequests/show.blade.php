@@ -86,23 +86,48 @@
                     </label>
 
                     @if ($case->getVariable('tracking_url'))
-                        <div class="d-flex align-items-center"
-                            style="
-                            background-color: #f8f9fa;
-                            border: 1px solid #e9ecef;
-                            border-radius: 4px;
-                            min-height: 40px;
-                            padding: 5px 10px;
-                        ">
+                        <div class="row align-items-center">
 
-                            <a href="[[ $case->getVariable('tracking_url') ]]" target="_blank" class="text-primary"
-                                style="
-                                direction: ltr;
-                                text-align: left;
-                                word-break: break-all;
-                            ">
-                                [[ $case->getVariable('tracking_url') ]]
-                            </a>
+                            <!-- لینک -->
+                            <div class="col-sm-8 mb-2">
+
+                                <div
+                                    style="
+                        background-color: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 4px;
+                        min-height: 40px;
+                        padding: 8px 10px;
+                    ">
+                                    <a href="[[ $case->getVariable('tracking_url') ]]" target="_blank" class="text-primary"
+                                        style="
+                            direction: ltr;
+                            text-align: left;
+                            word-break: break-all;
+                        ">
+                                        [[ $case->getVariable('tracking_url') ]]
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <!-- ارسال مجدد پیامک -->
+                            @if (access('ارسال مجدد لینک پذیرش برای مشتری'))
+                                <div class="col-sm-4 mb-2">
+
+                                    <button type="button" id="sendLinkSmsBtn" class="btn btn-sm btn-danger w-100"
+                                        onclick="send_link_sms('e3d42448-2b90-41b2-a1c8-9a0f03258e86')">
+                                        <span id="sendLinkSmsText">
+                                            ارسال مجدد پیامک لینک به مشتری
+                                        </span>
+
+                                        <span id="sendLinkSmsLoading" style="display:none;">
+                                            در حال ارسال...
+                                        </span>
+                                    </button>
+
+                                </div>
+                            @endif
 
                         </div>
                     @else
@@ -111,390 +136,386 @@
                         </div>
                     @endif
 
-                    <button class="btn btn-sm btn-danger" onclick="send_link_sms('e3d42448-2b90-41b2-a1c8-9a0f03258e86')">
-                        ارسال مجدد پیامک لینک به مشتری
-                    </button>
-
                 </div>
 
             </div>
 
         </div>
 
-    </div>
+        <div class="card p-0 mb-3">
 
-    <div class="card p-0 mb-3">
-
-        <!-- Header -->
-        <div class="card-header d-flex align-items-center"
-            style="
+            <!-- Header -->
+            <div class="card-header d-flex align-items-center"
+                style="
             background-color: #f5f5f5;
             min-height: 50px;
             border-bottom: 1px solid rgba(0,0,0,.1);
             padding: 0 15px;
         ">
 
-            <h5 class="mb-0 font-weight-bold" style="color: #333;">
-                اطلاعات پذیرش اولیه
-            </h5>
+                <h5 class="mb-0 font-weight-bold" style="color: #333;">
+                    اطلاعات پذیرش اولیه
+                </h5>
 
-        </div>
-
-
-        <!-- Body -->
-        <div class="card-body">
-
-            <div class="row">
+            </div>
 
 
-                <!-- تاریخ پذیرش -->
-                <div class="col-sm-3 mb-3">
+            <!-- Body -->
+            <div class="card-body">
 
-                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                        تاریخ پذیرش
-                    </label>
+                <div class="row">
 
-                    <div class="font-weight-bold" style="color: #333;">
-                        [[ $case->getVariable('receive_date') ?: '-' ]]
+
+                    <!-- تاریخ پذیرش -->
+                    <div class="col-sm-3 mb-3">
+
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            تاریخ پذیرش
+                        </label>
+
+                        <div class="font-weight-bold" style="color: #333;">
+                            [[ $case->getVariable('receive_date') ?: '-' ]]
+                        </div>
+
                     </div>
 
-                </div>
 
+                    <!-- نوع بسته بندی -->
+                    <div class="col-sm-3 mb-3">
 
-                <!-- نوع بسته بندی -->
-                <div class="col-sm-3 mb-3">
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            نوع بسته بندی
+                        </label>
 
-                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                        نوع بسته بندی
-                    </label>
+                        <div class="font-weight-bold" style="color: #333;">
+                            [[ $case->getVariable('device_packaging_type') ?: '-' ]]
+                        </div>
 
-                    <div class="font-weight-bold" style="color: #333;">
-                        [[ $case->getVariable('device_packaging_type') ?: '-' ]]
                     </div>
 
-                </div>
 
+                    <!-- لوازم همراه دستگاه -->
+                    <div class="col-sm-3 mb-3">
 
-                <!-- لوازم همراه دستگاه -->
-                <div class="col-sm-3 mb-3">
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            لوازم همراه دستگاه
+                        </label>
 
-                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                        لوازم همراه دستگاه
-                    </label>
+                        <div class="font-weight-bold" style="color: #333;">
+                            [[ $case->getVariable('device_accessories') ?: '-' ]]
+                        </div>
 
-                    <div class="font-weight-bold" style="color: #333;">
-                        [[ $case->getVariable('device_accessories') ?: '-' ]]
                     </div>
 
-                </div>
 
+                    <!-- توضیحات اولیه مشتری -->
+                    <div class="col-sm-3 mb-3">
 
-                <!-- توضیحات اولیه مشتری -->
-                <div class="col-sm-3 mb-3">
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            توضیحات اولیه مشتری
+                        </label>
 
-                    <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                        توضیحات اولیه مشتری
-                    </label>
+                        <div class="font-weight-bold" style="color: #333;">
+                            [[ $case->getVariable('customer_description') ?: '-' ]]
+                        </div>
 
-                    <div class="font-weight-bold" style="color: #333;">
-                        [[ $case->getVariable('customer_description') ?: '-' ]]
                     </div>
 
+
+                    <!-- دسته بندی تعمیر -->
+                    <div class="col-sm-3 mb-3">
+
+                        @include('SimpleWorkflowView::Core.Form.field-generator', [
+                            'fieldName' => 'repair_category',
+                            'fieldId' => 'repair_category',
+                            'fieldClass' => 'col-sm-12',
+                            'readOnly' => false,
+                            'required' => false,
+                            'fieldValue' => $case->getVariable('repair_category'),
+                            'fieldValueAlt' => null ?? '',
+                        ])
+
+                    </div>
+
+
                 </div>
-
-
-                <!-- دسته بندی تعمیر -->
-                <div class="col-sm-3 mb-3">
-
-                    @include('SimpleWorkflowView::Core.Form.field-generator', [
-                        'fieldName' => 'repair_category',
-                        'fieldId' => 'repair_category',
-                        'fieldClass' => 'col-sm-12',
-                        'readOnly' => false,
-                        'required' => false,
-                        'fieldValue' => $case->getVariable('repair_category'),
-                        'fieldValueAlt' => null ?? '',
-                    ])
-
-                </div>
-
 
             </div>
 
         </div>
 
-    </div>
-
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'نماینده یا نمایندگان مشتری',
-        'fieldId' => 'case_customers',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => false,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
-
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'توضیحات واحد فروش',
-        'fieldId' => 'sale_unit_notes',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null,
-    ])
-    <div class="">
         @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'جدول هزینه های پیش بینی نشده',
-            'fieldId' => 'unexpected_costs',
+            'fieldName' => 'نماینده یا نمایندگان مشتری',
+            'fieldId' => 'case_customers',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => false,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'توضیحات واحد فروش',
+            'fieldId' => 'sale_unit_notes',
             'fieldClass' => 'col-sm-12',
             'readOnly' => true,
             'required' => false,
             'fieldValue' => null,
             'fieldValueAlt' => null,
         ])
-    </div>
-    <div class="">
-        @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'device',
-            'fieldId' => 'device',
-            'fieldClass' => 'col-sm-12',
-            'readOnly' => true,
-            'required' => false,
-            'fieldValue' => null,
-            'fieldValueAlt' => null,
-        ])
-    </div>
-
-    <div class="card row">
-        <div class="card-header">
-            اطلاعات دستگاه
+        <div class="">
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'جدول هزینه های پیش بینی نشده',
+                'fieldId' => 'unexpected_costs',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null,
+            ])
         </div>
-        <div class="card-body row">
-
-            <div class="col-sm-3">
-                <label for="">نام دستگاه</label>
-                <p>[[ $case->device?->name ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">سری دستگاه</label>
-                <p>[[ $case->device?->brand ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">توان دستگاه</label>
-                <p>[[ $case->device?->power ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">سریال دستگاه</label>
-                <p>[[ $case->device?->serial ]]</p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">تصویر اولیه دستگاه</label>
-                <p>
-                    @if ($case->device?->initial_pic)
-                        <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100" download>
-                    @endif
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">تصویر پلاک دستگاه</label>
-                <p>
-                    @if ($case->device?->plaque_pic)
-                        <img src="[[ url('public/' . $case->device->plaque_pic) ]]" alt="" width="100" download>
-                    @endif
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <label for="">مشخصات دستگاه</label>
-                <p>[[ $case->device?->specifications ]]</p>
-            </div>
+        <div class="">
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'device',
+                'fieldId' => 'device',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null,
+            ])
         </div>
-    </div>
-    <div class="card">
-        @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'اطلاعات تعمیرات',
-            'fieldId' => 'repair_info',
-            'fieldClass' => 'col-sm-12',
-            'readOnly' => true,
-            'required' => false,
-            'fieldValue' => null,
-            'fieldValueAlt' => null,
-        ])
-    </div>
 
-    <div class="card">
-        <div class="card-header">
-            تصاویر تعمیرات
-        </div>
-        <div class="card-body row">
-            @foreach ($case->deviceRepairPics as $pic)
+        <div class="card row">
+            <div class="card-header">
+                اطلاعات دستگاه
+            </div>
+            <div class="card-body row">
+
                 <div class="col-sm-3">
-                    @if (str_contains($pic->file, 'http'))
-                        <a href="[[ $pic->file ]]" download="">دانلود</a>
-                    @else
-                        <a href="[[ url('public/' . $pic->file) ]]" download="">دانلود</a>
-                    @endif
+                    <label for="">نام دستگاه</label>
+                    <p>[[ $case->device?->name ]]</p>
                 </div>
-            @endforeach
+                <div class="col-sm-3">
+                    <label for="">سری دستگاه</label>
+                    <p>[[ $case->device?->brand ]]</p>
+                </div>
+                <div class="col-sm-3">
+                    <label for="">توان دستگاه</label>
+                    <p>[[ $case->device?->power ]]</p>
+                </div>
+                <div class="col-sm-3">
+                    <label for="">سریال دستگاه</label>
+                    <p>[[ $case->device?->serial ]]</p>
+                </div>
+                <div class="col-sm-3">
+                    <label for="">تصویر اولیه دستگاه</label>
+                    <p>
+                        @if ($case->device?->initial_pic)
+                            <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100"
+                                download>
+                        @endif
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <label for="">تصویر پلاک دستگاه</label>
+                    <p>
+                        @if ($case->device?->plaque_pic)
+                            <img src="[[ url('public/' . $case->device->plaque_pic) ]]" alt="" width="100"
+                                download>
+                        @endif
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <label for="">مشخصات دستگاه</label>
+                    <p>[[ $case->device?->specifications ]]</p>
+                </div>
+            </div>
         </div>
-    </div>
-    @if (access('امکان ویرایش تعیین هزینه در جزئیات پرونده'))
-        @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'جدول تعیین هزینه',
-            'fieldId' => 'repair_cost',
-            'fieldClass' => 'col-sm-12',
-            'readOnly' => true,
-            'required' => false,
-            'fieldValue' => null,
-            'fieldValueAlt' => null ?? '',
-        ])
-    @else
-        @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'مشاهده تعیین هزینه',
-            'fieldId' => 'repair_cost',
-            'fieldClass' => 'col-sm-12',
-            'readOnly' => true,
-            'required' => false,
-            'fieldValue' => null,
-            'fieldValueAlt' => null ?? '',
-        ])
-    @endif
+        <div class="card">
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'اطلاعات تعمیرات',
+                'fieldId' => 'repair_info',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null,
+            ])
+        </div>
 
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'اطلاعات پیش فاکتور',
-        'fieldId' => 'pre_invoice',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'آیتم های پیش فاکتور',
-        'fieldId' => 'pre_invoice_items',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null,
-    ])
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'ویرایش دریافت هزینه',
-        'fieldId' => 'repair_incomes',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
-    @include('SimpleWorkflowView::Core.Form.field-generator', [
-        'fieldName' => 'اطلاعات فاکتور',
-        'fieldId' => 'invoice',
-        'fieldClass' => 'col-sm-12',
-        'readOnly' => true,
-        'required' => false,
-        'fieldValue' => null,
-        'fieldValueAlt' => null ?? '',
-    ])
-
-    @if (access('تفکیک هزینه ها در مشاهده جزئیات بیشتر هر پرونده'))
         <div class="card">
             <div class="card-header">
-                تفکیک هزینه ها و دستمزد ها و پاداش ها
+                تصاویر تعمیرات
             </div>
-            <div class="card-body row table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>نوع تراکنش</th>
-                            <th>مبلغ</th>
-                            <th>توضیحات</th>
-                            <th>طرف حساب</th>
-                            <th>دسته بندی</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($case->transactions as $transaction)
-                            <tr>
-                                <td>[[ $transaction->transaction_type ]]</td>
-                                <td>[[ $transaction->amount ]]</td>
-                                <td>[[ $transaction->description ]]</td>
-                                <td>[[ $transaction->counterparty ]]</td>
-                                <td>[[ $transaction->catagory ]]</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
+            <div class="card-body row">
+                @foreach ($case->deviceRepairPics as $pic)
+                    <div class="col-sm-3">
+                        @if (str_contains($pic->file, 'http'))
+                            <a href="[[ $pic->file ]]" download="">دانلود</a>
+                        @else
+                            <a href="[[ url('public/' . $pic->file) ]]" download="">دانلود</a>
+                        @endif
+                    </div>
+                @endforeach
             </div>
         </div>
-    @endif
-    @php
-        $fieldName = 'فایل های مرتبط با پرونده';
-        $fieldDetails = getFieldDetailsByName($fieldName);
-        $fieldValue = isset($case) ? $case->getVariable($fieldName) : null;
-        $fieldValueAlt =
-            (isset($case) and in_array($fieldDetails->type, ['datetime', 'date']))
-                ? $case->getVariable($fieldName . '_alt')
-                : null;
-    @endphp
-    <div class="">
-        <p class="bg-warning text-center card">دقت داشته باشید این فایل های زیر به مشتری نمایش داده خواهد شد</p>
+        @if (access('امکان ویرایش تعیین هزینه در جزئیات پرونده'))
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'جدول تعیین هزینه',
+                'fieldId' => 'repair_cost',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null ?? '',
+            ])
+        @else
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'مشاهده تعیین هزینه',
+                'fieldId' => 'repair_cost',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null ?? '',
+            ])
+        @endif
+
         @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => $fieldName,
-            'fieldId' => $fieldName,
+            'fieldName' => 'اطلاعات پیش فاکتور',
+            'fieldId' => 'pre_invoice',
             'fieldClass' => 'col-sm-12',
             'readOnly' => true,
             'required' => false,
-            'fieldValue' => $fieldValue,
-            'fieldValueAlt' => $fieldValueAlt ?? '',
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
         ])
-    </div>
-@endsection
-@section('script')
-    <script>
-        $('#repair_category').change(function() {
-            var fd = new FormData();
-            fd.append('case_number', '[[ $case->number ]]');
-            fd.append('repair_category', $(this).val());
-            send_ajax_formdata_request(
-                '{{ route('simpleWorkflowReport.all-requests.update') }}',
-                fd,
-                function(response) {
-                    show_message(response.message);
-                }
-            )
-        })
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'آیتم های پیش فاکتور',
+            'fieldId' => 'pre_invoice_items',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null,
+        ])
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'ویرایش دریافت هزینه',
+            'fieldId' => 'repair_incomes',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'اطلاعات فاکتور',
+            'fieldId' => 'invoice',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
 
-        function send_link_sms(id) {
+        @if (access('تفکیک هزینه ها در مشاهده جزئیات بیشتر هر پرونده'))
+            <div class="card">
+                <div class="card-header">
+                    تفکیک هزینه ها و دستمزد ها و پاداش ها
+                </div>
+                <div class="card-body row table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>نوع تراکنش</th>
+                                <th>مبلغ</th>
+                                <th>توضیحات</th>
+                                <th>طرف حساب</th>
+                                <th>دسته بندی</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($case->transactions as $transaction)
+                                <tr>
+                                    <td>[[ $transaction->transaction_type ]]</td>
+                                    <td>[[ $transaction->amount ]]</td>
+                                    <td>[[ $transaction->description ]]</td>
+                                    <td>[[ $transaction->counterparty ]]</td>
+                                    <td>[[ $transaction->catagory ]]</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
-            var fd = new FormData();
-            fd.append('caseId', $('#caseId').val());
+                </div>
+            </div>
+        @endif
+        @php
+            $fieldName = 'فایل های مرتبط با پرونده';
+            $fieldDetails = getFieldDetailsByName($fieldName);
+            $fieldValue = isset($case) ? $case->getVariable($fieldName) : null;
+            $fieldValueAlt =
+                (isset($case) and in_array($fieldDetails->type, ['datetime', 'date']))
+                    ? $case->getVariable($fieldName . '_alt')
+                    : null;
+        @endphp
+        <div class="">
+            <p class="bg-warning text-center card">دقت داشته باشید این فایل های زیر به مشتری نمایش داده خواهد شد</p>
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => $fieldName,
+                'fieldId' => $fieldName,
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => $fieldValue,
+                'fieldValueAlt' => $fieldValueAlt ?? '',
+            ])
+        </div>
+    @endsection
+    @section('script')
+        <script>
+            $('#repair_category').change(function() {
+                var fd = new FormData();
+                fd.append('case_number', '[[ $case->number ]]');
+                fd.append('repair_category', $(this).val());
+                send_ajax_formdata_request(
+                    '{{ route('simpleWorkflowReport.all-requests.update') }}',
+                    fd,
+                    function(response) {
+                        show_message(response.message);
+                    }
+                )
+            })
 
-            runScript(
-                id,
-                fd,
-                function(response) {
+            function send_link_sms(id) {
 
-                    console.log(response);
+                var fd = new FormData();
+                fd.append('caseId', $('#caseId').val());
 
-                    if (response.status === 1) {
+                runScript(
+                    id,
+                    fd,
+                    function(response) {
 
-                        show_message(
-                            'پیامک با موفقیت برای مشتری ارسال شد.'
-                        );
+                        console.log(response);
 
-                    } else {
+                        if (response.status === 1) {
 
-                        show_message(
-                            response.message || 'ارسال پیامک با خطا مواجه شد.'
-                        );
+                            show_message(
+                                'پیامک با موفقیت برای مشتری ارسال شد.'
+                            );
+
+                        } else {
+
+                            show_message(
+                                response.message || 'ارسال پیامک با خطا مواجه شد.'
+                            );
+
+                        }
 
                     }
-
-                }
-            );
-        }
-    </script>
-@endsection
+                );
+            }
+        </script>
+    @endsection
