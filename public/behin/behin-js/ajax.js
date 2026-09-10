@@ -270,7 +270,7 @@ function get_view_model_rows(viewModel_id, api_key) {
     send_ajax_formdata_request(url, fd, function (response) {
 
         var container = $(`#${viewModel_id}`);
-
+        console.log(response)
         // دریافت دکمه ایجاد رکورد جدید
         get_view_model_create_new_btn(viewModel_id, api_key);
 
@@ -415,7 +415,6 @@ function get_view_model_create_new_btn(viewModel_id, api_key) {
     fd.append('case_id', $('#caseId').val() ?? '');
     send_ajax_formdata_request(url, fd, function (response) {
         console.log('response of create btn')
-        console.log(response)
         var createButtonDiv = $(`#create-view-model-row-${viewModel_id}`);
         createButtonDiv.html('');
         createButtonDiv.html(response);
