@@ -5,6 +5,10 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/notification/src/',
         'provider' => 'UserNotification\\UserNotificationProvider',
     ],
+    'UserSalary\\' => [
+        'path' => dirname(__DIR__) . '/../packages/user-salary/src/',
+        'provider' => 'UserSalary\\UserSalaryProvider',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {
