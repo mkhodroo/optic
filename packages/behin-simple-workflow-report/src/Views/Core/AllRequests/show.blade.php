@@ -111,6 +111,10 @@
                         </div>
                     @endif
 
+                    <button class="btn btn-sm btn-danger" onclick="send_link_sms()">
+                        ارسال مجدد پیامک لینک به مشتری
+                    </button>
+
                 </div>
 
             </div>
@@ -463,5 +467,16 @@
                 }
             )
         })
+
+        send_link_sms(id){
+            url = '{{ route('simpleWorkflow.scripts.run', [ 'id', 'ID' ]) }}'
+            url = url.replace('ID', id);
+            send_ajax_get_request(
+                url,
+                function(response){
+                    console.log(response)
+                }
+            )
+        }
     </script>
 @endsection
