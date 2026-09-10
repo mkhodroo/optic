@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0cc8f9cdbaf9e9e23bc0a0b9279f0cbf697f70d1',
+        'reference' => '05e3e26ccf7282b3ec4c420bddf95e1c25255597',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -46,7 +46,7 @@
         'arghavan/inventory' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a3063b0f87e266e90ce49745ee675eb77070866e',
+            'reference' => 'c56b338159ac81bf39aa1676dfc97a8f4c8f0645',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/inventory',
             'aliases' => array(),
@@ -55,7 +55,7 @@
         'arghavan/logging' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f',
+            'reference' => 'bfa8555fe71a2183834fb2c40df5e7d82dc94200',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/logging',
             'aliases' => array(
@@ -578,7 +578,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0cc8f9cdbaf9e9e23bc0a0b9279f0cbf697f70d1',
+            'reference' => '05e3e26ccf7282b3ec4c420bddf95e1c25255597',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1112,8 +1112,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

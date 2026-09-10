@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c77f561a6cf981ade3c3841ab310dd5",
+    "content-hash": "152943bad1112665c62ceb1aded73bb5",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -119,7 +119,7 @@
             "dist": {
                 "type": "path",
                 "url": "../packages/inventory",
-                "reference": "a3063b0f87e266e90ce49745ee675eb77070866e"
+                "reference": "c56b338159ac81bf39aa1676dfc97a8f4c8f0645"
             },
             "type": "library",
             "extra": {
@@ -154,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/logging.git",
-                "reference": "6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f"
+                "reference": "bfa8555fe71a2183834fb2c40df5e7d82dc94200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/logging/zipball/6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f",
-                "reference": "6f8c7481f4b6381cdd77ccdea6d8cd1ce68e697f",
+                "url": "https://api.github.com/repos/mkhodroo/logging/zipball/bfa8555fe71a2183834fb2c40df5e7d82dc94200",
+                "reference": "bfa8555fe71a2183834fb2c40df5e7d82dc94200",
                 "shasum": ""
             },
             "default-branch": true,
@@ -186,7 +186,7 @@
                 "source": "https://github.com/mkhodroo/logging/tree/main",
                 "issues": "https://github.com/mkhodroo/logging/issues"
             },
-            "time": "2026-08-21T08:03:29+00:00"
+            "time": "2026-09-10T06:20:10+00:00"
         },
         {
             "name": "arghavan/php-persian-number-to-words",
@@ -10878,6 +10878,6 @@
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }

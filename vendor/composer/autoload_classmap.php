@@ -62,6 +62,7 @@ return array(
     'BehinInit\\BehinInitProvider' => $baseDir . '/packages/behin-init/src/BehinInitProvider.php',
     'BehinLogging\\Controllers\\LoggingController' => $vendorDir . '/arghavan/logging/src/Controllers/LoggingController.php',
     'BehinLogging\\Middlewares\\Logging' => $vendorDir . '/arghavan/logging/src/Middlewares/Logging.php',
+    'BehinLogging\\Models\\UserActionLog' => $vendorDir . '/arghavan/logging/src/Models/UserActionLog.php',
     'BehinLogging\\ServiceProvider' => $vendorDir . '/arghavan/logging/src/ServiceProvider.php',
     'BehinUserRoles\\Controllers\\DepartmentController' => $vendorDir . '/arghavan/user-role/src/Controllers/DepartmentController.php',
     'BehinUserRoles\\Controllers\\GetMethodsController' => $vendorDir . '/arghavan/user-role/src/Controllers/GetMethodsController.php',
