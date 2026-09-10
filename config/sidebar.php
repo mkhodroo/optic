@@ -24,10 +24,10 @@ return [
             'icon' => 'report',
             'fa_name' => 'گزارشات کارتابل',
             'submenu' => [
-                'list' => [ 'fa_name' => 'لیست', 'route-name' => 'simpleWorkflowReport.index' ],
-                'fin-report' => [ 'fa_name' => 'مالی', 'route-name' => 'simpleWorkflowReport.fin-report.index' ],
+                // 'list' => [ 'fa_name' => 'لیست', 'route-name' => 'simpleWorkflowReport.index' ],
+                // 'fin-report' => [ 'fa_name' => 'مالی', 'route-name' => 'simpleWorkflowReport.fin-report.index' ],
                 'summary' => [ 'fa_name' => 'خلاصه', 'route-name' => 'simpleWorkflowReport.summary-report.index' ],
-                'role-form-control' => [ 'fa_name' => 'فرم گزارش نقش ها', 'route-name' => 'simpleWorkflowReport.role.index' ],
+                // 'role-form-control' => [ 'fa_name' => 'فرم گزارش نقش ها', 'route-name' => 'simpleWorkflowReport.role.index' ],
 
             ]
         ],

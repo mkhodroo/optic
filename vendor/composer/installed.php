@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '05e3e26ccf7282b3ec4c420bddf95e1c25255597',
+        'reference' => 'd220145d9fed8e5b1ceea868b93c1583a82d43eb',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -112,17 +112,6 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../beberlei/assert',
             'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'behin/simple-workflow' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '675dcb6356422465e8fdf56ecc9da84c1d0fdf97',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../behin/simple-workflow',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
             'dev_requirement' => false,
         ),
         'brianium/paratest' => array(
@@ -578,7 +567,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '05e3e26ccf7282b3ec4c420bddf95e1c25255597',
+            'reference' => 'd220145d9fed8e5b1ceea868b93c1583a82d43eb',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

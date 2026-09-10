@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "152943bad1112665c62ceb1aded73bb5",
+    "content-hash": "0bcf7ad8551136326773887258ca465a",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -450,52 +450,6 @@
                 "source": "https://github.com/beberlei/assert/tree/v3.3.3"
             },
             "time": "2024-07-15T13:18:35+00:00"
-        },
-        {
-            "name": "behin/simple-workflow",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkhodroo/behin-simple-workflow.git",
-                "reference": "675dcb6356422465e8fdf56ecc9da84c1d0fdf97"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/behin-simple-workflow/zipball/675dcb6356422465e8fdf56ecc9da84c1d0fdf97",
-                "reference": "675dcb6356422465e8fdf56ecc9da84c1d0fdf97",
-                "shasum": ""
-            },
-            "require": {
-                "morilog/jalali": "3.*"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Behin\\SimpleWorkflow\\SimpleWorkflowProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Behin\\SimpleWorkflow\\": "src/"
-                },
-                "files": [
-                    "src/Helper/behin-simple-workflow.php"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "mkhodroo",
-                    "email": "mkhodroo@yahoo.com"
-                }
-            ],
-            "support": {
-                "source": "https://github.com/mkhodroo/behin-simple-workflow/tree/main",
-                "issues": "https://github.com/mkhodroo/behin-simple-workflow/issues"
-            },
-            "time": "2026-08-27T16:18:58+00:00"
         },
         {
             "name": "brick/math",
@@ -10870,8 +10824,7 @@
         "arghavan/logging": 20,
         "arghavan/php-persian-number-to-words": 20,
         "arghavan/user-role": 20,
-        "arghavan/visual-script": 20,
-        "behin/simple-workflow": 20
+        "arghavan/visual-script": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

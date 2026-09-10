@@ -66,7 +66,6 @@
         "arghavan/user-role": "dev-main",
         "arghavan/visual-script": "dev-main",
         "barryvdh/laravel-translation-manager": "^0.6.6",
-        "behin/simple-workflow": "dev-main",
         "firebase/php-jwt": "^6.11",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
