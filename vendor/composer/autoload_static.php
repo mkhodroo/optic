@@ -156,6 +156,7 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'N' =>
         array (
             'NunoMaduro\\Collision\\' => 21,
+            'NumberToWord\\PersianNumberToWords\\' => 34,
         ),
         'M' =>
         array (
@@ -546,6 +547,10 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'NunoMaduro\\Collision\\' =>
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
+        ),
+        'NumberToWord\\PersianNumberToWords\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/../packages/number-to-words/src',
         ),
         'MyFormBuilder\\' =>
         array (

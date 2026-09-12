@@ -18,7 +18,6 @@ $providers = [
     BehinUserRoles\UserRolesServiceProvider::class,
     UserSalary\UserSalaryProvider::class,
     UserNotification\UserNotificationProvider::class,
-    NumberToWord\PersianNumberToWords::class,
 ];
 
 return array_values(array_filter($providers, function ($provider) {
