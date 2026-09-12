@@ -62,7 +62,6 @@
         "arghavan/file-control": "dev-main",
         "arghavan/inventory": "dev-main",
         "arghavan/logging": "dev-main",
-        "arghavan/php-persian-number-to-words": "dev-main",
         "arghavan/user-role": "dev-main",
         "arghavan/visual-script": "dev-main",
         "barryvdh/laravel-translation-manager": "^0.6.6",

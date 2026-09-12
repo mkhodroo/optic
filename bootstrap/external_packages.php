@@ -13,6 +13,10 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/user-salary/src/',
         'provider' => 'UserSalary\\UserSalaryProvider',
     ],
+    'NumberToWord\\' => [
+        'path' => dirname(__DIR__) . '/../packages/number-to-word/src/',
+        'provider' => 'NumberToWord\\PersianNumberToWords\\',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {
