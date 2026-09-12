@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7ca2fcf7877062779e748713ed78345d896459a3',
+        'reference' => 'f1af4c2c5bc16ec86cc57236325391925181b46e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -24,7 +24,7 @@
         'arghavan/field-builder' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8',
+            'reference' => '3f438e624370bc48bff14e9d02ee7edace286c60',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/field-builder',
             'aliases' => array(
@@ -556,7 +556,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7ca2fcf7877062779e748713ed78345d896459a3',
+            'reference' => 'f1af4c2c5bc16ec86cc57236325391925181b46e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

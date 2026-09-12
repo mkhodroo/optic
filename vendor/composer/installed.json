@@ -43,15 +43,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkhodroo/field-builder.git",
-                "reference": "97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8"
+                "reference": "3f438e624370bc48bff14e9d02ee7edace286c60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/field-builder/zipball/97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8",
-                "reference": "97ee8671c7d7d6c7dcca6cc6b7bc1b14388f00a8",
+                "url": "https://api.github.com/repos/mkhodroo/field-builder/zipball/3f438e624370bc48bff14e9d02ee7edace286c60",
+                "reference": "3f438e624370bc48bff14e9d02ee7edace286c60",
                 "shasum": ""
             },
-            "time": "2026-08-27T15:06:52+00:00",
+            "time": "2026-09-12T18:42:28+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
