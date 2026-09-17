@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9843fa92e3472b69ecc01a83a6f80d02",
+    "content-hash": "4278d562be5def887484e79b6f26e871",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -112,41 +112,6 @@
                 "issues": "https://github.com/mkhodroo/file-uploader/issues"
             },
             "time": "2026-08-20T14:55:44+00:00"
-        },
-        {
-            "name": "arghavan/inventory",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../packages/inventory",
-                "reference": "c56b338159ac81bf39aa1676dfc97a8f4c8f0645"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "StockFlow\\Inventory\\InventoryServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "StockFlow\\Inventory\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "StockFlow\\Inventory\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Inventory management package for Laravel",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "arghavan/logging",
@@ -10768,7 +10733,6 @@
         "arghavan/bale-bot": 20,
         "arghavan/field-builder": 20,
         "arghavan/file-control": 20,
-        "arghavan/inventory": 20,
         "arghavan/logging": 20,
         "arghavan/user-role": 20,
         "arghavan/visual-script": 20

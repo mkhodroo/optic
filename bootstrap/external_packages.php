@@ -17,6 +17,10 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/number-to-word/src/',
         'provider' => 'NumberToWord\\PersianNumberToWords\\',
     ],
+    'StockFlow\\Inventory\\' => [
+        'path' => dirname(__DIR__) . '/../packages/inventory/src/',
+        'provider' => 'StockFlow\\Inventory\\InventoryServiceProvider',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {

@@ -117,44 +117,6 @@
             "install-path": "../arghavan/file-control"
         },
         {
-            "name": "arghavan/inventory",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../packages/inventory",
-                "reference": "c56b338159ac81bf39aa1676dfc97a8f4c8f0645"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "StockFlow\\Inventory\\InventoryServiceProvider"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "StockFlow\\Inventory\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "StockFlow\\Inventory\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Inventory management package for Laravel",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            },
-            "install-path": "../arghavan/inventory"
-        },
-        {
             "name": "arghavan/logging",
             "version": "dev-main",
             "version_normalized": "dev-main",
