@@ -333,6 +333,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'خلاصه اطلاعات تعمیرات',
+                'fieldId' => 'repair_info',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null,
+            ])
+        </div>
+        
         <div class="card">
             @include('SimpleWorkflowView::Core.Form.field-generator', [
                 'fieldName' => 'اطلاعات تعمیرات',
