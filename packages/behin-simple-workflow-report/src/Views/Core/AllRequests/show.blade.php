@@ -408,7 +408,7 @@
                         @if (str_contains($pic->file, 'http'))
                             <a href="[[ $pic->file ]]" download="">دانلود</a>
                         @else
-                            <a href="[[ url('public/' . $pic->file) ]]" download="">دانلود</a>
+                            <a href="[[ url($pic->file) ]]" download="">دانلود</a>
                         @endif
                     </div>
                 @endforeach
