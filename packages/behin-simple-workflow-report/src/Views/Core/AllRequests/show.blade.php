@@ -373,7 +373,6 @@
     </div>
 
     @if (access('مشاهده گزارش تعمیرات در جزئیات پرونده'))
-        
         <div class="card">
             @include('SimpleWorkflowView::Core.Form.field-generator', [
                 'fieldName' => 'اطلاعات تعمیرات',
@@ -416,26 +415,28 @@
             </div>
         </div>
     @endif
-    @if (access('امکان ویرایش تعیین هزینه در جزئیات پرونده'))
-        @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'جدول تعیین هزینه',
-            'fieldId' => 'repair_cost',
-            'fieldClass' => 'col-sm-12',
-            'readOnly' => true,
-            'required' => false,
-            'fieldValue' => null,
-            'fieldValueAlt' => null ?? '',
-        ])
-    @else
-        @include('SimpleWorkflowView::Core.Form.field-generator', [
-            'fieldName' => 'مشاهده تعیین هزینه',
-            'fieldId' => 'repair_cost',
-            'fieldClass' => 'col-sm-12',
-            'readOnly' => true,
-            'required' => false,
-            'fieldValue' => null,
-            'fieldValueAlt' => null ?? '',
-        ])
+    @if(access('مشاهده تعیین هزینه در جزئیات پرونده'))
+        @if (access('امکان ویرایش تعیین هزینه در جزئیات پرونده'))
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'جدول تعیین هزینه',
+                'fieldId' => 'repair_cost',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null ?? '',
+            ])
+        @else
+            @include('SimpleWorkflowView::Core.Form.field-generator', [
+                'fieldName' => 'مشاهده تعیین هزینه',
+                'fieldId' => 'repair_cost',
+                'fieldClass' => 'col-sm-12',
+                'readOnly' => true,
+                'required' => false,
+                'fieldValue' => null,
+                'fieldValueAlt' => null ?? '',
+            ])
+        @endif
     @endif
 
     @if (access('مشاهده اطلاعات پیش فاکتور در جزئیات پرونده'))
