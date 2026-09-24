@@ -95,6 +95,15 @@
                                                 </td>
                                             </tr>
                                     @endif
+                                    @if(access('گزارش تعداد کارها در کارتابل پرسنل'))
+                                            <tr>
+                                                <td>گزارش تعداد کارها در کارتابل پرسنل</td>
+                                                <td class="d-none"></td>
+                                                <td>
+                                                    <a href="{{ route('simpleWorkflow.report.index') }}" class="btn btn-primary btn-sm">مشاهده گزارش</a>
+                                                </td>
+                                            </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
