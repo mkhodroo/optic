@@ -335,7 +335,7 @@
                 align-items: stretch !important;
             }
 
-            .requests-header > div:last-child {
+            .requests-header>div:last-child {
                 width: 100%;
             }
 
@@ -381,8 +381,7 @@
                                     <input type="hidden" name="{{ $key }}" value="{{ $value }}">
                                 @endforeach
 
-                                <button type="submit"
-                                    class="btn btn-light text-primary excel-btn">
+                                <button type="submit" class="btn btn-light text-primary excel-btn">
                                     <i class="fa fa-file-excel-o ml-1"></i>
                                     خروجی اکسل
                                 </button>
@@ -410,11 +409,8 @@
 
                         {{-- Filter Toggle --}}
                         <div class="mb-3">
-                            <button class="btn btn-outline-primary filter-toggle"
-                                type="button"
-                                data-toggle="collapse"
-                                data-target="#advanced-filters"
-                                aria-expanded="{{ $hasActiveFilters ? 'true' : 'false' }}"
+                            <button class="btn btn-outline-primary filter-toggle" type="button" data-toggle="collapse"
+                                data-target="#advanced-filters" aria-expanded="{{ $hasActiveFilters ? 'true' : 'false' }}"
                                 aria-controls="advanced-filters">
 
                                 <i class="fa fa-sliders"></i>
@@ -430,8 +426,7 @@
                         </div>
 
                         {{-- Filters --}}
-                        <div class="collapse {{ $hasActiveFilters ? 'show' : '' }}"
-                            id="advanced-filters">
+                        <div class="collapse {{ $hasActiveFilters ? 'show' : '' }}" id="advanced-filters">
 
                             <div class="card filter-card shadow-sm mb-4">
 
@@ -440,87 +435,69 @@
                                     جستجو و فیلتر درخواست‌ها
                                 </div>
 
-                                <form method="GET"
-                                    action="{{ route('simpleWorkflowReport.all-requests.index') }}">
+                                <form method="GET" action="{{ route('simpleWorkflowReport.all-requests.index') }}">
 
                                     <div class="row g-3">
 
                                         <div class="col-md-3">
                                             <label class="form-label">شماره پرونده</label>
-                                            <input type="text"
-                                                name="case_number"
-                                                value="{{ $filters['case_number'] ?? '' }}"
-                                                class="form-control"
+                                            <input type="text" name="case_number"
+                                                value="{{ $filters['case_number'] ?? '' }}" class="form-control"
                                                 placeholder="مثال: 1234">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">نام مشتری</label>
-                                            <input type="text"
-                                                name="customer_name"
-                                                value="{{ $filters['customer_name'] ?? '' }}"
-                                                class="form-control">
+                                            <input type="text" name="customer_name"
+                                                value="{{ $filters['customer_name'] ?? '' }}" class="form-control">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">موبایل مشتری</label>
-                                            <input type="text"
-                                                name="customer_mobile"
-                                                value="{{ $filters['customer_mobile'] ?? '' }}"
-                                                class="form-control"
+                                            <input type="text" name="customer_mobile"
+                                                value="{{ $filters['customer_mobile'] ?? '' }}" class="form-control"
                                                 dir="ltr">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">نام دستگاه</label>
-                                            <input type="text"
-                                                name="device_name"
-                                                value="{{ $filters['device_name'] ?? '' }}"
-                                                class="form-control">
+                                            <input type="text" name="device_name"
+                                                value="{{ $filters['device_name'] ?? '' }}" class="form-control">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">سریال دستگاه</label>
-                                            <input type="text"
-                                                name="device_serial"
-                                                value="{{ $filters['device_serial'] ?? '' }}"
-                                                class="form-control"
+                                            <input type="text" name="device_serial"
+                                                value="{{ $filters['device_serial'] ?? '' }}" class="form-control"
                                                 dir="ltr">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">نوع تعمیر</label>
-                                            <input type="text"
-                                                name="repair_type"
-                                                value="{{ $filters['repair_type'] ?? '' }}"
-                                                class="form-control">
+                                            <input type="text" name="repair_type"
+                                                value="{{ $filters['repair_type'] ?? '' }}" class="form-control">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">جزئیات نوع تعمیر</label>
-                                            <input type="text"
-                                                name="repair_subtype"
-                                                value="{{ $filters['repair_subtype'] ?? '' }}"
-                                                class="form-control">
+                                            <input type="text" name="repair_subtype"
+                                                value="{{ $filters['repair_subtype'] ?? '' }}" class="form-control">
                                         </div>
 
                                         <div class="col-md-3">
                                             <label class="form-label">تعمیرکار</label>
-                                            <input type="text"
-                                                name="repairman"
-                                                value="{{ $filters['repairman'] ?? '' }}"
-                                                class="form-control">
+                                            <input type="text" name="repairman"
+                                                value="{{ $filters['repairman'] ?? '' }}" class="form-control">
                                         </div>
 
                                         {{-- فیلترهای بعدی شما بدون تغییر --}}
-                                        
+
                                         <div class="col-md-3">
                                             <label class="form-label">
                                                 تعداد نمایش در هر صفحه
                                             </label>
 
-                                            <select name="per_page"
-                                                class="form-select form-control">
+                                            <select name="per_page" class="form-select form-control">
 
                                                 @foreach ([10, 15, 25, 50, 100] as $size)
                                                     <option value="{{ $size }}"
@@ -542,8 +519,7 @@
                                             پاکسازی فیلتر
                                         </a>
 
-                                        <button type="submit"
-                                            class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary">
                                             <i class="fa fa-search ml-1"></i>
                                             اعمال فیلتر
                                         </button>
@@ -575,8 +551,12 @@
                                         <th class="d-none">تاریخ شروع تعمیر</th>
                                         <th class="d-none">تاریخ پایان تعمیر</th>
                                         <th class="d-none">مدت تعمیر</th>
-                                        <th>هزینه تعیین شده</th>
-                                        <th>هزینه‌های دریافت شده</th>
+                                        @if (access('ستون هزینه تعیین شده در لیست تمام درخواست ها'))
+                                            <th>هزینه تعیین شده</th>
+                                        @endif
+                                        @if (access('ستون هزینه دریافت شده در لیست تمام درخواست ها'))
+                                            <th>هزینه‌های دریافت شده</th>
+                                        @endif
                                         <th>آخرین وضعیت</th>
                                         <th class="d-none">گزارش تعمیرات</th>
                                     </tr>
@@ -585,13 +565,11 @@
                                 <tbody>
 
                                     @forelse($rows as $row)
-
                                         <tr>
 
                                             <td>
 
                                                 @if (!empty($row->case_number))
-
                                                     <span class="case-number">
                                                         {{ $row->case_number }}
                                                     </span>
@@ -617,11 +595,8 @@
                                                         </a>
 
                                                     </div>
-
                                                 @else
-
                                                     <span class="text-muted">---</span>
-
                                                 @endif
 
                                             </td>
@@ -669,27 +644,28 @@
                                             <td class="d-none">
                                                 {{ $row->repair_duration ?? '---' }}
                                             </td>
-
-                                            <td>
-                                                @if ($row->repair_cost_formatted)
-                                                    <span class="money-value">
-                                                        {{ $row->repair_cost_formatted }}
-                                                    </span>
-                                                @else
-                                                    ---
-                                                @endif
-                                            </td>
-
-                                            <td>
-                                                @if ($row->received_cost_formatted)
-                                                    <span class="money-value">
-                                                        {{ $row->received_cost_formatted }}
-                                                    </span>
-                                                @else
-                                                    ---
-                                                @endif
-                                            </td>
-
+                                            @if (access('ستون هزینه تعیین شده در لیست تمام درخواست ها'))
+                                                <td>
+                                                    @if ($row->repair_cost_formatted)
+                                                        <span class="money-value">
+                                                            {{ $row->repair_cost_formatted }}
+                                                        </span>
+                                                    @else
+                                                        ---
+                                                    @endif
+                                                </td>
+                                            @endif
+                                            @if (access('ستون هزینه دریافت شده در لیست تمام درخواست ها'))
+                                                <td>
+                                                    @if ($row->received_cost_formatted)
+                                                        <span class="money-value">
+                                                            {{ $row->received_cost_formatted }}
+                                                        </span>
+                                                    @else
+                                                        ---
+                                                    @endif
+                                                </td>
+                                            @endif
                                             <td>
                                                 @if ($row->last_status)
                                                     <span class="status-value">
@@ -723,7 +699,6 @@
                                             </td>
 
                                         </tr>
-
                                     @endforelse
 
                                 </tbody>
