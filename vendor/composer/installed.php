@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c42b47d74752d2027aba9130ea5009dd34cfcad8',
+        'reference' => 'e810db771ab1d6c7c468f2bd3b46c70e66f36c19',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,17 +49,6 @@
             'reference' => 'bfa8555fe71a2183834fb2c40df5e7d82dc94200',
             'type' => 'library',
             'install_path' => __DIR__ . '/../arghavan/logging',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'dev_requirement' => false,
-        ),
-        'arghavan/user-role' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../arghavan/user-role',
             'aliases' => array(
                 0 => '9999999-dev',
             ),
@@ -547,7 +536,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c42b47d74752d2027aba9130ea5009dd34cfcad8',
+            'reference' => 'e810db771ab1d6c7c468f2bd3b46c70e66f36c19',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -160,46 +160,6 @@
             "install-path": "../arghavan/logging"
         },
         {
-            "name": "arghavan/user-role",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkhodroo/user-role.git",
-                "reference": "9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/user-role/zipball/9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d",
-                "reference": "9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d",
-                "shasum": ""
-            },
-            "time": "2026-08-20T12:51:24+00:00",
-            "default-branch": true,
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "BehinUserRoles\\": "src/"
-                },
-                "files": [
-                    "src/Helper/helper.php"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "mkhodroo",
-                    "email": "mkhodroo@yahoo.com"
-                }
-            ],
-            "description": "defining roles of users and accessibility of each role. it can use codes in views and controllers.",
-            "support": {
-                "source": "https://github.com/mkhodroo/user-role/tree/main",
-                "issues": "https://github.com/mkhodroo/user-role/issues"
-            },
-            "install-path": "../arghavan/user-role"
-        },
-        {
             "name": "arghavan/visual-script",
             "version": "dev-main",
             "version_normalized": "dev-main",

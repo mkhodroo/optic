@@ -41,7 +41,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'f83ed111c2f97a0449abf067f157f418' => __DIR__ . '/..' . '/pestphp/pest/src/Functions.php',
         '7d2876738dc0328edeb8a103c76cd8e7' => __DIR__ . '/..' . '/pestphp/pest/src/Pest.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
-        'a50a2d7cf3f9479ae7c99df78da7e152' => __DIR__ . '/..' . '/arghavan/user-role/src/Helper/helper.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'e4e590a9b5afe940db71ee1662c02677' => __DIR__ . '/..' . '/morilog/jalali/src/helpers.php',
@@ -742,7 +741,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'BehinUserRoles\\' =>
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-user-roles/src',
-            1 => __DIR__ . '/..' . '/arghavan/user-role/src',
         ),
         'BehinLogging\\' =>
         array (
@@ -844,16 +842,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'BehinLogging\\Middlewares\\Logging' => __DIR__ . '/..' . '/arghavan/logging/src/Middlewares/Logging.php',
         'BehinLogging\\Models\\UserActionLog' => __DIR__ . '/..' . '/arghavan/logging/src/Models/UserActionLog.php',
         'BehinLogging\\ServiceProvider' => __DIR__ . '/..' . '/arghavan/logging/src/ServiceProvider.php',
-        'BehinUserRoles\\Controllers\\DepartmentController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/DepartmentController.php',
-        'BehinUserRoles\\Controllers\\GetMethodsController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/GetMethodsController.php',
-        'BehinUserRoles\\Controllers\\GetRoleController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/GetRoleController.php',
-        'BehinUserRoles\\Controllers\\UserController' => __DIR__ . '/..' . '/arghavan/user-role/src/Controllers/UserController.php',
-        'BehinUserRoles\\Models\\Department' => __DIR__ . '/..' . '/arghavan/user-role/src/Models/Department.php',
-        'BehinUserRoles\\Models\\Method' => __DIR__ . '/..' . '/arghavan/user-role/src/Models/Method.php',
-        'BehinUserRoles\\Models\\Role' => __DIR__ . '/..' . '/arghavan/user-role/src/Models/Role.php',
-        'BehinUserRoles\\Models\\User' => __DIR__ . '/..' . '/arghavan/user-role/src/Models/User.php',
-        'BehinUserRoles\\Models\\UserDepartment' => __DIR__ . '/..' . '/arghavan/user-role/src/Models/UserDepartment.php',
-        'BehinUserRoles\\UserRolesServiceProvider' => __DIR__ . '/..' . '/arghavan/user-role/src/UserRolesServiceProvider.php',
         'Behin\\SimpleWorkflowReport\\Controllers\\Core\\AllRequestsReportController' => __DIR__ . '/../..' . '/packages/behin-simple-workflow-report/src/Controllers/Core/AllRequestsReportController.php',
         'Behin\\SimpleWorkflowReport\\Controllers\\Core\\CustomersReportController' => __DIR__ . '/../..' . '/packages/behin-simple-workflow-report/src/Controllers/Core/CustomersReportController.php',
         'Behin\\SimpleWorkflowReport\\Controllers\\Core\\FinReportController' => __DIR__ . '/../..' . '/packages/behin-simple-workflow-report/src/Controllers/Core/FinReportController.php',

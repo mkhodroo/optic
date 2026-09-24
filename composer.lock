@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4278d562be5def887484e79b6f26e871",
+    "content-hash": "188f662bb0fa591ccf21adf3ede2acf3",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -152,43 +152,6 @@
                 "issues": "https://github.com/mkhodroo/logging/issues"
             },
             "time": "2026-09-10T06:20:10+00:00"
-        },
-        {
-            "name": "arghavan/user-role",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkhodroo/user-role.git",
-                "reference": "9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/user-role/zipball/9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d",
-                "reference": "9ed9760b7f02a0f3dc251fe69ad657bb7361bd0d",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "BehinUserRoles\\": "src/"
-                },
-                "files": [
-                    "src/Helper/helper.php"
-                ]
-            },
-            "authors": [
-                {
-                    "name": "mkhodroo",
-                    "email": "mkhodroo@yahoo.com"
-                }
-            ],
-            "description": "defining roles of users and accessibility of each role. it can use codes in views and controllers.",
-            "support": {
-                "source": "https://github.com/mkhodroo/user-role/tree/main",
-                "issues": "https://github.com/mkhodroo/user-role/issues"
-            },
-            "time": "2026-08-20T12:51:24+00:00"
         },
         {
             "name": "arghavan/visual-script",
@@ -10734,7 +10697,6 @@
         "arghavan/field-builder": 20,
         "arghavan/file-control": 20,
         "arghavan/logging": 20,
-        "arghavan/user-role": 20,
         "arghavan/visual-script": 20
     },
     "prefer-stable": true,

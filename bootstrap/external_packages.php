@@ -21,6 +21,10 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/inventory/src/',
         'provider' => 'StockFlow\\Inventory\\InventoryServiceProvider',
     ],
+    'BehinUserRoles\\' => [
+        'path' => dirname(__DIR__) . '/../packages/user-role/src/',
+        'provider' => 'BehinUserRoles\\UserRolesServiceProvider',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {

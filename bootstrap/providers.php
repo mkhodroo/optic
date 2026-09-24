@@ -19,6 +19,7 @@ $providers = [
     UserSalary\UserSalaryProvider::class,
     UserNotification\UserNotificationProvider::class,
     StockFlow\Inventory\InventoryServiceProvider::class,
+    BehinUserRoles\UserRolesServiceProvider::class,
 ];
 
 return array_values(array_filter($providers, function ($provider) {
