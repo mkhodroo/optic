@@ -1,5 +1,5 @@
-<li class="mr-2">
+<li class="nav-item">
     <a class="btn btn-sm btn-info" href="{{ route('user-profile.profile') }}">
-        <i class="fa fa-user"></i>
+        <i class="fa fa-user text-white"></i>
     </a>
 </li>

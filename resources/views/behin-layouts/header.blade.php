@@ -2,91 +2,44 @@
 use App\CustomClasses\Access;
 ?>
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand" style="background-color: #263238; color: #fff; border-bottom: none;">
-
-    <!-- Left navbar links -->
-    <ul class="navbar-nav align-items-center">
-        <!-- Menu Toggle -->
+<nav class="main-header navbar navbar-expand">
+    <ul class="navbar-nav optic-header-start align-items-center">
         <li class="nav-item">
-            <a class="nav-link text-white" data-widget="pushmenu" href="#">
-                <i class="material-icons">menu</i>
+            <a class="nav-link" data-widget="pushmenu" href="#" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
             </a>
         </li>
-
-        <!-- Send SMS -->
+        <li class="nav-item optic-brand d-none d-md-flex">
+            <span class="optic-brand-mark"><i class="fa fa-layer-group"></i></span>
+            <span>پنل مدیریت</span>
+        </li>
+        <li class="nav-item optic-header-divider d-none d-lg-block"></li>
         @if (access('send-sms'))
-            <li class="nav-item">
-                <a href="{{ url('admin/send-sms') }}" class="btn btn-sm btn-outline-light ms-2">
-                    <i class="material-icons" style="font-size:18px;">sms</i>
-                    ارسال پیامک
+            <li class="nav-item d-none d-lg-block">
+                <a href="{{ url('admin/send-sms') }}" class="btn btn-sm btn-primary">
+                    <i class="fa fa-paper-plane"></i> ارسال پیامک
                 </a>
             </li>
         @endif
-
-        <!-- Test Notification -->
-        <li class="nav-item d-none d-md-block">
-            <a href="{{ route('send-notification') }}" class="btn btn-sm btn-warning">
+        <li class="nav-item d-none d-xl-block">
+            <a href="{{ route('send-notification') }}" class="btn btn-sm btn-light text-warning" title="تست نوتیفیکیشن">
                 <i class="fa fa-bell"></i>
-                تست نوتیفیکیشن
             </a>
         </li>
     </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ms-auto align-items-center" >
-
-        <!-- Refresh -->
-        <li class="mr-2">
-            <button type="button" class="btn btn-sm btn-outline-light" onclick="window.location.reload()" ondblclick="{{ url('build-app') }}">
-                <i class="fa fa-refresh"></i>
-                {{ __('Refresh') }}
+    <ul class="navbar-nav optic-header-actions align-items-center">
+        <li class="nav-item">
+            <button type="button" class="btn btn-sm btn-light" onclick="window.location.reload()" ondblclick="{{ url('build-app') }}" title="بارگذاری مجدد">
+                <i class="fa fa-refresh"></i><span class="ms-1"></span>
             </button>
         </li>
-
-        <!-- Home -->
-        <li class="mr-2">
-            <a href="{{ url('admin') }}" class="btn btn-sm btn-primary">
-                <i class="fa fa-home"></i>
-            </a>
+        <li class="nav-item">
+            <a href="{{ url('admin') }}" class="btn btn-sm btn-primary" title="صفحه اصلی"><i class="fa fa-home text-white"></i></a>
         </li>
-
-        <!-- Todo List -->
         @include('TodoListViews::partial-views.todo-list-icon')
-
-        <!-- User Profile -->
         @include('UserProfileViews::partial-views.user-profile-icon')
-
-        <!-- Logout -->
-        <li class="mr-2">
-            <button class="btn btn-sm btn-danger" onclick="logout()">
-                <i class="fa fa-sign-out"></i>
-            </button>
+        <li class="nav-item">
+            <button class="btn btn-sm btn-danger" onclick="logout()" title="خروج"><i class="fa fa-sign-out text-white"></i></button>
         </li>
     </ul>
 </nav>
-
-<!-- Material Icons -->
-{{-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> --}}
-
-<style>
-    .navbar .btn {
-        border-radius: 8px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-    .navbar .btn-outline-light:hover {
-        background: rgba(255,255,255,0.1);
-        color: #fff;
-    }
-    .navbar .btn-warning {
-        color: #000;
-        font-weight: 600;
-    }
-    .navbar .nav-link:hover {
-        background: rgba(255,255,255,0.08);
-        border-radius: 8px;
-    }
-    .navbar-expand{
-        justify-content:space-between !important;
-    }
-</style>

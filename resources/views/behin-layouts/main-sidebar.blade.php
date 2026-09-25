@@ -1,13 +1,9 @@
-<aside class="main-sidebar elevation-4" style="background: #263238; color: #fff; min-height: 100vh;">
+<aside class="main-sidebar elevation-4">
 
     <!-- User Profile -->
-    <div class="sidebar p-3" style="direction: ltr;">
+    <div class="sidebar">
         <div style="direction: rtl;">
-            <div class="user-panel d-flex align-items-center mb-4 p-2 rounded" style="background: rgba(255,255,255,0.05);">
-                <div class="image me-2">
-                    <img src="{{ url('public/behin/behin-dist/dist/img/avatar5.png') }}"
-                         class="rounded-circle" alt="User Image" width="45" height="45">
-                </div>
+            <div class="user-panel d-flex align-items-center">
                 <div class="info">
                     <span class="fw-bold">{{ auth()->user()->name ?? 'کاربر' }}</span>
                 </div>
@@ -19,12 +15,12 @@
                     @foreach (config('sidebar.menu') as $menu)
                         @if ( access('منو >>' .$menu['fa_name']) )
                             <li class="nav-item">
-                                <a href="#" class="nav-link d-flex align-items-center" style="color: #fff; padding: 10px 15px;">
-                                    
+                                <a href="#" class="nav-link optic-nav-link">
+                                    <i class="nav-icon fa fa-{{ $menu['icon'] }}"></i>
                                     <span>{{ $menu['fa_name'] }}</span>
-                                    
+                                    <i class="nav-arrow fa fa-angle-left left"></i>
                                 </a>
-                                <ul class="nav nav-treeview ms-3" style="border-left: 2px solid rgba(255,255,255,0.1); margin-left: 10px;">
+                                <ul class="nav nav-treeview">
                                     @foreach ($menu['submenu'] as $submenu)
                                         @if ( access('منو >>' .$menu['fa_name'] . '>>' . $submenu['fa_name'] ) )
                                             <li class="nav-item">
@@ -38,8 +34,9 @@
                                                                 {{ url($submenu['route-url']) }} 
                                                             @endif"
                                                     class="nav-link" 
-                                                    style="color: #cfd8dc; padding: 8px 15px; transition: all 0.3s ease;">
+                                                    >
                                                     
+                                                    <i class="nav-icon fa fa-circle"></i>
                                                     <span>{{ $submenu['fa_name'] }}</span>
                                                 </a>
                                             </li>
@@ -54,22 +51,3 @@
         </div>
     </div>
 </aside>
-
-<!-- Material Icons -->
-{{-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> --}}
-
-<style>
-    .nav-link {
-        color: #bfbfbf !important;
-        border-radius: 8px;
-    }
-    .nav-link:hover {
-        background: rgba(255,255,255,0.08);
-        color: #fff !important;
-        border-radius: 8px;
-    }
-    .nav-treeview .nav-link:hover {
-        background: rgba(255,255,255,0.05);
-        padding-left: 20px !important;
-    }
-</style>

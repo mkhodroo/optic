@@ -178,7 +178,7 @@
              * @type {string}
              */
             
-            var Template = "\n<div id=\"plotId\" class=\"datepicker-plot-area {{cssClass}}\">\n    {{#navigator.enabled}}\n        <div data-navigator class=\"datepicker-navigator\">\n            <div class=\"pwt-btn pwt-btn-next\">{{navigator.text.btnNextText}}</div>\n            <div class=\"pwt-btn pwt-btn-switch\">{{navigator.switch.text}}</div>\n            <div class=\"pwt-btn pwt-btn-prev\">{{navigator.text.btnPrevText}}</div>\n        </div>\n    {{/navigator.enabled}}\n    <div class=\"datepicker-grid-view\" >\n    {{#days.enabled}}\n        {{#days.viewMode}}\n        <div class=\"datepicker-day-view\" >    \n            <div class=\"month-grid-box\">\n                <div class=\"header\">\n                    <div class=\"title\"></div>\n                    <div class=\"header-row\">\n                        {{#weekdays.list}}\n                            <div class=\"header-row-cell\">{{.}}</div>\n                        {{/weekdays.list}}\n                    </div>\n                </div>    \n                <table cellspacing=\"0\" class=\"table-days\">\n                    <tbody>\n                        {{#days.list}}\n                           \n                            <tr>\n                                {{#.}}\n                                    {{#enabled}}\n                                        <td data-date=\"{{dataDate}}\" data-unix=\"{{dataUnix}}\" >\n                                            <span  class=\"{{#otherMonth}}other-month{{/otherMonth}}\">{{title}}</span>\n                                            {{#altCalendarShowHint}}\n                                            <i  class=\"alter-calendar-day\">{{alterCalTitle}}</i>\n                                            {{/altCalendarShowHint}}\n                                        </td>\n                                    {{/enabled}}\n                                    {{^enabled}}\n                                        <td data-date=\"{{dataDate}}\" data-unix=\"{{dataUnix}}\" class=\"disabled\">\n                                            <span class=\"{{#otherMonth}}other-month{{/otherMonth}}\">{{title}}</span>\n                                            {{#altCalendarShowHint}}\n                                            <i  class=\"alter-calendar-day\">{{alterCalTitle}}</i>\n                                            {{/altCalendarShowHint}}\n                                        </td>\n                                    {{/enabled}}\n                                    \n                                {{/.}}\n                            </tr>\n                        {{/days.list}}\n                    </tbody>\n                </table>\n            </div>\n        </div>\n        {{/days.viewMode}}\n    {{/days.enabled}}\n    \n    {{#month.enabled}}\n        {{#month.viewMode}}\n            <div class=\"datepicker-month-view\">\n                {{#month.list}}\n                    {{#enabled}}               \n                        <div data-year=\"{{year}}\" data-month=\"{{dataMonth}}\" class=\"month-item {{#selected}}selected{{/selected}}\">{{title}}</small></div>\n                    {{/enabled}}\n                    {{^enabled}}               \n                        <div data-year=\"{{year}}\"data-month=\"{{dataMonth}}\" class=\"month-item month-item-disable {{#selected}}selected{{/selected}}\">{{title}}</small></div>\n                    {{/enabled}}\n                {{/month.list}}\n            </div>\n        {{/month.viewMode}}\n    {{/month.enabled}}\n    \n    {{#year.enabled }}\n        {{#year.viewMode }}\n            <div class=\"datepicker-year-view\" >\n                {{#year.list}}\n                    {{#enabled}}\n                        <div data-year=\"{{dataYear}}\" class=\"year-item {{#selected}}selected{{/selected}}\">{{title}}</div>\n                    {{/enabled}}\n                    {{^enabled}}\n                        <div data-year=\"{{dataYear}}\" class=\"year-item year-item-disable {{#selected}}selected{{/selected}}\">{{title}}</div>\n                    {{/enabled}}                    \n                {{/year.list}}\n            </div>\n        {{/year.viewMode }}\n    {{/year.enabled }}\n    \n    </div>\n    {{#time}}\n    {{#enabled}}\n    <div class=\"datepicker-time-view\">\n        {{#hour.enabled}}\n            <div class=\"hour time-segment\" data-time-key=\"hour\">\n                <div class=\"up-btn\" data-time-key=\"hour\">\u25B2</div>\n                <input disabled value=\"{{hour.title}}\" type=\"text\" placeholder=\"hour\" class=\"hour-input\">\n                <div class=\"down-btn\" data-time-key=\"hour\">\u25BC</div>                    \n            </div>       \n            <div class=\"divider\">\n                <span>:</span>\n            </div>\n        {{/hour.enabled}}\n        {{#minute.enabled}}\n            <div class=\"minute time-segment\" data-time-key=\"minute\" >\n                <div class=\"up-btn\" data-time-key=\"minute\">\u25B2</div>\n                <input disabled value=\"{{minute.title}}\" type=\"text\" placeholder=\"minute\" class=\"minute-input\">\n                <div class=\"down-btn\" data-time-key=\"minute\">\u25BC</div>\n            </div>        \n            <div class=\"divider second-divider\">\n                <span>:</span>\n            </div>\n        {{/minute.enabled}}\n        {{#second.enabled}}\n            <div class=\"second time-segment\" data-time-key=\"second\"  >\n                <div class=\"up-btn\" data-time-key=\"second\" >\u25B2</div>\n                <input disabled value=\"{{second.title}}\"  type=\"text\" placeholder=\"second\" class=\"second-input\">\n                <div class=\"down-btn\" data-time-key=\"second\" >\u25BC</div>\n            </div>\n            <div class=\"divider meridian-divider\"></div>\n            <div class=\"divider meridian-divider\"></div>\n        {{/second.enabled}}\n        {{#meridian.enabled}}\n            <div class=\"meridian time-segment\" data-time-key=\"meridian\" >\n                <div class=\"up-btn\" data-time-key=\"meridian\">\u25B2</div>\n                <input disabled value=\"{{meridian.title}}\" type=\"text\" class=\"meridian-input\">\n                <div class=\"down-btn\" data-time-key=\"meridian\">\u25BC</div>\n            </div>\n        {{/meridian.enabled}}\n    </div>\n    {{/enabled}}\n    {{/time}}\n    \n    {{#toolbox}}\n    {{#enabled}}\n    <div class=\"toolbox\">\n        {{#toolbox.submitButton.enabled}}\n            <div class=\"pwt-btn-submit\">{{submitButtonText}}</div>\n        {{/toolbox.submitButton.enabled}}        \n        {{#toolbox.todayButton.enabled}}\n            <div class=\"pwt-btn-today\">{{todayButtonText}}</div>\n        {{/toolbox.todayButton.enabled}}        \n        {{#toolbox.calendarSwitch.enabled}}\n            <div class=\"pwt-btn-calendar\">{{calendarSwitchText}}</div>\n        {{/toolbox.calendarSwitch.enabled}}\n    </div>\n    {{/enabled}}\n    {{^enabled}}\n        {{#onlyTimePicker}}\n        <div class=\"toolbox\">\n            <div class=\"pwt-btn-submit\">{{submitButtonText}}</div>\n        </div>\n        {{/onlyTimePicker}}\n    {{/enabled}}\n    {{/toolbox}}\n</div>\n";
+            var Template = "\n<div id=\"plotId\" class=\"datepicker-plot-area {{cssClass}}\">\n    {{#navigator.enabled}}\n        <div data-navigator class=\"datepicker-navigator\">\n            <div class=\"pwt-btn pwt-btn-next\">{{navigator.text.btnNextText}}</div>\n            <div class=\"pwt-btn pwt-btn-switch\">{{navigator.switch.text}}</div>\n            <div class=\"pwt-btn pwt-btn-prev\">{{navigator.text.btnPrevText}}</div>\n        </div>\n    {{/navigator.enabled}}\n    <div class=\"datepicker-grid-view\" >\n    {{#days.enabled}}\n        {{#days.viewMode}}\n        <div class=\"datepicker-day-view\" >    \n            <div class=\"month-grid-box\">\n                <div class=\"header\">\n                    <div class=\"title\"></div>\n                    <div class=\"header-row\">\n                        {{#weekdays.list}}\n                            <div class=\"header-row-cell\">{{.}}</div>\n                        {{/weekdays.list}}\n                    </div>\n                </div>    \n                <table cellspacing=\"0\" class=\"table-days\">\n                    <tbody>\n                        {{#days.list}}\n                           \n                            <tr>\n                                {{#.}}\n                                    {{#enabled}}\n                                        <td data-date=\"{{dataDate}}\" data-unix=\"{{dataUnix}}\" >\n                                            <span  class=\"{{#otherMonth}}other-month{{/otherMonth}}\">{{title}}</span>\n                                            {{#altCalendarShowHint}}\n                                            <i  class=\"alter-calendar-day\">{{alterCalTitle}}</i>\n                                            {{/altCalendarShowHint}}\n                                        </td>\n                                    {{/enabled}}\n                                    {{^enabled}}\n                                        <td data-date=\"{{dataDate}}\" data-unix=\"{{dataUnix}}\" class=\"disabled\">\n                                            <span class=\"{{#otherMonth}}other-month{{/otherMonth}}\">{{title}}</span>\n                                            {{#altCalendarShowHint}}\n                                            <i  class=\"alter-calendar-day\">{{alterCalTitle}}</i>\n                                            {{/altCalendarShowHint}}\n                                        </td>\n                                    {{/enabled}}\n                                    \n                                {{/.}}\n                            </tr>\n                        {{/days.list}}\n                    </tbody>\n                </table>\n            </div>\n        </div>\n        {{/days.viewMode}}\n    {{/days.enabled}}\n    \n    {{#month.enabled}}\n        {{#month.viewMode}}\n            <div class=\"datepicker-month-view\">\n                {{#month.list}}\n                    {{#enabled}}               \n                        <div data-year=\"{{year}}\" data-month=\"{{dataMonth}}\" class=\"month-item {{#selected}}selected{{/selected}}\">{{title}}</small></div>\n                    {{/enabled}}\n                    {{^enabled}}               \n                        <div data-year=\"{{year}}\"data-month=\"{{dataMonth}}\" class=\"month-item month-item-disable {{#selected}}selected{{/selected}}\">{{title}}</small></div>\n                    {{/enabled}}\n                {{/month.list}}\n            </div>\n        {{/month.viewMode}}\n    {{/month.enabled}}\n    \n    {{#year.enabled }}\n        {{#year.viewMode }}\n            <div class=\"datepicker-year-view\" >\n                {{#year.list}}\n                    {{#enabled}}\n                        <div data-year=\"{{dataYear}}\" class=\"year-item {{#selected}}selected{{/selected}}\">{{title}}</div>\n                    {{/enabled}}\n                    {{^enabled}}\n                        <div data-year=\"{{dataYear}}\" class=\"year-item year-item-disable {{#selected}}selected{{/selected}}\">{{title}}</div>\n                    {{/enabled}}                    \n                {{/year.list}}\n            </div>\n        {{/year.viewMode }}\n    {{/year.enabled }}\n    \n    </div>\n    {{#time}}\n    {{#enabled}}\n    <div class=\"datepicker-time-view\">\n        {{#hour.enabled}}\n            <div class=\"hour time-segment\" data-time-key=\"hour\">\n                <select class=\"hour-select\" data-time-key=\"hour\">\n                    {{#hour.list}}\n                    <option value=\"{{value}}\" {{#selected}}selected{{/selected}}>{{title}}</option>\n                    {{/hour.list}}\n                </select>                    \n            </div>       \n            <div class=\"divider\">\n                <span>:</span>\n            </div>\n        {{/hour.enabled}}\n        {{#minute.enabled}}\n            <div class=\"minute time-segment\" data-time-key=\"minute\" >\n                <select class=\"minute-select\" data-time-key=\"minute\">\n                    {{#minute.list}}\n                    <option value=\"{{value}}\" {{#selected}}selected{{/selected}}>{{title}}</option>\n                    {{/minute.list}}\n                </select>\n            </div>        \n            <div class=\"divider second-divider\">\n                <span>:</span>\n            </div>\n        {{/minute.enabled}}\n        {{#second.enabled}}\n            <div class=\"second time-segment\" data-time-key=\"second\"  >\n                <div class=\"up-btn\" data-time-key=\"second\" >\u25B2</div>\n                <input disabled value=\"{{second.title}}\"  type=\"text\" placeholder=\"second\" class=\"second-input\">\n                <div class=\"down-btn\" data-time-key=\"second\" >\u25BC</div>\n            </div>\n            <div class=\"divider meridian-divider\"></div>\n            <div class=\"divider meridian-divider\"></div>\n        {{/second.enabled}}\n        {{#meridian.enabled}}\n            <div class=\"meridian time-segment\" data-time-key=\"meridian\" >\n                <div class=\"up-btn\" data-time-key=\"meridian\">\u25B2</div>\n                <input disabled value=\"{{meridian.title}}\" type=\"text\" class=\"meridian-input\">\n                <div class=\"down-btn\" data-time-key=\"meridian\">\u25BC</div>\n            </div>\n        {{/meridian.enabled}}\n    </div>\n    {{/enabled}}\n    {{/time}}\n    \n    {{#toolbox}}\n    {{#enabled}}\n    <div class=\"toolbox\">\n        {{#toolbox.submitButton.enabled}}\n            <div class=\"pwt-btn-submit\">{{submitButtonText}}</div>\n        {{/toolbox.submitButton.enabled}}        \n        {{#toolbox.todayButton.enabled}}\n            <div class=\"pwt-btn-today\">{{todayButtonText}}</div>\n        {{/toolbox.todayButton.enabled}}        \n        {{#toolbox.calendarSwitch.enabled}}\n            <div class=\"pwt-btn-calendar\">{{calendarSwitchText}}</div>\n        {{/toolbox.calendarSwitch.enabled}}\n    </div>\n    {{/enabled}}\n    {{^enabled}}\n        {{#onlyTimePicker}}\n        <div class=\"toolbox\">\n            <div class=\"pwt-btn-submit\">{{submitButtonText}}</div>\n        </div>\n        {{/onlyTimePicker}}\n    {{/enabled}}\n    {{/toolbox}}\n</div>\n";
 
             module.exports = Template;
 
@@ -1352,17 +1352,21 @@
                  <div class="datepicker-time-view">
                  {{#hour.enabled}}
                  <div class="hour time-segment" data-time-key="hour">
-                 <div class="up-btn" data-time-key="hour">></div>
-                 <input value="{{hour.title}}" type="text" placeholder="hour" class="hour-input">
-                 <div class="down-btn" data-time-key="hour">▼</div>
+                 <select class="hour-select" data-time-key="hour">
+                 {{#hour.list}}
+                 <option value="{{value}}" {{#selected}}selected{{/selected}}>{{title}}</option>
+                 {{/hour.list}}
+                 </select>
                  </div>
                  <div class="divider">:</div>
                  {{/hour.enabled}}
                  {{#minute.enabled}}
                  <div class="minute time-segment" data-time-key="minute" >
-                 <div class="up-btn" data-time-key="minute">▲</div>
-                 <input value="{{minute.title}}" type="text" placeholder="minute" class="minute-input">
-                 <div class="down-btn" data-time-key="minute">▼</div>
+                 <select class="minute-select" data-time-key="minute">
+                 {{#minute.list}}
+                 <option value="{{value}}" {{#selected}}selected{{/selected}}>{{title}}</option>
+                 {{/minute.list}}
+                 </select>
                  </div>
                  <div class="divider second-divider">:</div>
                  {{/minute.enabled}}
@@ -1719,7 +1723,8 @@
                         var persianDatePickerTimeRegex = '^([0-1][0-9]|2[0-3]):([0-5][0-9])(?::([0-5][0-9]))?$';
                         var garegurianDate = null,
                             $inputElem = $(this.elem),
-                            inputValue = void 0;
+                            inputValue = void 0,
+                            hasTimePart = false;
 
                         // Define input value by check inline mode and input mode
 
@@ -1744,15 +1749,30 @@
                         } else {
                             if (this.model.options.initialValueType === 'persian' && inputValue) {
                                 var parse = new PersianDateParser();
-                                var pd = new persianDate(parse.parse(inputValue)).valueOf();
+                                var parsedArray = parse.parse(inputValue);
+                                var pd = new persianDate(parsedArray).valueOf();
                                 garegurianDate = new Date(pd).valueOf();
+                                hasTimePart = !!parsedArray && parsedArray.length > 3;
                             } else if (this.model.options.initialValueType === 'unix' && inputValue) {
                                 garegurianDate = parseInt(inputValue);
+                                hasTimePart = true;
                             } else if (inputValue) {
                                 garegurianDate = new Date(inputValue).valueOf();
+                                hasTimePart = /([0-1][0-9]|2[0-3]):[0-5][0-9]/.test(inputValue);
                             }
                             if (garegurianDate && garegurianDate != 'undefined') {
-                                this.initialUnix = garegurianDate;
+                                var initialDate = new Date(garegurianDate);
+                                if (!hasTimePart) {
+                                    /**
+                                     * @desc when initial value has no time part,
+                                     * keep current time of day instead of 00:00
+                                     */
+                                    var nowDate = new Date();
+                                    initialDate.setHours(nowDate.getHours());
+                                    initialDate.setMinutes(nowDate.getMinutes());
+                                    initialDate.setSeconds(nowDate.getSeconds());
+                                }
+                                this.initialUnix = initialDate.valueOf();
                             } else {
                                 this.initialUnix = new Date().valueOf();
                             }
@@ -2025,6 +2045,38 @@
                                     stopRepeating();
                                 }
                             );
+
+                            // HOUR & MINUTE DROPDOWNS
+                            $(document).on(
+                                'change',
+                                '#' + that.model.view.id + ' .datepicker-time-view select.hour-select, #' + that.model.view.id + ' .datepicker-time-view select.minute-select',
+                                function () {
+
+                                    const timekey = $(this).data('time-key');
+                                    let value = parseInt($(this).val(), 10);
+
+                                    if (isNaN(value)) {
+                                        return;
+                                    }
+
+                                    if (timekey === 'hour' && that.model.options.timePicker.meridian.enabled) {
+                                        const isPM = that.model.state.view.hour >= 12;
+                                        if (isPM && value < 12) {
+                                            value = value + 12;
+                                        } else if (!isPM && value === 12) {
+                                            value = 0;
+                                        }
+                                    }
+
+                                    that.model.state.setViewDateTime(timekey, value);
+                                    that.model.state.setSelectedDateTime(timekey, value);
+                                    that.model.view.renderTimePartial();
+                                    that.model.view.markSelectedDay();
+                                    that.model.options.onSelect(
+                                        that.model.state.selected.unixDate
+                                    );
+                                }
+                            );
                         }
 
 
@@ -2230,7 +2282,7 @@
 
                     this.pattern = {
                         iso: /^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z)?$/g,
-                        jalali: /^[1-4]\d{3}(\/|-|\.)((0?[1-6](\/|-|\.)((3[0-1])|([1-2][0-9])|(0?[1-9])))|((1[0-2]|(0?[7-9]))(\/|-|\.)(30|([1-2][0-9])|(0?[1-9]))))$/g
+                        jalali: /^[1-4]\d{3}(\/|-|\.)((0?[1-6](\/|-|\.)((3[0-1])|([1-2][0-9])|(0?[1-9])))|((1[0-2]|(0?[7-9]))(\/|-|\.)(30|([1-2][0-9])|(0?[1-9]))))(\s+(2[0-3]|[01][0-9]):([0-5][0-9])(:([0-5][0-9]))?)?$/g
                     };
                 }
 
@@ -2252,7 +2304,7 @@
                         inputString = inputString.toEnglishDigits();
                         if (jalaliPat.test(inputString)) {
                             /* eslint-disable no-useless-escape */
-                            persianDateArray = inputString.split(/\/|-|\,|\./).map(Number);
+                            persianDateArray = inputString.split(/\/|-|\,|\.|\:|\s+/).map(Number);
                             /* eslint-enable no-useless-escape */
                             return persianDateArray;
                         } else if (isoPat.test(inputString)) {
@@ -3349,21 +3401,71 @@
                             };
                         }
 
+                        var meridianEnabled = this.model.options.timePicker.meridian.enabled;
                         var hourTitle = void 0;
-                        if (this.model.options.timePicker.meridian.enabled) {
+                        if (meridianEnabled) {
                             hourTitle = this.model.state.view.dateObject.format('hh');
                         } else {
                             hourTitle = this.model.state.view.dateObject.format('HH');
+                        }
+                        var minuteTitle = this.model.state.view.dateObject.format('mm');
+
+                        /**
+                         * format() output may contain persian digits in fa locale,
+                         * so detect it and localize option titles (option values always stay latin digits)
+                         */
+                        var usePersianDigits = !/^[0-9]/.test(hourTitle);
+                        var faDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+                        var zeroPad = function (num) {
+                            return ('0' + num).slice(-2);
+                        };
+                        var localizeDigits = function (str) {
+                            if (!usePersianDigits) {
+                                return str;
+                            }
+                            return str.replace(/[0-9]/g, function (d) {
+                                return faDigits[parseInt(d, 10)];
+                            });
+                        };
+
+                        var currentHour24 = this.model.state.view.hour;
+                        var currentMinute = this.model.state.view.minute;
+                        var currentDisplayHour = meridianEnabled ? (currentHour24 + 11) % 12 + 1 : currentHour24;
+
+                        var hourList = [];
+                        var hourStart = meridianEnabled ? 1 : 0;
+                        var hourEnd = meridianEnabled ? 12 : 23;
+                        for (var h = hourStart; h <= hourEnd; h++) {
+                            var hourValue = zeroPad(h);
+                            hourList.push({
+                                title: localizeDigits(hourValue),
+                                value: hourValue,
+                                selected: h === currentDisplayHour
+                            });
+                        }
+
+                        var minuteList = [];
+                        for (var m = 0; m <= 59; m++) {
+                            var minuteValue = zeroPad(m);
+                            minuteList.push({
+                                title: localizeDigits(minuteValue),
+                                value: minuteValue,
+                                selected: m === currentMinute
+                            });
                         }
 
                         return {
                             enabled: isEnabled,
                             hour: {
                                 title: hourTitle,
+                                value: zeroPad(currentDisplayHour),
+                                list: hourList,
                                 enabled: this.model.options.timePicker.hour.enabled
                             },
                             minute: {
-                                title: this.model.state.view.dateObject.format('mm'),
+                                title: minuteTitle,
+                                value: zeroPad(currentMinute),
+                                list: minuteList,
                                 enabled: this.model.options.timePicker.minute.enabled
                             },
                             second: {
@@ -3474,8 +3576,8 @@
                     key: 'renderTimePartial',
                     value: function renderTimePartial() {
                         var timeViewModel = this._getTimeViewModel(this.model.state.view);
-                        this.$container.find('[data-time-key="hour"] input').val(timeViewModel.hour.title);
-                        this.$container.find('[data-time-key="minute"] input').val(timeViewModel.minute.title);
+                        this.$container.find('[data-time-key="hour"] select.hour-select').val(timeViewModel.hour.value);
+                        this.$container.find('[data-time-key="minute"] select.minute-select').val(timeViewModel.minute.value);
                         this.$container.find('[data-time-key="second"] input').val(timeViewModel.second.title);
                         this.$container.find('[data-time-key="meridian"] input').val(timeViewModel.meridian.title);
                     }

@@ -576,7 +576,7 @@
 
                                                     <div class="case-actions">
 
-                                                        <a href="{{ route('simpleWorkflow.inbox.caseHistoryView', ['caseNumber' => $row->case_number]) }}"
+                                                        <a href="{{ route('simpleWorkflow.inbox.caseHistoryViewV2', ['caseNumber' => $row->case_number]) }}"
                                                             target="_blank"
                                                             class="btn btn-sm btn-outline-info case-action-btn">
 
