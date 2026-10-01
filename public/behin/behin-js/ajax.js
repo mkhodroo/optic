@@ -1,9 +1,43 @@
+/**
+ * Safe wrapper around show_error().
+ *
+ * show_error() lives in behin/behin-js/scripts.js, which is a separate file.
+ * If a page ever renders before that file is parsed (or it failed to load),
+ * calling show_error() directly throws "ReferenceError: show_error is not defined"
+ * from inside the ajax error callback, hiding the original server error.
+ * This wrapper degrades gracefully instead.
+ */
+function notify_error(data) {
+    if (typeof show_error === 'function') {
+        return show_error(data);
+    }
+
+    if (typeof hide_loading === 'function') {
+        hide_loading();
+    }
+
+    var message = data;
+    if (data && typeof data === 'object') {
+        message = (data.responseJSON && (data.responseJSON.message || data.responseJSON.errors))
+            || data.responseText
+            || ('Request failed with status ' + data.status);
+    }
+
+    console.error('[ajax error]', message);
+
+    if (typeof toastr !== 'undefined') {
+        toastr.error(String(message));
+    } else if (typeof console !== 'undefined') {
+        console.error(String(message));
+    }
+}
+
 function send_ajax_request(url, data, callback, erCallback = null) {
     show_loading()
     if (erCallback == null) {
         erCallback = function (data) {
             hide_loading();
-            show_error(data);
+            notify_error(data);
             // error_notification('<p dir="ltr">' + JSON.stringify(data) + '</p>');
         }
     }
@@ -29,7 +63,7 @@ function send_ajax_formdata_request(url, data, callback, erCallback = null) {
     if (erCallback == null) {
         erCallback = function (data) {
             hide_loading();
-            show_error(data)
+            notify_error(data);
         }
     }
     return $.ajax({
@@ -56,7 +90,7 @@ function send_ajax_request_with_confirm(url, data, callback, erCallback = null, 
         if (erCallback == null) {
             erCallback = function (data) {
                 hide_loading();
-                show_error(data)
+                notify_error(data);
             }
         }
         return $.ajax({
@@ -78,23 +112,23 @@ function send_ajax_request_with_confirm(url, data, callback, erCallback = null, 
     }
 }
 
-function send_ajax_formdata_request_with_confirm(url, data, callback, erCallback = null, message = "مطمئنید؟") {
+function send_ajax_formdata_request_with_confirm(url, data, callback, erCallback = null, message = "Ù…Ø·Ù…Ø¦Ù†ÛŒØ¯ØŸ") {
     Swal.fire({
         text: message,
         icon: 'question',
-        showCancelButton: true, // نمایش دکمه لغو
-        confirmButtonColor: '#3085d6', // رنگ دکمه تأیید
-        cancelButtonColor: '#d33', // رنگ دکمه لغو
-        confirmButtonText: 'بله',
-        cancelButtonText: 'خیر'
+        showCancelButton: true, // Ù†Ù…Ø§ÛŒØ´ Ø¯Ú©Ù…Ù‡ Ù„ØºÙˆ
+        confirmButtonColor: '#3085d6', // Ø±Ù†Ú¯ Ø¯Ú©Ù…Ù‡ ØªØ£ÛŒÛŒØ¯
+        cancelButtonColor: '#d33', // Ø±Ù†Ú¯ Ø¯Ú©Ù…Ù‡ Ù„ØºÙˆ
+        confirmButtonText: 'Ø¨Ù„Ù‡',
+        cancelButtonText: 'Ø®ÛŒØ±'
     }).then((result) => {
-        // اگر کاربر روی دکمه تأیید کلیک کرد
+        // Ø§Ú¯Ø± Ú©Ø§Ø±Ø¨Ø± Ø±ÙˆÛŒ Ø¯Ú©Ù…Ù‡ ØªØ£ÛŒÛŒØ¯ Ú©Ù„ÛŒÚ© Ú©Ø±Ø¯
         if (result.isConfirmed) {
             show_loading()
             if (erCallback == null) {
                 erCallback = function (data) {
                     hide_loading();
-                    show_error(data)
+                    notify_error(data);
                 }
             }
             return $.ajax({
@@ -114,7 +148,7 @@ function send_ajax_formdata_request_with_confirm(url, data, callback, erCallback
             })
                 .done(callback);
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-            // اگر کاربر روی دکمه لغو کلیک کرد
+            // Ø§Ú¯Ø± Ú©Ø§Ø±Ø¨Ø± Ø±ÙˆÛŒ Ø¯Ú©Ù…Ù‡ Ù„ØºÙˆ Ú©Ù„ÛŒÚ© Ú©Ø±Ø¯
             return false;
         }
     });
@@ -126,7 +160,7 @@ function send_ajax_get_request(url, callback, erCallback = null) {
     if (erCallback == null) {
         erCallback = function (data) {
             hide_loading();
-            show_error(data)
+            notify_error(data);
         }
     }
     return $.ajax({
@@ -150,7 +184,7 @@ function send_ajax_get_request_with_confirm(url, callback, message = "Are you su
         if (erCallback == null) {
             erCallback = function (data) {
                 hide_loading();
-                show_error(data)
+                notify_error(data);
             }
         }
         return $.ajax({
@@ -253,7 +287,7 @@ function open_admin_modal_with_data(data, title = '', id = null) {
 }
 
 function close_admin_modal(id) {
-    // اگر id داده نشده باشد، آخرین مودال باز بسته می‌شود
+    // Ø§Ú¯Ø± id Ø¯Ø§Ø¯Ù‡ Ù†Ø´Ø¯Ù‡ Ø¨Ø§Ø´Ø¯ØŒ Ø¢Ø®Ø±ÛŒÙ† Ù…ÙˆØ¯Ø§Ù„ Ø¨Ø§Ø² Ø¨Ø³ØªÙ‡ Ù…ÛŒâ€ŒØ´ÙˆØ¯
     if (id === undefined || id === null) {
         $('#admin-modal').last().modal('hide');
         return;
@@ -276,13 +310,13 @@ function get_view_model_rows(viewModel_id, api_key) {
 
         var container = $(`#${viewModel_id}`);
         console.log(response)
-        // دریافت دکمه ایجاد رکورد جدید
+        // Ø¯Ø±ÛŒØ§ÙØª Ø¯Ú©Ù…Ù‡ Ø§ÛŒØ¬Ø§Ø¯ Ø±Ú©ÙˆØ±Ø¯ Ø¬Ø¯ÛŒØ¯
         get_view_model_create_new_btn(viewModel_id, api_key);
 
 
         /*
          * =========================================
-         * حالت Table
+         * Ø­Ø§Ù„Øª Table
          * =========================================
          */
 
@@ -325,7 +359,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                         margin-bottom: 5px;
                                     "
                                 >
-                                    داده‌ای وجود ندارد
+                                    Ø¯Ø§Ø¯Ù‡â€ŒØ§ÛŒ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯
                                 </div>
 
                                 <div
@@ -334,7 +368,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                         color: #adb5bd;
                                     "
                                 >
-                                    هنوز رکوردی برای نمایش ثبت نشده است.
+                                    Ù‡Ù†ÙˆØ² Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø±Ø§ÛŒ Ù†Ù…Ø§ÛŒØ´ Ø«Ø¨Øª Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª.
                                 </div>
 
                             </div>
@@ -351,7 +385,7 @@ function get_view_model_rows(viewModel_id, api_key) {
 
         /*
          * =========================================
-         * حالت Box
+         * Ø­Ø§Ù„Øª Box
          * =========================================
          */
 
@@ -387,7 +421,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                 margin-bottom: 5px;
                             "
                         >
-                            داده‌ای وجود ندارد
+                            Ø¯Ø§Ø¯Ù‡â€ŒØ§ÛŒ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯
                         </div>
 
                         <div
@@ -396,7 +430,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                 color: #adb5bd;
                             "
                         >
-                            هنوز رکوردی برای نمایش ثبت نشده است.
+                            Ù‡Ù†ÙˆØ² Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø±Ø§ÛŒ Ù†Ù…Ø§ÛŒØ´ Ø«Ø¨Øª Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª.
                         </div>
 
                     </div>

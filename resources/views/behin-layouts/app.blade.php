@@ -203,6 +203,17 @@
     <script>
         window.appUrl = "{{ env('APP_URL') }}";
     </script>
+    {{--
+        These must be loaded in <head> (before any content-level inline script).
+        Package views (e.g. field-builder ViewModelField) emit inline <script>
+        blocks inside @yield('content') that fire ajax requests while the HTML
+        parser is still running. If scripts.js/toastr were loaded at the bottom
+        of the body, the ajax error callback could fire before they were parsed,
+        causing "show_error is not defined".
+    --}}
+    <script src="{{ url('behin/behin-dist/plugins/toastr/toastr.min.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-dist/plugins/sweetalert/sweetalert2.all.min.js') . '?' . config('app.version') }}"></script>
+    <script src="{{ url('behin/behin-js/scripts.js') . '?' . config('app.version') }}"></script>
     <script src="{{ url('behin/behin-js/ajax.js') . '?' . config('app.version') }}"></script>
     <script src="{{ url('behin/behin-js/dataTable.js') . '?' . config('app.version') }}"></script>
     <script src="{{ url('behin/behin-js/dropzone.js') . '?' . config('app.version') }}"></script>
@@ -225,6 +236,12 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+    {{--
+        loader.js builds the #preloader element and appends it to <body>, so it must
+        run after the body tag exists but before any content-level script calls
+        show_loading()/hide_loading().
+    --}}
+    <script src="{{ url('behin/behin-js/loader.js') . '?' . config('app.version') }}"></script>
     <div class="wrapper">
 
         @include('behin-layouts.header')
@@ -296,8 +313,6 @@
 <script src="{{ url('behin/behin-dist/dist/js/adminlte.js') . '?' . config('app.version') }}"></script>
 <script src="{{ url('behin/behin-dist/plugins/select2/select2.full.min.js') }}"></script>
 <script src="{{ url('behin/behin-dist/plugins/mapp/js/mapp.min.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('behin/behin-dist/plugins/toastr/toastr.min.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('behin/behin-dist/plugins/sweetalert/sweetalert2.all.min.js') }}"></script>
 
 {{-- <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
@@ -427,8 +442,6 @@
     }
 </script>
 
-<script src="{{ url('behin/behin-js/loader.js') . '?' . config('app.version') }}"></script>
-<script src="{{ url('behin/behin-js/scripts.js') . '?' . config('app.version') }}"></script>
 @yield('script')
 </div>
 
