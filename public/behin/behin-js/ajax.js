@@ -112,17 +112,17 @@ function send_ajax_request_with_confirm(url, data, callback, erCallback = null, 
     }
 }
 
-function send_ajax_formdata_request_with_confirm(url, data, callback, erCallback = null, message = "Ù…Ø·Ù…Ø¦Ù†ÛŒØ¯ØŸ") {
+function send_ajax_formdata_request_with_confirm(url, data, callback, erCallback = null, message = "مطمئنید؟") {
     Swal.fire({
         text: message,
         icon: 'question',
-        showCancelButton: true, // Ù†Ù…Ø§ÛŒØ´ Ø¯Ú©Ù…Ù‡ Ù„ØºÙˆ
-        confirmButtonColor: '#3085d6', // Ø±Ù†Ú¯ Ø¯Ú©Ù…Ù‡ ØªØ£ÛŒÛŒØ¯
-        cancelButtonColor: '#d33', // Ø±Ù†Ú¯ Ø¯Ú©Ù…Ù‡ Ù„ØºÙˆ
-        confirmButtonText: 'Ø¨Ù„Ù‡',
-        cancelButtonText: 'Ø®ÛŒØ±'
+        showCancelButton: true, // نمایش دکمه لغو
+        confirmButtonColor: '#3085d6', // رنگ دکمه تأیید
+        cancelButtonColor: '#d33', // رنگ دکمه لغو
+        confirmButtonText: 'بله',
+        cancelButtonText: 'خیر'
     }).then((result) => {
-        // Ø§Ú¯Ø± Ú©Ø§Ø±Ø¨Ø± Ø±ÙˆÛŒ Ø¯Ú©Ù…Ù‡ ØªØ£ÛŒÛŒØ¯ Ú©Ù„ÛŒÚ© Ú©Ø±Ø¯
+        // اگر کاربر روی دکمه تأیید کلیک کرد
         if (result.isConfirmed) {
             show_loading()
             if (erCallback == null) {
@@ -148,7 +148,7 @@ function send_ajax_formdata_request_with_confirm(url, data, callback, erCallback
             })
                 .done(callback);
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-            // Ø§Ú¯Ø± Ú©Ø§Ø±Ø¨Ø± Ø±ÙˆÛŒ Ø¯Ú©Ù…Ù‡ Ù„ØºÙˆ Ú©Ù„ÛŒÚ© Ú©Ø±Ø¯
+            // اگر کاربر روی دکمه لغو کلیک کرد
             return false;
         }
     });
@@ -287,7 +287,7 @@ function open_admin_modal_with_data(data, title = '', id = null) {
 }
 
 function close_admin_modal(id) {
-    // Ø§Ú¯Ø± id Ø¯Ø§Ø¯Ù‡ Ù†Ø´Ø¯Ù‡ Ø¨Ø§Ø´Ø¯ØŒ Ø¢Ø®Ø±ÛŒÙ† Ù…ÙˆØ¯Ø§Ù„ Ø¨Ø§Ø² Ø¨Ø³ØªÙ‡ Ù…ÛŒâ€ŒØ´ÙˆØ¯
+    // اگر id داده نشده باشد، آخرین مودال باز بسته می‌شود
     if (id === undefined || id === null) {
         $('#admin-modal').last().modal('hide');
         return;
@@ -310,13 +310,13 @@ function get_view_model_rows(viewModel_id, api_key) {
 
         var container = $(`#${viewModel_id}`);
         console.log(response)
-        // Ø¯Ø±ÛŒØ§ÙØª Ø¯Ú©Ù…Ù‡ Ø§ÛŒØ¬Ø§Ø¯ Ø±Ú©ÙˆØ±Ø¯ Ø¬Ø¯ÛŒØ¯
+        // دریافت دکمه ایجاد رکورد جدید
         get_view_model_create_new_btn(viewModel_id, api_key);
 
 
         /*
          * =========================================
-         * Ø­Ø§Ù„Øª Table
+         * حالت Table
          * =========================================
          */
 
@@ -359,7 +359,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                         margin-bottom: 5px;
                                     "
                                 >
-                                    Ø¯Ø§Ø¯Ù‡â€ŒØ§ÛŒ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯
+                                    داده‌ای وجود ندارد
                                 </div>
 
                                 <div
@@ -368,7 +368,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                         color: #adb5bd;
                                     "
                                 >
-                                    Ù‡Ù†ÙˆØ² Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø±Ø§ÛŒ Ù†Ù…Ø§ÛŒØ´ Ø«Ø¨Øª Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª.
+                                    هنوز رکوردی برای نمایش ثبت نشده است.
                                 </div>
 
                             </div>
@@ -385,7 +385,7 @@ function get_view_model_rows(viewModel_id, api_key) {
 
         /*
          * =========================================
-         * Ø­Ø§Ù„Øª Box
+         * حالت Box
          * =========================================
          */
 
@@ -421,7 +421,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                 margin-bottom: 5px;
                             "
                         >
-                            Ø¯Ø§Ø¯Ù‡â€ŒØ§ÛŒ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯
+                            داده‌ای وجود ندارد
                         </div>
 
                         <div
@@ -430,7 +430,7 @@ function get_view_model_rows(viewModel_id, api_key) {
                                 color: #adb5bd;
                             "
                         >
-                            Ù‡Ù†ÙˆØ² Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø±Ø§ÛŒ Ù†Ù…Ø§ÛŒØ´ Ø«Ø¨Øª Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª.
+                            هنوز رکوردی برای نمایش ثبت نشده است.
                         </div>
 
                     </div>

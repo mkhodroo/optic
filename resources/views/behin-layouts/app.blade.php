@@ -313,6 +313,17 @@
 <script src="{{ url('behin/behin-dist/dist/js/adminlte.js') . '?' . config('app.version') }}"></script>
 <script src="{{ url('behin/behin-dist/plugins/select2/select2.full.min.js') }}"></script>
 <script src="{{ url('behin/behin-dist/plugins/mapp/js/mapp.min.js') . '?' . config('app.version') }}"></script>
+{{--
+    mapp.min.js is a bundled build (Leaflet + tooltipster + ...) that ships its own
+    broken copy of toastr and does `window.toastr = ...`, which overwrites the real
+    toastr loaded in <head>. That bundled toastr references an undefined variable
+    (a minifier artifact), so calling toastr.success()/toastr.error() afterwards
+    throws "uWd is not defined".
+
+    Re-loading the real toastr here makes it win the global again. This is required
+    because toastr must also exist in <head> for show_error()/show_message().
+--}}
+<script src="{{ url('behin/behin-dist/plugins/toastr/toastr.min.js') . '?' . config('app.version') }}"></script>
 
 {{-- <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
