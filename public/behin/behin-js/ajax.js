@@ -253,6 +253,11 @@ function open_admin_modal_with_data(data, title = '', id = null) {
 }
 
 function close_admin_modal(id) {
+    // اگر id داده نشده باشد، آخرین مودال باز بسته می‌شود
+    if (id === undefined || id === null) {
+        $('#admin-modal').last().modal('hide');
+        return;
+    }
     $('#admin-modal-' + id).modal('hide');
 }
 
