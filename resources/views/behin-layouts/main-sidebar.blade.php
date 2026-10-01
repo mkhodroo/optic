@@ -3,6 +3,18 @@
     <!-- User Profile -->
     <div class="sidebar">
         <div style="direction: rtl;">
+            <!-- Panel Logo -->
+            <div class="sidebar-logo">
+                @if ($opticSidebarLogo = \SidebarManager\Models\SidebarImage::active())
+                    <img src="{{ url($opticSidebarLogo->url) }}" alt="{{ $opticSidebarLogo->title ?: config('app.name', 'پنل کاربری') }}" class="sidebar-logo-img">
+                @else
+                    <div class="sidebar-logo-placeholder">
+                        <i class="fa fa-layer-group"></i>
+                        <span>{{ config('app.name', 'پنل کاربری') }}</span>
+                    </div>
+                @endif
+            </div>
+
             <div class="user-panel d-flex align-items-center">
                 <div class="info">
                     <span class="fw-bold">{{ auth()->user()->name ?? 'کاربر' }}</span>

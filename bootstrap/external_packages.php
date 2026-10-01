@@ -25,6 +25,10 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/user-role/src/',
         'provider' => 'BehinUserRoles\\UserRolesServiceProvider',
     ],
+    'SidebarManager\\' => [
+        'path' => dirname(__DIR__) . '/../packages/sidebar-manager/src/',
+        'provider' => 'SidebarManager\\SidebarManagerServiceProvider',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {

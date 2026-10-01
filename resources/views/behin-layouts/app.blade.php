@@ -122,6 +122,17 @@
             overflow: hidden; z-index: 1040;
         }
         .main-sidebar .sidebar { height: 100%; padding: 24px 16px !important; direction: rtl !important; overflow-y: auto; }
+        .sidebar-logo {
+            background: #f6f8fc; border: 1px solid var(--optic-border); border-radius: 16px;
+            padding: 14px; margin-bottom: 16px; display: flex; align-items: center;
+            justify-content: center; min-height: 76px; overflow: hidden;
+        }
+        .sidebar-logo-img { max-width: 100%; max-height: 52px; width: auto; height: auto; object-fit: contain; }
+        .sidebar-logo-placeholder {
+            display: flex; align-items: center; gap: 9px; color: var(--optic-muted);
+            font-weight: 700; font-size: 15px; text-align: center;
+        }
+        .sidebar-logo-placeholder .fa { font-size: 20px; color: var(--optic-primary); }
         .main-sidebar .user-panel { background: #f6f8fc !important; border: 1px solid var(--optic-border); border-radius: 16px; padding: 14px !important; margin-bottom: 25px !important; }
         .main-sidebar .user-panel img { width: 44px; height: 44px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 3px 10px rgba(25,45,80,.12); }
         .main-sidebar .user-panel .info { color: var(--optic-ink); line-height: 1.4; }

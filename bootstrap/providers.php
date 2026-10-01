@@ -20,6 +20,7 @@ $providers = [
     UserNotification\UserNotificationProvider::class,
     StockFlow\Inventory\InventoryServiceProvider::class,
     BehinUserRoles\UserRolesServiceProvider::class,
+    SidebarManager\SidebarManagerServiceProvider::class,
 ];
 
 return array_values(array_filter($providers, function ($provider) {

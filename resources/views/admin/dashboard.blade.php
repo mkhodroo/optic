@@ -47,7 +47,7 @@
 
 
             {{-- پذیرش دستگاه --}}
-            @if (auth()->user()->access('منو >>کارتابل>>فرایند جدید'))
+            @if (auth()->user()->access('پذیرش دستگاه'))
                 <div class="col-lg-3 col-md-4 col-sm-6">
 
                     <div class="material-card card-blue"
