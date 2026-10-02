@@ -295,6 +295,43 @@ function close_admin_modal(id) {
     $('#admin-modal-' + id).modal('hide');
 }
 
+/**
+ * خواندن شناسه پرونده (case) به‌صورت مطمئن.
+ *
+ * نکته: هنگام باز بودن مودال «ایجاد/ویرایش رکورد»، داخل مودال هم یک input با
+ * id="caseId" وجود دارد. چون jQuery برای id فقط اولین تطبیق را برمی‌گرداند و
+ * مودال انتهای body اضافه می‌شود، اگر مودال قبلاً باز شده و بسته نشده باشد
+ * ممکن است مقدار اشتباهی خوانده شود. این تابع مقادیر را جمع می‌کند و
+ * اولین مقدار غیرخالی را برمی‌گرداند.
+ */
+function get_current_case_id() {
+    var ids = [];
+    var $inputs = $('[name="caseId"], #caseId');
+
+    $inputs.each(function () {
+        var v = $(this).val();
+        if (v !== undefined && v !== null && String(v).trim() !== '') {
+            ids.push(String(v).trim());
+        }
+    });
+
+    return ids.length ? ids[0] : '';
+}
+
+function get_current_inbox_id() {
+    var ids = [];
+    var $inputs = $('[name="inboxId"], #inboxId');
+
+    $inputs.each(function () {
+        var v = $(this).val();
+        if (v !== undefined && v !== null && String(v).trim() !== '') {
+            ids.push(String(v).trim());
+        }
+    });
+
+    return ids.length ? ids[0] : '';
+}
+
 function get_view_model_rows(viewModel_id, api_key) {
 
     url = appUrl + 'workflow/get-view-model-rows';
@@ -303,8 +340,8 @@ function get_view_model_rows(viewModel_id, api_key) {
 
     fd.append('viewModel_id', viewModel_id);
     fd.append('api_key', api_key);
-    fd.append('inbox_id', $('#inboxId').val() ?? '');
-    fd.append('case_id', $('#caseId').val() ?? '');
+    fd.append('inbox_id', get_current_inbox_id());
+    fd.append('case_id', get_current_case_id());
 
     send_ajax_formdata_request(url, fd, function (response) {
 
@@ -322,12 +359,24 @@ function get_view_model_rows(viewModel_id, api_key) {
 
         if (container.hasClass('table')) {
 
+            /*
+             * ساختار جدول (thead و tbody) باید همیشه حفظ شود.
+             * اگر کل innerHtml جدول با حالت «خالی» جایگزین شود،
+             * tbody حذف می‌شود و رفرش‌های بعدی هیچ رکوردی نمایش نمی‌دهند.
+             */
+            var table = $(`#${viewModel_id}`);
+            var tbody = table.find('tbody');
+
+            if (tbody.length === 0) {
+                tbody = $('<tbody></tbody>').appendTo(table);
+            }
+
             if (response.body == '') {
 
-                $(`#${viewModel_id}`).html(`
+                tbody.html(`
                     <tr>
                         <td
-                            colspan="${$(`#${viewModel_id} thead th`).length}"
+                            colspan="${table.find('thead th').length}"
                             style="
                                 border: 0;
                                 padding: 40px 20px;
@@ -379,7 +428,7 @@ function get_view_model_rows(viewModel_id, api_key) {
 
             } else {
 
-                $(`#${viewModel_id} tbody`).html(response.body);
+                tbody.html(response.body);
             }
 
 
@@ -450,8 +499,8 @@ function get_view_model_create_new_btn(viewModel_id, api_key) {
     var fd = new FormData();
     fd.append('viewModel_id', viewModel_id);
     fd.append('api_key', api_key);
-    fd.append('inbox_id', $('#inboxId').val() ?? '');
-    fd.append('case_id', $('#caseId').val() ?? '');
+    fd.append('inbox_id', get_current_inbox_id());
+    fd.append('case_id', get_current_case_id());
     send_ajax_formdata_request(url, fd, function (response) {
         console.log('response of create btn')
         var createButtonDiv = $(`#create-view-model-row-${viewModel_id}`);
@@ -466,8 +515,8 @@ function open_view_model_form(form_id, viewModel_id, row_id, api_key) {
     fd.append('viewModel_id', viewModel_id);
     fd.append('row_id', row_id);
     fd.append('api_key', api_key);
-    fd.append('inbox_id', $('#inboxId').val() ?? '');
-    fd.append('case_id', $('#caseId').val() ?? '');
+    fd.append('inbox_id', get_current_inbox_id());
+    fd.append('case_id', get_current_case_id());
     send_ajax_formdata_request(url, fd, function (response) {
         open_admin_modal_with_data(response, 'Edit', viewModel_id + row_id)
     })
@@ -478,8 +527,8 @@ function open_view_model_create_new_form(form_id, viewModel_id, api_key) {
     var fd = new FormData();
     fd.append('viewModel_id', viewModel_id);
     fd.append('api_key', api_key);
-    fd.append('inbox_id', $('#inboxId').val() ?? '');
-    fd.append('case_id', $('#caseId').val() ?? '');
+    fd.append('inbox_id', get_current_inbox_id());
+    fd.append('case_id', get_current_case_id());
     send_ajax_formdata_request(url, fd, function (response) {
         open_admin_modal_with_data(response, 'Create New', viewModel_id)
     })
@@ -491,7 +540,7 @@ function delete_view_model_row(viewModel_id, row_id, api_key, callback) {
     fd.append('viewModel_id', viewModel_id);
     fd.append('row_id', row_id);
     fd.append('api_key', api_key);
-    fd.append('inbox_id', $('#inboxId').val() ?? '');
+    fd.append('inbox_id', get_current_inbox_id());
     send_ajax_formdata_request_with_confirm(url, fd, function (response) {
         show_message(response)
         get_view_model_rows(viewModel_id, api_key)
