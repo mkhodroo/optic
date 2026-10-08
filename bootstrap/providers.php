@@ -21,6 +21,7 @@ $providers = [
     StockFlow\Inventory\InventoryServiceProvider::class,
     BehinUserRoles\UserRolesServiceProvider::class,
     SidebarManager\SidebarManagerServiceProvider::class,
+    Behin\GitDeployer\GitDeployerServiceProvider::class,
 ];
 
 return array_values(array_filter($providers, function ($provider) {

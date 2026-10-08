@@ -29,6 +29,10 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/sidebar-manager/src/',
         'provider' => 'SidebarManager\\SidebarManagerServiceProvider',
     ],
+    'Behin\\GitDeployer\\' => [
+        'path' => dirname(__DIR__) . '/../packages/git-deployer/src/',
+        'provider' => 'Behin\\GitDeployer\\GitDeployerServiceProvider',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {
