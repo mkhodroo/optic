@@ -9,10 +9,6 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "vcs",
-            "url": "git@github.com:mkhodroo/behin-simple-workflow.git"
-        },
-        {
             "type": "path",
             "url": "../packages/inventory",
             "options": {
