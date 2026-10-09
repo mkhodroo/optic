@@ -490,6 +490,22 @@
                                                 value="{{ $filters['repairman'] ?? '' }}" class="form-control">
                                         </div>
 
+                                        <div class="col-md-3">
+                                            <label class="form-label">از تاریخ پذیرش (شمسی)</label>
+                                            <input type="text" name="created_from"
+                                                value="{{ $filters['created_from'] ?? '' }}"
+                                                class="form-control persian-date" placeholder="مثال: 1403-05-15"
+                                                autocomplete="off">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label class="form-label">تا تاریخ پذیرش (شمسی)</label>
+                                            <input type="text" name="created_to"
+                                                value="{{ $filters['created_to'] ?? '' }}"
+                                                class="form-control persian-date" placeholder="مثال: 1403-05-25"
+                                                autocomplete="off">
+                                        </div>
+
                                         {{-- فیلترهای بعدی شما بدون تغییر --}}
 
                                         <div class="col-md-3">

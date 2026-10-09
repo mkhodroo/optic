@@ -18,6 +18,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use Morilog\Jalali\Jalalian;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Behin\SimpleWorkflow\Models\Entities;
 use Behin\SimpleWorkflow\Models\Entities\Transactions;
@@ -261,6 +262,17 @@ class AllRequestsReportController extends Controller
             $query->where('repairman.name', 'like', '%' . $filters['repairman'] . '%');
         }
 
+        // فیلتر بازه تاریخ پذیرش (شمسی) - از تاریخ تا تاریخ
+        $createdFrom = $this->jalaliDateToCarbon($filters['created_from'] ?? null);
+        if ($createdFrom !== null) {
+            $query->where('c.created_at', '>=', $createdFrom->startOfDay());
+        }
+
+        $createdTo = $this->jalaliDateToCarbon($filters['created_to'] ?? null);
+        if ($createdTo !== null) {
+            $query->where('c.created_at', '<=', $createdTo->endOfDay());
+        }
+
         if (!empty($filters['repair_start_from'])) {
             $filters['repair_start_from'] = convertPersianDateToTimestamp($filters['repair_start_from']);
             $query->whereDate('dr.repair_start_date_alt', '>=', $filters['repair_start_from']);
@@ -346,6 +358,32 @@ class AllRequestsReportController extends Controller
             });
         } elseif ($value === 'pending') {
             $query->whereNull($column);
+        }
+    }
+
+    /**
+     * تبدیل تاریخ شمسی ورودی کاربر (مثال: 1403-05-15) به تاریخ میلادی.
+     * در صورت ورود نامعتبر، null برمی‌گردد تا فیلتر اعمال نشود.
+     */
+    protected function jalaliDateToCarbon(?string $date): ?Carbon
+    {
+        if ($date === null || trim($date) === '') {
+            return null;
+        }
+
+        $normalized = str_replace('/', '-', convertPersianToEnglish(trim($date)));
+
+        if (!preg_match('/^(\d{4})-(\d{1,2})-(\d{1,2})$/', $normalized, $matches)) {
+            return null;
+        }
+
+        try {
+            return Jalalian::fromFormat(
+                'Y-m-d',
+                sprintf('%04d-%02d-%02d', (int) $matches[1], (int) $matches[2], (int) $matches[3])
+            )->toCarbon();
+        } catch (\Throwable $exception) {
+            return null;
         }
     }
 
