@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "188f662bb0fa591ccf21adf3ede2acf3",
+    "content-hash": "d5044884ac6dbb06f184bcc3e9b9a7ed",
     "packages": [
         {
             "name": "arghavan/bale-bot",
@@ -112,46 +112,6 @@
                 "issues": "https://github.com/mkhodroo/file-uploader/issues"
             },
             "time": "2026-08-20T14:55:44+00:00"
-        },
-        {
-            "name": "arghavan/logging",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkhodroo/logging.git",
-                "reference": "bfa8555fe71a2183834fb2c40df5e7d82dc94200"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkhodroo/logging/zipball/bfa8555fe71a2183834fb2c40df5e7d82dc94200",
-                "reference": "bfa8555fe71a2183834fb2c40df5e7d82dc94200",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "BehinLogging\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "BehinLogging\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Mkhodroo",
-                    "email": "mkhodroo@yahoo.com"
-                }
-            ],
-            "support": {
-                "source": "https://github.com/mkhodroo/logging/tree/main",
-                "issues": "https://github.com/mkhodroo/logging/issues"
-            },
-            "time": "2026-09-10T06:20:10+00:00"
         },
         {
             "name": "arghavan/visual-script",
@@ -10696,7 +10656,6 @@
         "arghavan/bale-bot": 20,
         "arghavan/field-builder": 20,
         "arghavan/file-control": 20,
-        "arghavan/logging": 20,
         "arghavan/visual-script": 20
     },
     "prefer-stable": true,

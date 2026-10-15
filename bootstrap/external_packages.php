@@ -33,6 +33,14 @@ $packages = [
         'path' => dirname(__DIR__) . '/../packages/git-deployer/src/',
         'provider' => 'Behin\\GitDeployer\\GitDeployerServiceProvider',
     ],
+    'ArghavanWorkflow\\' => [
+        'path' => dirname(__DIR__) . '/../packages/arghavan-workflow/src/',
+        'provider' => 'ArghavanWorkflow\\WorkflowServiceProvider',
+    ],
+    'BehinLogging\\' => [
+        'path' => dirname(__DIR__) . '/../packages/logging/src/',
+        'provider' => 'BehinLogging\\ServiceProvider',
+    ],
 ];
 
 spl_autoload_register(function ($class) use ($packages) {

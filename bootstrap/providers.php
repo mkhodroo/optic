@@ -22,6 +22,8 @@ $providers = [
     BehinUserRoles\UserRolesServiceProvider::class,
     SidebarManager\SidebarManagerServiceProvider::class,
     Behin\GitDeployer\GitDeployerServiceProvider::class,
+    ArghavanWorkflow\WorkflowServiceProvider::class,
+    BehinLogging\ServiceProvider::class,
 ];
 
 return array_values(array_filter($providers, function ($provider) {

@@ -9,13 +9,6 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "path",
-            "url": "../packages/inventory",
-            "options": {
-                "symlink": true
-            }
-        },
-        {
             "type": "vcs",
             "url": "https://github.com/mkhodroo/user-role.git"
         },
@@ -56,7 +49,6 @@
         "arghavan/bale-bot": "dev-main",
         "arghavan/field-builder": "dev-main",
         "arghavan/file-control": "dev-main",
-        "arghavan/logging": "dev-main",
         "arghavan/visual-script": "dev-main",
         "barryvdh/laravel-translation-manager": "^0.6.6",
         "firebase/php-jwt": "^6.11",

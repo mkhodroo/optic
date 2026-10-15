@@ -128,7 +128,6 @@ return array(
     'Behin\\Sms\\' => array($baseDir . '/packages/behin-sms/src'),
     'Behin\\SimpleWorkflowReport\\' => array($baseDir . '/packages/behin-simple-workflow-report/src'),
     'BehinUserRoles\\' => array($baseDir . '/packages/behin-user-roles/src'),
-    'BehinLogging\\' => array($vendorDir . '/arghavan/logging/src'),
     'BehinInit\\' => array($baseDir . '/packages/behin-init/src'),
     'BehinFileControl\\' => array($vendorDir . '/arghavan/file-control/src'),
     'Barryvdh\\TranslationManager\\' => array($vendorDir . '/barryvdh/laravel-translation-manager/src'),

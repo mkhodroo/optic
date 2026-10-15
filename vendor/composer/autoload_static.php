@@ -233,7 +233,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
             'Behin\\Sms\\' => 10,
             'Behin\\SimpleWorkflowReport\\' => 27,
             'BehinUserRoles\\' => 15,
-            'BehinLogging\\' => 13,
             'BehinInit\\' => 10,
             'BehinFileControl\\' => 17,
             'Barryvdh\\TranslationManager\\' => 28,
@@ -742,10 +741,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-user-roles/src',
         ),
-        'BehinLogging\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/arghavan/logging/src',
-        ),
         'BehinInit\\' =>
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-init/src',
@@ -838,10 +833,6 @@ class ComposerStaticInitf86875715c5b32c6021b837db7efc70f
         'BehinInit\\App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Requests/Auth/LoginRequest.php',
         'BehinInit\\App\\Models\\Access' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Models/Access.php',
         'BehinInit\\BehinInitProvider' => __DIR__ . '/../..' . '/packages/behin-init/src/BehinInitProvider.php',
-        'BehinLogging\\Controllers\\LoggingController' => __DIR__ . '/..' . '/arghavan/logging/src/Controllers/LoggingController.php',
-        'BehinLogging\\Middlewares\\Logging' => __DIR__ . '/..' . '/arghavan/logging/src/Middlewares/Logging.php',
-        'BehinLogging\\Models\\UserActionLog' => __DIR__ . '/..' . '/arghavan/logging/src/Models/UserActionLog.php',
-        'BehinLogging\\ServiceProvider' => __DIR__ . '/..' . '/arghavan/logging/src/ServiceProvider.php',
         'Behin\\SimpleWorkflowReport\\Controllers\\Core\\AllRequestsReportController' => __DIR__ . '/../..' . '/packages/behin-simple-workflow-report/src/Controllers/Core/AllRequestsReportController.php',
         'Behin\\SimpleWorkflowReport\\Controllers\\Core\\CustomersReportController' => __DIR__ . '/../..' . '/packages/behin-simple-workflow-report/src/Controllers/Core/CustomersReportController.php',
         'Behin\\SimpleWorkflowReport\\Controllers\\Core\\FinReportController' => __DIR__ . '/../..' . '/packages/behin-simple-workflow-report/src/Controllers/Core/FinReportController.php',
