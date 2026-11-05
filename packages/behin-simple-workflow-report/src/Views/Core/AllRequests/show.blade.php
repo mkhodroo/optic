@@ -38,7 +38,7 @@
                     {{ $dupDev->case_number }}
                 @endforeach
             </div>
-        @else
+        @endif
             <div class="card-body">
 
                 <div class="row">
