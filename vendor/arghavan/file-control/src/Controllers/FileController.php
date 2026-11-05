@@ -19,7 +19,7 @@ class FileController extends Controller
                     'message' => trans("File Format Is Invalid")
                 ];
             }
-            $ftpHost = '185.49.85.171';
+            $ftpHost = 'dl60.hostdl.com';
             $ftpUrl = 'dl.opticpardaz.com';
             $ftpUser = env('FTP_USERNAME');
             $ftpPass = env('FTP_PASSWORD');
