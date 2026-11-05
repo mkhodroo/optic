@@ -4,7 +4,20 @@
 
 @section('content')
     <input type="hidden" id="caseId" value="[[ $case->id ]]">
-
+    @if (count($case->duplicate_devices))
+        <div class="card">
+            <div class="card-header">پرونده های تکراری</div>
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <ul>
+                        @foreach ($case->duplicate_devices as $dupDev)
+                            <li>{{ $dupDev->case_number }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="card p-0 mb-3">
 
         <!-- Header -->
@@ -32,131 +45,124 @@
 
 
         <!-- Body -->
-        @if (count($case->duplicate_devices))
-            <div class="alert alert-warning">
-                @foreach ($case->duplicate_devices as $dupDev)
-                    {{ $dupDev->case_number }}
-                @endforeach
-            </div>
-        @endif
-            <div class="card-body">
+        <div class="card-body">
 
-                <div class="row">
+            <div class="row">
 
-                    <!-- نام مشتری -->
-                    @if (access('مشاهده نام مشتری در جزئیات پرونده'))
-                        <div class="col-sm-4 mb-3">
+                <!-- نام مشتری -->
+                @if (access('مشاهده نام مشتری در جزئیات پرونده'))
+                    <div class="col-sm-4 mb-3">
 
-                            <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                                نام مشتری
-                            </label>
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            نام مشتری
+                        </label>
 
-                            <div class="font-weight-bold" style="color: #333;">
-                                [[ $case->customer?->fullname ?? '-' ]]
-                            </div>
-
+                        <div class="font-weight-bold" style="color: #333;">
+                            [[ $case->customer?->fullname ?? '-' ]]
                         </div>
-                    @endif
+
+                    </div>
+                @endif
 
 
-                    <!-- موبایل -->
-                    @if (access('مشاهده موبایل مشتری در جزئیات پرونده'))
-                        <div class="col-sm-4 mb-3">
+                <!-- موبایل -->
+                @if (access('مشاهده موبایل مشتری در جزئیات پرونده'))
+                    <div class="col-sm-4 mb-3">
 
-                            <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                                موبایل مشتری
-                            </label>
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            موبایل مشتری
+                        </label>
 
-                            <div class="font-weight-bold" style="direction: ltr; text-align: right; color: #333;">
-                                [[ $case->customer?->mobile ?? '-' ]]
-                            </div>
-
+                        <div class="font-weight-bold" style="direction: ltr; text-align: right; color: #333;">
+                            [[ $case->customer?->mobile ?? '-' ]]
                         </div>
-                    @endif
+
+                    </div>
+                @endif
 
 
-                    <!-- آدرس -->
-                    @if (access('مشاهده آدرس مشتری در جزئیات پرونده'))
-                        <div class="col-sm-12 mb-3">
+                <!-- آدرس -->
+                @if (access('مشاهده آدرس مشتری در جزئیات پرونده'))
+                    <div class="col-sm-12 mb-3">
 
-                            <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                                آدرس مشتری
-                            </label>
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            آدرس مشتری
+                        </label>
 
-                            <div class="font-weight-bold" style="color: #333;">
-                                [[ $case->customer?->address ?? '-' ]]
-                            </div>
-
+                        <div class="font-weight-bold" style="color: #333;">
+                            [[ $case->customer?->address ?? '-' ]]
                         </div>
-                    @endif
+
+                    </div>
+                @endif
 
 
-                    <!-- لینک پیگیری -->
-                    @if (access('مشاهده لینک پیگیری پرونده برای مشتری'))
-                        <div class="col-sm-12">
+                <!-- لینک پیگیری -->
+                @if (access('مشاهده لینک پیگیری پرونده برای مشتری'))
+                    <div class="col-sm-12">
 
-                            <label class="d-block mb-1 text-muted" style="font-size: 13px;">
-                                لینک مشاهده جزئیات پرونده توسط مشتری
-                            </label>
+                        <label class="d-block mb-1 text-muted" style="font-size: 13px;">
+                            لینک مشاهده جزئیات پرونده توسط مشتری
+                        </label>
 
-                            @if ($case->getVariable('tracking_url'))
-                                <div class="row align-items-center">
+                        @if ($case->getVariable('tracking_url'))
+                            <div class="row align-items-center">
 
-                                    <!-- لینک -->
-                                    <div class="col-sm-8 mb-2">
+                                <!-- لینک -->
+                                <div class="col-sm-8 mb-2">
 
-                                        <div
-                                            style="
+                                    <div
+                                        style="
                         background-color: #f8f9fa;
                         border: 1px solid #e9ecef;
                         border-radius: 4px;
                         min-height: 40px;
                         padding: 8px 10px;
                     ">
-                                            <a href="[[ $case->getVariable('tracking_url') ]]" target="_blank"
-                                                class="text-primary"
-                                                style="
+                                        <a href="[[ $case->getVariable('tracking_url') ]]" target="_blank"
+                                            class="text-primary"
+                                            style="
                             direction: ltr;
                             text-align: left;
                             word-break: break-all;
                         ">
-                                                [[ $case->getVariable('tracking_url') ]]
-                                            </a>
-                                        </div>
-
+                                            [[ $case->getVariable('tracking_url') ]]
+                                        </a>
                                     </div>
 
-                                    <!-- ارسال مجدد پیامک -->
-                                    @if (access('ارسال مجدد لینک پذیرش برای مشتری'))
-                                        <div class="col-sm-4 mb-2">
-
-                                            <button type="button" id="sendLinkSmsBtn" class="btn btn-sm btn-danger w-100"
-                                                onclick="send_link_sms('e3d42448-2b90-41b2-a1c8-9a0f03258e86')">
-                                                <span id="sendLinkSmsText">
-                                                    ارسال مجدد پیامک لینک به مشتری
-                                                </span>
-
-                                                <span id="sendLinkSmsLoading" style="display:none;">
-                                                    در حال ارسال...
-                                                </span>
-                                            </button>
-
-                                        </div>
-                                    @endif
-
                                 </div>
-                            @else
-                                <div class="text-muted">
-                                    لینکی برای این پرونده ایجاد نشده است.
-                                </div>
-                            @endif
 
-                        </div>
-                    @endif
+                                <!-- ارسال مجدد پیامک -->
+                                @if (access('ارسال مجدد لینک پذیرش برای مشتری'))
+                                    <div class="col-sm-4 mb-2">
 
-                </div>
+                                        <button type="button" id="sendLinkSmsBtn" class="btn btn-sm btn-danger w-100"
+                                            onclick="send_link_sms('e3d42448-2b90-41b2-a1c8-9a0f03258e86')">
+                                            <span id="sendLinkSmsText">
+                                                ارسال مجدد پیامک لینک به مشتری
+                                            </span>
+
+                                            <span id="sendLinkSmsLoading" style="display:none;">
+                                                در حال ارسال...
+                                            </span>
+                                        </button>
+
+                                    </div>
+                                @endif
+
+                            </div>
+                        @else
+                            <div class="text-muted">
+                                لینکی برای این پرونده ایجاد نشده است.
+                            </div>
+                        @endif
+
+                    </div>
+                @endif
 
             </div>
+
+        </div>
     </div>
 
     <div class="card p-0 mb-3">
