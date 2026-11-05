@@ -6,15 +6,18 @@
     <input type="hidden" id="caseId" value="[[ $case->id ]]">
     @if (count($case->duplicate_devices))
         <div class="card">
-            <div class="card-header">پرونده های تکراری</div>
+            <div class="card-header bg-warning">پرونده های تکراری با همین شماره سریال</div>
             <div class="card-body">
-                <div class="alert alert-warning">
-                    <ul>
-                        @foreach ($case->duplicate_devices as $dupDev)
-                            <li>{{ $dupDev->case_number }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                <ul>
+                    @foreach ($case->duplicate_devices as $dupDev)
+                        <li>
+                            <a href="{{ route('simpleWorkflowReport.all-requests.show', $dupDev->case_number) }}"
+                                target="_blank">
+                                {{ $dupDev->case_number }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     @endif
