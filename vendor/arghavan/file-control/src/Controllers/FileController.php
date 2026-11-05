@@ -39,7 +39,7 @@ class FileController extends Controller
 
             $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
 
-            $remotePath = "/public_html/crm/uploads/$filename";
+            $remotePath = "/crm/uploads/$filename";
 
             $uploaded = ftp_put($conn, $remotePath, $file->getRealPath(), FTP_BINARY);
 
