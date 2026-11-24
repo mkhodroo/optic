@@ -366,11 +366,11 @@
                     <p>
                         @if ($case->device?->initial_pic)
                             @if (str_contains($case->device->initial_pic, 'http'))
-                                <img src="[[ $case->device->initial_pic ]]" alt="" width="100"
-                                    download>
+                                <a href="[[ $case->device->initial_pic ]]" alt="" width="100"
+                                    target="_blank">دانلود</a>
                             @else
-                                <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100"
-                                    download>
+                                <a href="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100"
+                                    target="_blank">دانلود</a>
                             @endif
                         @endif
                     </p>
@@ -382,11 +382,11 @@
                     <p>
                         @if ($case->device?->plaque_pic)
                             @if (str_contains($case->device->plaque_pic, 'http'))
-                                <img src="[[ $case->device->plaque_pic ]]" alt="" width="100"
-                                    download>
+                                <a href="[[ $case->device->plaque_pic ]]" alt="" width="100"
+                                    target="_blank">دانلود</a>
                             @else
-                                <img src="[[ url('public/' . $case->device->plaque_pic) ]]" alt="" width="100"
-                                    download>
+                                <a href="[[ url('public/' . $case->device->plaque_pic) ]]" alt="" width="100"
+                                    target="_blank">دانلود</a>  
                             @endif
                         @endif
                     </p>
