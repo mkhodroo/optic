@@ -365,8 +365,13 @@
                     <label for="">تصویر اولیه دستگاه</label>
                     <p>
                         @if ($case->device?->initial_pic)
-                            <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100"
-                                download>
+                            @if (str_contains($case->device->initial_pic, 'http'))
+                                <img src="[[ $case->device->initial_pic ]]" alt="" width="100"
+                                    download>
+                            @else
+                                <img src="[[ url('public/' . $case->device->initial_pic) ]]" alt="" width="100"
+                                    download>
+                            @endif
                         @endif
                     </p>
                 </div>
@@ -376,8 +381,13 @@
                     <label for="">تصویر پلاک دستگاه</label>
                     <p>
                         @if ($case->device?->plaque_pic)
-                            <img src="[[ url('public/' . $case->device->plaque_pic) ]]" alt="" width="100"
-                                download>
+                            @if (str_contains($case->device->plaque_pic, 'http'))
+                                <img src="[[ $case->device->plaque_pic ]]" alt="" width="100"
+                                    download>
+                            @else
+                                <img src="[[ url('public/' . $case->device->plaque_pic) ]]" alt="" width="100"
+                                    download>
+                            @endif
                         @endif
                     </p>
                 </div>
