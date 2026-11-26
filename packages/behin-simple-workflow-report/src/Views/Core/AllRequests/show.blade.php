@@ -478,6 +478,16 @@
             'fieldValue' => null,
             'fieldValueAlt' => null ?? '',
         ])
+        @include('SimpleWorkflowView::Core.Form.field-generator', [
+            'fieldName' => 'صدور فایل پیش فاکتور',
+            'fieldId' => 'pre_invoice_btn',
+            'fieldClass' => 'col-sm-12',
+            'readOnly' => true,
+            'required' => false,
+            'fieldValue' => null,
+            'fieldValueAlt' => null ?? '',
+        ])
+        <br>
     @endif
     @if (access('مشاهده آیتم های پیش فاکتور در جزئیات پرونده'))
         @include('SimpleWorkflowView::Core.Form.field-generator', [
