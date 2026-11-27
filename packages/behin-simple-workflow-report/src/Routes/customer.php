@@ -23,4 +23,10 @@ Route::name('customers.')->prefix('customers')->middleware(['web', 'auth'])->gro
     Route::delete('destroy/{customer}', [CustomersReportController::class, 'destroy'])
         ->middleware(Access::class . ':گزارش مشتریان')
         ->name('destroy');
+    Route::get('disable/{customer}', [CustomersReportController::class, 'disable'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('disable');
+    Route::get('enable/{customer}', [CustomersReportController::class, 'enable'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('enable');
 });

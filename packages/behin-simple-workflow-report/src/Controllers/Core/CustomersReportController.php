@@ -16,12 +16,15 @@ class CustomersReportController extends Controller
 {
     /**
      * List customers with optional search/filter.
+     * Inactive customers are hidden by default unless show_inactive is set.
      */
     public function index(Request $request): View
     {
         $search = $this->buildSearchQuery($request);
+        $showInactive = $request->boolean('show_inactive');
 
         $customers = Customers::query()
+            ->when(!$showInactive, fn($q) => $q->where('is_active', true))
             ->when($search['fullname'], fn($q, $v) => $q->where('fullname', 'like', "%{$v}%"))
             ->when($search['mobile'], fn($q, $v) => $q->where('mobile', 'like', "%{$v}%"))
             ->when($search['national_id'], fn($q, $v) => $q->where('national_id', 'like', "%{$v}%"))
@@ -30,7 +33,7 @@ class CustomersReportController extends Controller
             ->paginate(25)
             ->appends($request->except('page'));
 
-        return view('SimpleWorkflowReportView::Core.Customers.index', compact('customers', 'search'));
+        return view('SimpleWorkflowReportView::Core.Customers.index', compact('customers', 'search', 'showInactive'));
     }
 
     /**
@@ -94,9 +97,38 @@ class CustomersReportController extends Controller
             ->with('success', 'مشتری با موفقیت حذف شد.');
     }
 
+    /**
+     * Deactivate a customer without deleting the record.
+     * Uses forceFill because is_active is not in the Customers model's fillable
+     * (the model lives in the separate behin-simple-workflow package).
+     */
+    public function disable(Customers $customer): RedirectResponse
+    {
+        $customer->forceFill(['is_active' => false])->save();
+
+        return redirect()
+            ->back()
+            ->with('success', 'مشتری غیرفعال شد.');
+    }
+
+    /**
+     * Reactivate a previously disabled customer.
+     */
+    public function enable(Customers $customer): RedirectResponse
+    {
+        $customer->forceFill(['is_active' => true])->save();
+
+        return redirect()
+            ->back()
+            ->with('success', 'مشتری فعال شد.');
+    }
+
     public function export(Request $request): BinaryFileResponse
     {
+        $showInactive = $request->boolean('show_inactive');
+
         $customers = Customers::query()
+            ->when(!$showInactive, fn($q) => $q->where('is_active', true))
             ->when($request->input('fullname'), fn($q, $v) => $q->where('fullname', 'like', "%{$v}%"))
             ->when($request->input('mobile'), fn($q, $v) => $q->where('mobile', 'like', "%{$v}%"))
             ->when($request->input('national_id'), fn($q, $v) => $q->where('national_id', 'like', "%{$v}%"))
@@ -108,7 +140,7 @@ class CustomersReportController extends Controller
     }
 
     /**
-     * Validate customer data including customer_job (was missing).
+     * Validate customer data including customer_job.
      */
     protected function validateCustomer(Request $request): array
     {

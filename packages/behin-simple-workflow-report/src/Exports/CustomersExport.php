@@ -26,6 +26,7 @@ class CustomersExport implements FromCollection, WithHeadings, WithMapping
             'شماره موبایل',
             'شغل',
             'آدرس',
+            'وضعیت',
             'تاریخ ثبت',
         ];
     }
@@ -36,32 +37,10 @@ class CustomersExport implements FromCollection, WithHeadings, WithMapping
             $customer->fullname,
             $customer->national_id,
             $customer->mobile,
-            $this->formatJob($customer->customer_job),
+            $customer->customer_job,
             $customer->address,
+            $customer->is_active ? 'فعال' : 'غیرفعال',
             optional($customer->created_at)->format('Y-m-d H:i'),
         ];
-    }
-
-    /**
-     * Convert the JSON customer_job field into a readable string for Excel.
-     */
-    private function formatJob(?string $job): string
-    {
-        if (empty($job)) {
-            return '';
-        }
-
-        $decoded = json_decode($job, true);
-        if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
-            $parts = array_filter([
-                $decoded['title'] ?? null,
-                $decoded['industry'] ?? null,
-                $decoded['experience'] ?? null,
-            ]);
-
-            return $parts ? implode(' - ', $parts) : '';
-        }
-
-        return (string) $job;
     }
 }

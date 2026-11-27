@@ -8,7 +8,7 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">مدیریت مشتریان</h5>
                 <div class="d-flex gap-2">
-                    <a href="{{ route('simpleWorkflowReport.customers.export', $search) }}"
+                    <a href="{{ route('simpleWorkflowReport.customers.export', array_merge($search, ['show_inactive' => $showInactive])) }}"
                         class="btn btn-success btn-sm">
                         <i class="fa fa-file-excel"></i>
                         خروجی اکسل
@@ -58,7 +58,12 @@
                             <input type="text" name="customer_job" class="form-control form-control-sm"
                                 value="{{ e($search['customer_job'] ?? '') }}" placeholder="شغل">
                         </div>
-                        <div class="col-md-3 d-flex gap-1">
+                        <div class="col-md-3 d-flex align-items-end gap-2">
+                            <div class="form-check mb-2">
+                                <input type="checkbox" name="show_inactive" value="1" id="show-inactive"
+                                    class="form-check-input" {{ $showInactive ? 'checked' : '' }}>
+                                <label for="show-inactive" class="form-check-label small">نمایش غیرفعال‌ها</label>
+                            </div>
                             <button type="submit" class="btn btn-sm btn-primary">
                                 <i class="fa fa-search"></i>
                                 جستجو
@@ -72,7 +77,7 @@
                 </form>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped" id="customers-table">
+                    <table class="table table-bordered table-striped">
                         <thead class="thead-light">
                             <tr>
                                 <th class="text-center">ردیف</th>
@@ -81,6 +86,7 @@
                                 <th>شماره موبایل</th>
                                 <th>شغل</th>
                                 <th>آدرس</th>
+                                <th class="text-center">وضعیت</th>
                                 <th class="text-center">عملیات</th>
                             </tr>
                         </thead>
@@ -95,9 +101,16 @@
                                         </a>
                                     </td>
                                     <td dir="ltr">{{ $customer->national_id ?: '—' }}</td>
-                                    <td dir="ltr">{{ formatMobile($customer->mobile) }}</td>
-                                    <td>{{ formatCustomerJob($customer->customer_job) }}</td>
-                                    <td>{{ Str::limit($customer->address ?? '', 60, '…') ?: '—' }}</td>
+                                    <td dir="ltr">{{ $customer->mobile ?: '—' }}</td>
+                                    <td>{{ $customer->customer_job ?: '—' }}</td>
+                                    <td>{{ \Illuminate\Support\Str::limit($customer->address ?? '', 60, '…') ?: '—' }}</td>
+                                    <td class="text-center">
+                                        @if ($customer->is_active)
+                                            <span class="badge badge-success">فعال</span>
+                                        @else
+                                            <span class="badge badge-secondary">غیرفعال</span>
+                                        @endif
+                                    </td>
                                     <td class="text-center text-nowrap">
                                         <a href="{{ route('simpleWorkflowReport.customers.show', $customer) }}"
                                             class="btn btn-sm btn-outline-info" title="مشاهده جزئیات">
@@ -112,8 +125,19 @@
                                             data-address="{{ e($customer->address) }}"
                                             data-customer-job="{{ e($customer->customer_job) }}">
                                             <i class="fa fa-pencil"></i>
-                                            ویرایش
                                         </button>
+                                        @if ($customer->is_active)
+                                            <a href="{{ route('simpleWorkflowReport.customers.disable', $customer) }}"
+                                                class="btn btn-sm btn-outline-warning" title="غیرفعال کردن"
+                                                onclick="return confirm('آیا از غیرفعال کردن این مشتری مطمئن هستید؟');">
+                                                <i class="fa fa-ban"></i>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('simpleWorkflowReport.customers.enable', $customer) }}"
+                                                class="btn btn-sm btn-outline-success" title="فعال کردن">
+                                                <i class="fa fa-check"></i>
+                                            </a>
+                                        @endif
                                         <form class="d-inline"
                                             action="{{ route('simpleWorkflowReport.customers.destroy', $customer) }}"
                                             method="POST"
@@ -129,7 +153,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center text-muted py-4">
+                                    <td colspan="8" class="text-center text-muted py-4">
                                         مشتری یافت نشد.
                                     </td>
                                 </tr>
@@ -245,50 +269,8 @@
 @endsection
 
 @section('script')
-    @php
-        use Illuminate\Support\Str;
-
-        if (!function_exists('formatMobile')) {
-            function formatMobile(?string $mobile): string {
-                $mobile = preg_replace('/\D+/', '', (string) $mobile);
-                if ($mobile === '' || strlen($mobile) < 10) {
-                    return $mobile ?: '—';
-                }
-                $tail = substr($mobile, -10);
-                return substr($tail, 0, 4) . '-' . substr($tail, 4, 3) . '-' . substr($tail, 7, 4);
-            }
-        }
-
-        if (!function_exists('formatCustomerJob')) {
-            function formatCustomerJob(?string $job): string {
-                if (empty($job)) {
-                    return '—';
-                }
-                $decoded = json_decode($job, true);
-                if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
-                    $parts = array_filter([
-                        $decoded['title'] ?? null,
-                        $decoded['industry'] ?? null,
-                    ]);
-                    return $parts ? implode(' - ', $parts) : '—';
-                }
-                return e($job);
-            }
-        }
-    @endphp
     <script>
         $(document).ready(function() {
-            $('#customers-table').DataTable({
-                paging: false,
-                searching: false,
-                ordering: true,
-                info: false,
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/fa.json'
-                },
-                order: []
-            });
-
             $('#editCustomerModal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
                 const action = button.data('action');
