@@ -5,9 +5,22 @@ use BehinInit\App\Http\Middleware\Access;
 use Illuminate\Support\Facades\Route;
 
 Route::name('customers.')->prefix('customers')->middleware(['web', 'auth'])->group(function () {
-    Route::get('customers/export', [CustomersReportController::class, 'export'])->name('export');
-    Route::get('index', [CustomersReportController::class, 'index'])->name('index');
-    Route::post('store', [CustomersReportController::class, 'store'])->name('store');
-    Route::put('update', [CustomersReportController::class, 'update'])->name('update');
-    Route::delete('destroy', [CustomersReportController::class, 'destroy'])->name('destroy');
+    Route::get('export', [CustomersReportController::class, 'export'])
+        ->middleware(Access::class . ':خروجی اکسل مشتریان')
+        ->name('export');
+    Route::get('index', [CustomersReportController::class, 'index'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('index');
+    Route::get('show/{customer}', [CustomersReportController::class, 'show'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('show');
+    Route::post('store', [CustomersReportController::class, 'store'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('store');
+    Route::put('update/{customer}', [CustomersReportController::class, 'update'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('update');
+    Route::delete('destroy/{customer}', [CustomersReportController::class, 'destroy'])
+        ->middleware(Access::class . ':گزارش مشتریان')
+        ->name('destroy');
 });
