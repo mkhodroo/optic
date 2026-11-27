@@ -274,6 +274,38 @@
                 </div>
             @endif
 
+            {{-- مشتریان --}}
+            @if (auth()->user()->access('گزارش مشتریان'))
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="material-card card-green"
+                         onclick="window.location='{{ route('simpleWorkflowReport.customers.index') }}'">
+
+                        <div class="material-card-content">
+
+                            <div class="material-icon">
+                                <i class="ion ion-person-stalker"></i>
+                            </div>
+
+                            <h3>{{ trans('مشتریان') }}</h3>
+
+                            <p>{{ trans('مدیریت مشتریان') }}</p>
+
+                        </div>
+
+                        <a href="{{ route('simpleWorkflowReport.customers.index') }}"
+                           class="material-card-link">
+
+                            {{ trans('مشاهده مشتریان') }}
+                            <i class="fa fa-arrow-left"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+            @endif
+
         </div>
 
     </div>
