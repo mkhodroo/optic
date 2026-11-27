@@ -14,6 +14,20 @@
                 جزئیات مشتری
             </h4>
             <div class="d-flex gap-2">
+                @if ($customer->is_active)
+                    <a href="{{ route('simpleWorkflowReport.customers.disable', $customer) }}"
+                        class="btn btn-sm btn-outline-warning"
+                        onclick="return confirm('آیا از غیرفعال کردن این مشتری مطمئن هستید؟');">
+                        <i class="fa fa-ban"></i>
+                        غیرفعال کردن
+                    </a>
+                @else
+                    <a href="{{ route('simpleWorkflowReport.customers.enable', $customer) }}"
+                        class="btn btn-sm btn-outline-success">
+                        <i class="fa fa-check"></i>
+                        فعال کردن
+                    </a>
+                @endif
                 <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
                     data-target="#editCustomerModal"
                     data-action="{{ route('simpleWorkflowReport.customers.update', $customer) }}"
@@ -34,8 +48,13 @@
 
         {{-- Customer info card --}}
         <div class="card mb-4">
-            <div class="card-header bg-light">
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">اطلاعات تماس</h5>
+                @if ($customer->is_active)
+                    <span class="badge badge-success">فعال</span>
+                @else
+                    <span class="badge badge-secondary">غیرفعال</span>
+                @endif
             </div>
             <div class="card-body">
                 <div class="row">
@@ -45,7 +64,7 @@
                         <p><strong>شماره موبایل:</strong> <span dir="ltr">{{ $customer->mobile ?: '—' }}</span></p>
                     </div>
                     <div class="col-md-6">
-                        <p><strong>شغل:</strong> {{ formatCustomerJob($customer->customer_job) }}</p>
+                        <p><strong>شغل:</strong> {{ $customer->customer_job ?: '—' }}</p>
                         <p><strong>تاریخ ثبت:</strong>
                             {{ optional($customer->created_at)->format('Y-m-d H:i') ?: '—' }}
                         </p>
@@ -137,7 +156,7 @@
                                     </td>
                                     <td dir="ltr">{{ $case->postal_code ?: '—' }}</td>
                                     <td dir="ltr">{{ $case->eco_number ?: '—' }}</td>
-                                    <td>{{ Str::limit($case->address ?? '', 50, '…') ?: '—' }}</td>
+                                    <td>{{ \Illuminate\Support\Str::limit($case->address ?? '', 50, '…') ?: '—' }}</td>
                                     <td>{{ optional(\Illuminate\Support\Carbon::parse($case->created_at))->format('Y-m-d H:i') ?: '—' }}</td>
                                 </tr>
                             @empty
@@ -154,7 +173,7 @@
         </div>
     </div>
 
-    {{-- Reuse the same edit modal structure as index page --}}
+    {{-- Edit Modal --}}
     <div class="modal fade" id="editCustomerModal" tabindex="-1" role="dialog"
         aria-labelledby="editCustomerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -204,26 +223,6 @@
 @endsection
 
 @section('script')
-    @php
-        use Illuminate\Support\Str;
-
-        if (!function_exists('formatCustomerJob')) {
-            function formatCustomerJob(?string $job): string {
-                if (empty($job)) {
-                    return '—';
-                }
-                $decoded = json_decode($job, true);
-                if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
-                    $parts = array_filter([
-                        $decoded['title'] ?? null,
-                        $decoded['industry'] ?? null,
-                    ]);
-                    return $parts ? implode(' - ', $parts) : '—';
-                }
-                return e($job);
-            }
-        }
-    @endphp
     <script>
         $(document).ready(function() {
             $('#case-history-table').DataTable({
