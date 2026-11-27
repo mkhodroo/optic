@@ -1,7 +1,5 @@
 @extends('behin-layouts.app')
 
-@section('title', 'لیست مشتریان')
-
 @section('title', 'مدیریت مشتریان')
 
 @section('content')
@@ -9,16 +7,22 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">مدیریت مشتریان</h5>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#createCustomerModal">
-                    <i class="fa fa-plus"></i>
-                    افزودن مشتری جدید
-                </button>
+                <div class="d-flex gap-2">
+                    <a href="{{ route('simpleWorkflowReport.customers.export', $search) }}"
+                        class="btn btn-success btn-sm">
+                        <i class="fa fa-file-excel"></i>
+                        خروجی اکسل
+                    </a>
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#createCustomerModal">
+                        <i class="fa fa-plus"></i>
+                        افزودن مشتری جدید
+                    </button>
+                </div>
             </div>
+
             <div class="card-body">
                 @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
+                    <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
                 @if ($errors->any())
@@ -31,62 +35,117 @@
                     </div>
                 @endif
 
+                {{-- Search / Filter form --}}
+                <form method="GET" action="{{ route('simpleWorkflowReport.customers.index') }}" class="mb-3">
+                    <div class="row g-2 align-items-end">
+                        <div class="col-md-3">
+                            <label class="form-label small mb-1">نام و نام خانوادگی</label>
+                            <input type="text" name="fullname" class="form-control form-control-sm"
+                                value="{{ e($search['fullname'] ?? '') }}" placeholder="جستجو بر اساس نام">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label small mb-1">موبایل</label>
+                            <input type="text" name="mobile" class="form-control form-control-sm"
+                                value="{{ e($search['mobile'] ?? '') }}" placeholder="09xxxxxxxxx">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label small mb-1">کد ملی</label>
+                            <input type="text" name="national_id" class="form-control form-control-sm"
+                                value="{{ e($search['national_id'] ?? '') }}" placeholder="کد ملی">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label small mb-1">شغل</label>
+                            <input type="text" name="customer_job" class="form-control form-control-sm"
+                                value="{{ e($search['customer_job'] ?? '') }}" placeholder="شغل">
+                        </div>
+                        <div class="col-md-3 d-flex gap-1">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="fa fa-search"></i>
+                                جستجو
+                            </button>
+                            <a href="{{ route('simpleWorkflowReport.customers.index') }}"
+                                class="btn btn-sm btn-outline-secondary">
+                                پاک کردن
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped" id="customers-table">
                         <thead class="thead-light">
                             <tr>
-                                <th>ردیف</th>
+                                <th class="text-center">ردیف</th>
                                 <th>نام و نام خانوادگی</th>
                                 <th>کد ملی</th>
                                 <th>شماره موبایل</th>
+                                <th>شغل</th>
                                 <th>آدرس</th>
-                                <th>عملیات</th>
+                                <th class="text-center">عملیات</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($customers as $customer)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $customer->fullname }}</td>
-                                    <td>{{ $customer->national_id ?? '—' }}</td>
-                                    <td>{{ $customer->mobile ?? '—' }}</td>
-                                    <td>{!! nl2br(e($customer->address ?? '—')) !!}</td>
-                                    <td class="text-nowrap">
+                                    <td class="text-center">{{ $customers->firstItem() + $loop->index }}</td>
+                                    <td>
+                                        <a href="{{ route('simpleWorkflowReport.customers.show', $customer) }}"
+                                            class="text-primary font-weight-bold">
+                                            {{ $customer->fullname }}
+                                        </a>
+                                    </td>
+                                    <td dir="ltr">{{ $customer->national_id ?: '—' }}</td>
+                                    <td dir="ltr">{{ formatMobile($customer->mobile) }}</td>
+                                    <td>{{ formatCustomerJob($customer->customer_job) }}</td>
+                                    <td>{{ Str::limit($customer->address ?? '', 60, '…') ?: '—' }}</td>
+                                    <td class="text-center text-nowrap">
+                                        <a href="{{ route('simpleWorkflowReport.customers.show', $customer) }}"
+                                            class="btn btn-sm btn-outline-info" title="مشاهده جزئیات">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
                                         <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
                                             data-target="#editCustomerModal"
                                             data-action="{{ route('simpleWorkflowReport.customers.update', $customer) }}"
                                             data-fullname="{{ e($customer->fullname) }}"
                                             data-national-id="{{ e($customer->national_id) }}"
                                             data-mobile="{{ e($customer->mobile) }}"
-                                            data-address="{{ e($customer->address) }}">
+                                            data-address="{{ e($customer->address) }}"
+                                            data-customer-job="{{ e($customer->customer_job) }}">
                                             <i class="fa fa-pencil"></i>
                                             ویرایش
                                         </button>
                                         <form class="d-inline"
                                             action="{{ route('simpleWorkflowReport.customers.destroy', $customer) }}"
-                                            method="POST" onsubmit="return confirm('آیا از حذف این مشتری مطمئن هستید؟');">
+                                            method="POST"
+                                            onsubmit="return confirm('آیا از حذف این مشتری مطمئن هستید؟');">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                title="حذف">
                                                 <i class="fa fa-trash"></i>
-                                                حذف
                                             </button>
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="text-center">مشتری یافت نشد.</td>
+                                    <td colspan="7" class="text-center text-muted py-4">
+                                        مشتری یافت نشد.
+                                    </td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    {{ $customers->links() }}
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Create Modal -->
+    {{-- Create Modal --}}
     <div class="modal fade" id="createCustomerModal" tabindex="-1" role="dialog"
         aria-labelledby="createCustomerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -96,22 +155,6 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <div class="form-group">
-                        <label for="edit-case-number">شماره صورتCase</label>
-                        <input type="text" class="form-control" id="edit-case-number" name="case_number">
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-case-id">ID صورتCase</label>
-                        <input type="text" class="form-control" id="edit-case-id" name="case_id">
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-eco-number">کدeco</label>
-                        <input type="text" class="form-control" id="edit-eco-number" name="eco_number">
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-postal-code">پستال کد</label>
-                        <input type="text" class="form-control" id="edit-postal-code" name="postal_code">
-                    </div>
                 </div>
                 <form method="POST" action="{{ route('simpleWorkflowReport.customers.store') }}">
                     @csrf
@@ -133,7 +176,14 @@
                         </div>
                         <div class="form-group">
                             <label for="create-address">آدرس</label>
-                            <textarea class="form-control" id="create-address" name="address" rows="3">{{ old('address') }}</textarea>
+                            <textarea class="form-control" id="create-address" name="address"
+                                rows="3">{{ old('address') }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="create-customer-job">شغل</label>
+                            <textarea class="form-control" id="create-customer-job" name="customer_job"
+                                rows="3" placeholder='مثال: {"title": "مهندس", "industry": "نرم‌افزار", "experience": "۵ سال"}'>{{ old('customer_job') }}</textarea>
+                            <small class="text-muted">فرمت اختیاری JSON: {"title", "industry", "experience"}</small>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -145,7 +195,7 @@
         </div>
     </div>
 
-    <!-- Edit Modal -->
+    {{-- Edit Modal --}}
     <div class="modal fade" id="editCustomerModal" tabindex="-1" role="dialog"
         aria-labelledby="editCustomerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -177,11 +227,11 @@
                             <textarea class="form-control" id="edit-address" name="address" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="edit-customer-job">وظیفه</label>
-                            <textarea class="form-control" id="edit-customer-job" name="customer_job" rows="3"
-                                placeholder='{"title": "", "industry": "", "experience": ""}'>
+                            <label for="edit-customer-job">شغل</label>
+                            <textarea class="form-control" id="edit-customer-job" name="customer_job"
+                                rows="3" placeholder='مثال: {"title": "مهندس", "industry": "نرم‌افزار", "experience": "۵ سال"}'>
                             </textarea>
-                            <small class="text-muted">JSON format: {"title": "", "industry": "", "experience": ""}</small>
+                            <small class="text-muted">فرمت اختیاری JSON: {"title", "industry", "experience"}</small>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -195,23 +245,48 @@
 @endsection
 
 @section('script')
+    @php
+        use Illuminate\Support\Str;
+
+        if (!function_exists('formatMobile')) {
+            function formatMobile(?string $mobile): string {
+                $mobile = preg_replace('/\D+/', '', (string) $mobile);
+                if ($mobile === '' || strlen($mobile) < 10) {
+                    return $mobile ?: '—';
+                }
+                $tail = substr($mobile, -10);
+                return substr($tail, 0, 4) . '-' . substr($tail, 4, 3) . '-' . substr($tail, 7, 4);
+            }
+        }
+
+        if (!function_exists('formatCustomerJob')) {
+            function formatCustomerJob(?string $job): string {
+                if (empty($job)) {
+                    return '—';
+                }
+                $decoded = json_decode($job, true);
+                if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                    $parts = array_filter([
+                        $decoded['title'] ?? null,
+                        $decoded['industry'] ?? null,
+                    ]);
+                    return $parts ? implode(' - ', $parts) : '—';
+                }
+                return e($job);
+            }
+        }
+    @endphp
     <script>
         $(document).ready(function() {
             $('#customers-table').DataTable({
-                dom: 'Bfrtip',
+                paging: false,
+                searching: false,
+                ordering: true,
+                info: false,
                 language: {
                     url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/fa.json'
                 },
-                buttons: [{
-                    text: 'خروجی اکسل',
-                    className: 'btn btn-success',
-                    action: function() {
-                        window.location.href =
-                            '{{ route('simpleWorkflowReport.customers.export') }}';
-                    }
-                }],
-                order: [],
-                pageLength: 10
+                order: []
             });
 
             $('#editCustomerModal').on('show.bs.modal', function(event) {
@@ -221,11 +296,8 @@
                 const nationalId = button.data('nationalId') || '';
                 const mobile = button.data('mobile') || '';
                 const address = button.data('address') || '';
+                const customerJob = button.data('customerJob') || '';
 
-                const caseNumber = button.data('case-number') || '';
-                const caseId = button.data('case-id') || '';
-                const ecoNumber = button.data('eco-number') || '';
-                const postalCode = button.data('postal-code') || '';
                 const modal = $(this);
                 const form = modal.find('form');
 
@@ -234,16 +306,8 @@
                 form.find('input[name="national_id"]').val(nationalId);
                 form.find('input[name="mobile"]').val(mobile);
                 form.find('textarea[name="address"]').val(address);
+                form.find('textarea[name="customer_job"]').val(customerJob);
             });
         });
     </script>
 @endsection
-
-form.find('input[name="case_number"]').val(caseNumber);
-form.find('input[name="national_id"]').val(nationalId);
-form.find('input[name="mobile"]').val(mobile);
-form.find('textarea[name="address"]').val(address);
-form.find('textarea[name="customer_job"]').val(customerJob);
-form.find('input[name="case_id"]').val(caseId);
-form.find('input[name="eco_number"]').val(ecoNumber);
-form.find('input[name="postal_code"]').val(postalCode);
