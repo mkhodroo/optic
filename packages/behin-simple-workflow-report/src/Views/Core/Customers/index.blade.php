@@ -1,5 +1,7 @@
 @extends('behin-layouts.app')
 
+@section('title', 'لیست مشتریان')
+
 @section('title', 'مدیریت مشتریان')
 
 @section('content')
@@ -50,8 +52,7 @@
                                     <td>{{ $customer->mobile ?? '—' }}</td>
                                     <td>{!! nl2br(e($customer->address ?? '—')) !!}</td>
                                     <td class="text-nowrap">
-                                        <button class="btn btn-sm btn-outline-secondary"
-                                            data-toggle="modal"
+                                        <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
                                             data-target="#editCustomerModal"
                                             data-action="{{ route('simpleWorkflowReport.customers.update', $customer) }}"
                                             data-fullname="{{ e($customer->fullname) }}"
@@ -63,8 +64,7 @@
                                         </button>
                                         <form class="d-inline"
                                             action="{{ route('simpleWorkflowReport.customers.destroy', $customer) }}"
-                                            method="POST"
-                                            onsubmit="return confirm('آیا از حذف این مشتری مطمئن هستید؟');">
+                                            method="POST" onsubmit="return confirm('آیا از حذف این مشتری مطمئن هستید؟');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
@@ -96,6 +96,22 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
                         <span aria-hidden="true">&times;</span>
                     </button>
+                    <div class="form-group">
+                        <label for="edit-case-number">شماره صورتCase</label>
+                        <input type="text" class="form-control" id="edit-case-number" name="case_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-case-id">ID صورتCase</label>
+                        <input type="text" class="form-control" id="edit-case-id" name="case_id">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-eco-number">کدeco</label>
+                        <input type="text" class="form-control" id="edit-eco-number" name="eco_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-postal-code">پستال کد</label>
+                        <input type="text" class="form-control" id="edit-postal-code" name="postal_code">
+                    </div>
                 </div>
                 <form method="POST" action="{{ route('simpleWorkflowReport.customers.store') }}">
                     @csrf
@@ -160,6 +176,13 @@
                             <label for="edit-address">آدرس</label>
                             <textarea class="form-control" id="edit-address" name="address" rows="3"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="edit-customer-job">وظیفه</label>
+                            <textarea class="form-control" id="edit-customer-job" name="customer_job" rows="3"
+                                placeholder='{"title": "", "industry": "", "experience": ""}'>
+                            </textarea>
+                            <small class="text-muted">JSON format: {"title": "", "industry": "", "experience": ""}</small>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
@@ -183,7 +206,8 @@
                     text: 'خروجی اکسل',
                     className: 'btn btn-success',
                     action: function() {
-                        window.location.href = '{{ route('simpleWorkflowReport.customers.export') }}';
+                        window.location.href =
+                            '{{ route('simpleWorkflowReport.customers.export') }}';
                     }
                 }],
                 order: [],
@@ -198,6 +222,10 @@
                 const mobile = button.data('mobile') || '';
                 const address = button.data('address') || '';
 
+                const caseNumber = button.data('case-number') || '';
+                const caseId = button.data('case-id') || '';
+                const ecoNumber = button.data('eco-number') || '';
+                const postalCode = button.data('postal-code') || '';
                 const modal = $(this);
                 const form = modal.find('form');
 
@@ -210,3 +238,12 @@
         });
     </script>
 @endsection
+
+form.find('input[name="case_number"]').val(caseNumber);
+form.find('input[name="national_id"]').val(nationalId);
+form.find('input[name="mobile"]').val(mobile);
+form.find('textarea[name="address"]').val(address);
+form.find('textarea[name="customer_job"]').val(customerJob);
+form.find('input[name="case_id"]').val(caseId);
+form.find('input[name="eco_number"]').val(ecoNumber);
+form.find('input[name="postal_code"]').val(postalCode);

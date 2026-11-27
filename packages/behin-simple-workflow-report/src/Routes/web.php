@@ -20,13 +20,12 @@ use BehinInit\App\Http\Middleware\Access;
 use Illuminate\Support\Facades\Route;
 
 Route::name('simpleWorkflowReport.')->prefix('workflow-report')->middleware(['web', 'auth'])->group(function () {
+    include __DIR__ . '/customer.php';
     Route::get('index', [ReportController::class, 'index'])->name('index');
     Route::resource('report', ReportController::class);
     Route::resource('summary-report', SummaryReportController::class);
     Route::resource('role', RoleReportFormController::class);
     Route::resource('fin-report', FinReportController::class);
-    Route::get('customers/export', [CustomersReportController::class, 'export'])->name('customers.export');
-    Route::resource('customers', CustomersReportController::class)->except(['create', 'show', 'edit']);
     Route::get('timeoff-report', [TimeoffController::class, 'index'])->middleware(Access::class . ':گزارش مرخصی ها')->name('timeoff-report.index');
     Route::get('total-payment', [FinReportController::class, 'totalPayment'])->name('totalPayment');
     Route::get('test', function () {
@@ -53,7 +52,6 @@ Route::name('simpleWorkflowReport.')->prefix('workflow-report')->middleware(['we
 
     Route::prefix('management')->name('management.')->group(function () {
         Route::view('processes', 'SimpleWorkflowReportView::Management.Processes.overview')->name('processes');
-        Route::view('customers', 'SimpleWorkflowReportView::Management.Customers.overview')->name('customers');
         Route::view('financial', 'SimpleWorkflowReportView::Management.Financial.overview')->name('financial');
         Route::view('inventory', 'SimpleWorkflowReportView::Management.Inventory.overview')->name('inventory');
         Route::view('devices', 'SimpleWorkflowReportView::Management.Devices.overview')->name('devices');
