@@ -52,6 +52,7 @@ Route::name('simpleWorkflowReport.')->prefix('workflow-report')->middleware(['we
 
     Route::prefix('management')->name('management.')->group(function () {
         Route::view('processes', 'SimpleWorkflowReportView::Management.Processes.overview')->name('processes');
+        Route::view('customers', 'SimpleWorkflowReportView::Management.Customers.overview')->name('customers');
         Route::view('financial', 'SimpleWorkflowReportView::Management.Financial.overview')->name('financial');
         Route::view('inventory', 'SimpleWorkflowReportView::Management.Inventory.overview')->name('inventory');
         Route::view('devices', 'SimpleWorkflowReportView::Management.Devices.overview')->name('devices');
